@@ -1,27 +1,26 @@
+type FontFamilies = 'text' | 'title';
 
-  type FontFamilies = 'text' | 'title';
-
-  interface ISizes {
+interface ISizes {
     small: string;
     medium: string;
     large: string;
-  }
+}
 
-  interface ITypography {
+interface ITypography {
     family: Record<FontFamilies, string>;
     sizes: ISizes;
-  }
+}
 
-  const typography: ITypography = {
+const typography: ITypography = {
     sizes: {
-      small: '10px',
-      medium: '16px',
-      large: '22px',
+        small: '10px',
+        medium: '16px',
+        large: '22px',
     },
     family: {
-      text: "'Roboto', sans-serif",
-      title: "'Open Sans', sans-serif",
+        text: "'Roboto', sans-serif",
+        title: "'Open Sans', sans-serif",
     },
-  };
+};
 
-  export default typography;
+export default typography;
