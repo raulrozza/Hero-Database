@@ -19,7 +19,8 @@
       "@/assets/*": ["./src/assets/*"],
       "@/config/*": ["./src/config/*"],
       "@/modules/*": ["./src/modules/*"],
-      "@/shared/*": ["./src/shared/*"]
+      "@/shared/*": ["./src/shared/*"],
+      "@api/*": ["./src/modules/api/presentation/*"]
     },
 
     "typeRoots" : [
