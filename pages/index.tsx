@@ -12,6 +12,9 @@ export default function Home() {
 
             <p>This website is under development</p>
 
+            <Link href="conditions">Go to Conditions page</Link>
+            <br />
+
             <Link href="powers">Go to Powers page</Link>
         </div>
     );
