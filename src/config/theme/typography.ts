@@ -1,25 +1,23 @@
-type FontFamilies = 'text' | 'title';
-
-interface ISizes {
-    small: string;
-    medium: string;
-    large: string;
-}
-
-interface ITypography {
-    family: Record<FontFamilies, string>;
-    sizes: ISizes;
-}
-
-const typography: ITypography = {
+const typography = {
     sizes: {
-        small: '10px',
-        medium: '16px',
-        large: '22px',
+        title1: '2.25rem',
+        title2: '1.5rem',
+        title3: '1.125rem',
+        subtitle: '1rem',
+        body1: '1rem',
+        body2: '0.875rem',
+        caption: '0.75rem',
     },
+
     family: {
-        text: "'Roboto', sans-serif",
-        title: "'Open Sans', sans-serif",
+        title: 'Newsflash-BB, script, serif',
+        text: 'Biryani, sans-serif',
+    },
+    weight: {
+        extraBold: 'ExtraBold',
+        bold: 'Bold',
+        regular: 'Regular',
+        light: 'Light',
     },
 };
 

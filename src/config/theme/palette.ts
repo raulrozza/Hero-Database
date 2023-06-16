@@ -1,104 +1,83 @@
-interface PaletteOptions {
-    light: string;
-    main: string;
-    dark: string;
-}
-
-type PaletteKeys = 'primary' | 'secondary' | 'error';
-
-interface ContrastPallete {
-    light: string;
-    dark: string;
-}
-
-type ContrastPalleteKeys = 'contrast';
-
-interface ScalePallete {
-    0: string;
-    100: string;
-    200: string;
-    300: string;
-    400: string;
-    500: string;
-    600: string;
-    700: string;
-    800: string;
-    900: string;
-    1000: string;
-}
-
-type ScalePalleteKeys = 'gray';
-
-type Palette = Record<PaletteKeys, PaletteOptions> &
-    Record<ContrastPalleteKeys, ContrastPallete> &
-    Record<ScalePalleteKeys, ScalePallete>;
-
-export const lightPalette: Palette = {
+export const lightPalette = {
     primary: {
-        light: '#f68c6f',
-        main: '#d83a0e',
-        dark: '#782008',
+        300: '#FC9D83',
+        500: '#D83A0E',
+        800: '#782008',
     },
     secondary: {
-        light: '#f7df88',
-        main: '#f2cb40',
-        dark: '#d7ab0f',
-    },
-    error: {
-        light: '#fe6776',
-        main: '#C20114',
-        dark: '#65010b',
+        300: '#F7DF88',
+        500: '#F2CB40',
+        800: '#D7AB0F',
     },
     contrast: {
-        light: '#E6EAEA',
-        dark: '#031717',
+        300: '#66C6FF',
+        500: '#20A4F3',
+        800: '#157AB7',
     },
-    gray: {
-        0: '#FFFFFF',
-        100: '#E6EAEA',
-        200: '#CDD5D5',
-        300: '#B4C0C0',
-        400: '#9BABAB',
-        500: '#829697',
-        600: '#698182',
-        700: '#506C6D',
-        800: '#375758',
-        900: '#1E4243',
-        1000: '#052D2E',
+    error: {
+        300: '#FE6776',
+        500: '#C20114',
+        800: '#790612',
+    },
+    neutral: {
+        50: '#F8FAFC',
+        100: '#F1F5F9',
+        200: '#E2EDF0',
+        300: '#CBD7E1',
+        400: '#94A7B8',
+        500: '#647487',
+        600: '#485A6A',
+        700: '#344556',
+        800: '#1E2C38',
+        900: '#0F1A29',
+    },
+    text: {
+        main: '#181E21',
+        light: '#454D4F',
+        black: '#181E21',
+        white: '#F9FBFB',
     },
 };
 
+type Palette = typeof lightPalette;
+
 export const darkPalette: Palette = {
     primary: {
-        light: '#d1977b',
-        main: '#BE6E46',
-        dark: '#844b2e',
+        300: '#CC94EB',
+        500: '#AB3BE8',
+        800: '#6F12A1',
     },
     secondary: {
-        light: '#a873f2',
-        main: '#8338EC',
-        dark: '#420d8c',
-    },
-    error: {
-        light: '#f47180',
-        main: '#ef233c',
-        dark: '#8e0b1a',
+        300: '#a873f2',
+        500: '#EB4D3B',
+        800: '#B21B0A',
     },
     contrast: {
-        light: '#efeef6',
-        dark: '#0A0911',
+        300: '#91FF85',
+        500: '#58EB47',
+        800: '#2DAD1F',
     },
-    gray: {
-        0: '#0A0911',
-        100: '#1C1B25',
-        200: '#2E2D3A',
-        300: '#413F4E',
-        400: '#535162',
-        500: '#656377',
-        600: '#77748B',
-        700: '#89869F',
-        800: '#9C98B3',
-        900: '#AEAAC8',
-        1000: '#C0BCDC',
+    error: {
+        300: '#F47180',
+        500: '#EF233C',
+        800: '#8E0B1A',
+    },
+    neutral: {
+        50: '#151226',
+        100: '#252334',
+        200: '#3E3B4F',
+        300: '#514C67',
+        400: '#6E6783',
+        500: '#9F9DAF',
+        600: '#D1CFDD',
+        700: '#E3E1EF',
+        800: '#F1F1F9',
+        900: '#F9F8FC',
+    },
+    text: {
+        main: '#F9FBFB',
+        light: '#BEC7CA',
+        black: '#181E21',
+        white: '#F9FBFB',
     },
 };
