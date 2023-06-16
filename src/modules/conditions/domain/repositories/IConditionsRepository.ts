@@ -1,5 +1,5 @@
-import ICondition from '@/shared/domain/entities/ICondition';
+import { ICondition } from '@/shared/domain/entities';
 
 export interface IConditionsRepository {
-    findAll(): Promise<ICondition[]>;
+  findAll(): Promise<ICondition[]>;
 }

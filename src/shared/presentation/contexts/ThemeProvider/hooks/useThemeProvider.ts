@@ -2,21 +2,29 @@ import { createContext, useContext } from 'react';
 
 import { isEmpty } from 'lodash';
 
-import IThemeProvider from '@/shared/domain/providers/IThemeProvider';
+import { ITheme } from '@/config/theme';
+
+type ThemeName = 'light' | 'dark';
+
+export interface IThemeProvider {
+  theme: ITheme;
+  name: ThemeName;
+  toggle(): void;
+}
 
 export const ThemeContextProvider = createContext<IThemeProvider>(
-    {} as IThemeProvider,
+  {} as IThemeProvider,
 );
 
 const useThemeProvider = (): IThemeProvider => {
-    const themeProvider = useContext(ThemeContextProvider);
+  const themeProvider = useContext(ThemeContextProvider);
 
-    if (isEmpty(themeProvider))
-        throw new Error(
-            'useThemeProvider should be called inside a ThemeContextProvider',
-        );
+  if (isEmpty(themeProvider))
+    throw new Error(
+      'useThemeProvider should be called inside a ThemeContextProvider',
+    );
 
-    return themeProvider;
+  return themeProvider;
 };
 
 export default useThemeProvider;
