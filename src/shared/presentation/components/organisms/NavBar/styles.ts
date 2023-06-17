@@ -12,7 +12,13 @@ export const Container = styled.nav`
       height: 100%;
       display: flex;
       align-items: center;
-      color: ${theme.palette.text.white};
+
+      a {
+        color: ${theme.palette.text.white};
+        font-family: ${theme.typography.family.title};
+        font-size: ${theme.typography.sizes.title1};
+        text-decoration: none;
+      }
     }
 
     .links {

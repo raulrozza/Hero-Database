@@ -1,5 +1,11 @@
 import { FC } from 'react';
 
-const Powers: FC = () => <div />;
+import { NavBar } from '@/shared/presentation/components/organisms';
+
+const Powers: FC = () => (
+  <div>
+    <NavBar />
+  </div>
+);
 
 export default Powers;

@@ -1,5 +1,6 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { NavLink } from '@/shared/presentation/components/atoms';
@@ -23,7 +24,7 @@ const NavBar: React.FC = () => {
   return (
     <Container>
       <div className="logo">
-        <h1>M&M Index</h1>
+        <Link href="/">M&M Index</Link>
       </div>
 
       <div className="links">
