@@ -147,4 +147,84 @@ export const conditions = {
     description: ['A bound character is defenseless, immobile, and impaired.'],
     components: ['Defenseless', 'Immobile', 'Impaired'],
   } as MetaCondition,
+  Deaf: {
+    type: 'combined',
+    name: 'Deaf',
+    description: [
+      'The character cannot hear, giving everything total auditory concealment from him. This may allow for surprise attacks on the unaware character. Interaction with other characters is limited to sign-language and lip-reading.',
+    ],
+    components: ['Unaware'],
+  } as MetaCondition,
+  Dying: {
+    type: 'combined',
+    name: 'Dying',
+    description: [
+      'A dying character is incapacitated nd near death. When the character gains this condition, immediately make a Fortitude check (DC 15). If the check succeeds, nothing happens. With two degrees of success, the character stabilizes, removing this condition. If the check fails, the character remains dying. Three or more total degrees of failure mean the character dies: so three failed Fortitude checks or one or two checks adding up to three degrees.',
+      'Dying characters make a Fortitude check each round until they either die or stabilize. Another character can stabilize a dying character with a successful Treatment check (DC 15) or use of a Healing effect.',
+    ],
+    components: ['Incapacitated'],
+  } as MetaCondition,
+  Entranced: {
+    type: 'combined',
+    name: 'Entranced',
+    description: [
+      'An entranced character is stunned, taking no actions other than paying attention to the entrancing effect. Any obvious threat automatically breaks the trance. An ally can also shake a character free of the condition with an interaction skill check (DC 10 + effect rank).',
+    ],
+    components: ['Stunned'],
+  } as MetaCondition,
+  Exhausted: {
+    type: 'combined',
+    name: 'Exhausted',
+    description: [
+      'Exhausted characters are near collapse. They are impaired and hindered. Characters recover from an exhausted condition after an hour of rest in comfortable surroundings.',
+    ],
+    components: ['Impaired', 'Hindered'],
+  } as MetaCondition,
+  Incapacitated: {
+    type: 'combined',
+    name: 'Incapacitated',
+    description: [
+      'An incapacitated character is defenseless, stunned, and unaware. Incapacitated characters generally also fall prone, unless some outside force or aid keeps them standing.',
+    ],
+    components: ['Defenseless', 'Stunned', 'Unaware', 'Prone'],
+  } as MetaCondition,
+  Paralyzed: {
+    type: 'combined',
+    name: 'Paralyzed',
+    description: [
+      'A paralyzed character is defenseless, immobile, and physically stunned, frozen in place and unable to move, but still aware and able to take purely mental actions, involving no physical movement whatsoever.',
+    ],
+    components: ['Defenseless', 'Immobile', 'Stunned'],
+  } as MetaCondition,
+  Prone: {
+    type: 'combined',
+    name: 'Prone',
+    description: [
+      'A prone character is lying on the ground, receiving a –5 circumstance penalty on close attack checks. Opponents receive a +5 circumstance bonus to close attack checks but a –5 penalty to ranged attack checks (effectively giving the prone character total cover against ranged attacks). Prone characters are hindered.',
+      'Standing up from a prone position is a move action.',
+    ],
+    components: ['Hindered'],
+  } as MetaCondition,
+  Restrained: {
+    type: 'combined',
+    name: 'Restrained',
+    description: [
+      'A restrained character is hindered and vulnerable. If the restraints are anchored to an immobile object, the character is immobile rather than hindered. If restrained by another character, the restrained character is immobile but may be moved by the restraining character.',
+    ],
+    components: ['Hindered', 'Immobile', 'Vulnerable'],
+  } as MetaCondition,
+  Staggered: {
+    type: 'combined',
+    name: 'Staggered',
+    description: ['A staggered character is dazed and hindered.'],
+    components: ['Dazed', 'Hindered'],
+  } as MetaCondition,
+  Surprised: {
+    type: 'combined',
+    name: 'Surprised',
+    description: [
+      'A surprised character is stunned and vulnerable, caught off-guard and therefore unable to act, and less able to avoid attacks.',
+    ],
+    components: ['Stunned', 'Vulnerable'],
+  } as MetaCondition,
 };
