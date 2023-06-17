@@ -4,11 +4,11 @@ import { ThemeProvider as SCThemeProvider } from 'styled-components';
 
 import buildTheme from '@/config/theme';
 
+import GlobalStyles from './styles';
 import {
   ThemeContextProvider,
   IThemeProvider,
 } from '../../hooks/useThemeProvider';
-import GlobalStyles from './styles';
 
 const StyledComponentsThemeContext: FC = ({ children }) => {
   const [name, setName] = useState<IThemeProvider['name']>('light');
