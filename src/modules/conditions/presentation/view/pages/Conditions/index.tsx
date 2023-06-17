@@ -14,7 +14,18 @@ const Conditions: FC = () => {
           <li key={condition.key}>
             <strong>{condition.name}</strong>
 
-            <p>{condition.description}</p>
+            {condition.description.split('\n').map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
+
+            {condition.type === 'combined' && (
+              <p>
+                Components:{' '}
+                {condition.components
+                  .map(component => component.name)
+                  .join(', ')}
+              </p>
+            )}
           </li>
         ))}
       </ul>

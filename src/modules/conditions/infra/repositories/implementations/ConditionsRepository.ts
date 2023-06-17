@@ -14,14 +14,14 @@ export default class ConditionsRepository implements IConditionsRepository {
       return {
         key,
         name: condition.name,
-        description: condition.description,
+        description: condition.description.join('\n'),
         type: condition.type,
       };
 
     return {
       key,
       name: condition.name,
-      description: condition.description,
+      description: condition.description.join('\n'),
       type: condition.type,
       components: condition.components.map(key => {
         const data = conditions[key as keyof typeof conditions];
