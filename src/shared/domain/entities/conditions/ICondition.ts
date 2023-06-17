@@ -4,6 +4,7 @@ interface IBaseCondition {
   key: string;
   name: string;
   description: string;
+  source: string;
 }
 
 export interface IBasicCondition extends IBaseCondition {

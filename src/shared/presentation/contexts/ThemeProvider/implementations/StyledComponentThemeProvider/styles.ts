@@ -39,7 +39,7 @@ ${({ theme }) => css`
   }
 
   body {
-    background-color: ${theme.palette.neutral['50']};
+    background-color: ${theme.palette.neutral['200']};
     min-height: 100vh;
   }
 

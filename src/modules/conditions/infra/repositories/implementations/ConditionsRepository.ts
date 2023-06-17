@@ -16,6 +16,7 @@ export default class ConditionsRepository implements IConditionsRepository {
         name: condition.name,
         description: condition.description.join('\n'),
         type: condition.type,
+        source: condition.source,
       };
 
     return {
@@ -28,6 +29,7 @@ export default class ConditionsRepository implements IConditionsRepository {
 
         return this.convertCondition(key, data);
       }),
+      source: condition.source,
     };
   }
 }
