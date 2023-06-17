@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,21 +17,36 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-
     "baseUrl": ".",
     "paths": {
-      "@/assets/*": ["./src/assets/*"],
-      "@/config/*": ["./src/config/*"],
-      "@/modules/*": ["./src/modules/*"],
-      "@/shared/*": ["./src/shared/*"],
-      "@api/*": ["./src/modules/api/presentation/*"]
-    },
-
-    "typeRoots" : [
-        "node_modules/@types",
-        "./src/@types"
+      "@/assets/*": [
+        "./src/assets/*"
+      ],
+      "@/config/*": [
+        "./src/config/*"
+      ],
+      "@/modules/*": [
+        "./src/modules/*"
+      ],
+      "@/shared/*": [
+        "./src/shared/*"
+      ],
+      "@api/*": [
+        "./src/modules/api/presentation/*"
       ]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "./src/@types"
+    ],
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
