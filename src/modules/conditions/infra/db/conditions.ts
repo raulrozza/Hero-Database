@@ -133,4 +133,18 @@ export const conditions = {
     ],
     components: ['Defenseless', 'Stunned', 'Unaware'],
   } as MetaCondition,
+  Blind: {
+    type: 'combined',
+    name: 'Blind',
+    description: [
+      'The character cannot see. Everything effectively has full visual concealment from him. He is hindered, visually unaware, and vulnerable, and may be impaired or disabled for activities where vision is a factor.',
+    ],
+    components: ['Disabled', 'Hindered', 'Impaired', 'Unaware', 'Vulnerable'],
+  } as MetaCondition,
+  Bound: {
+    type: 'combined',
+    name: 'Bound',
+    description: ['A bound character is defenseless, immobile, and impaired.'],
+    components: ['Defenseless', 'Immobile', 'Impaired'],
+  } as MetaCondition,
 };
