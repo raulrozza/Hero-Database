@@ -1,19 +1,16 @@
 import { FC } from 'react';
 
 import { api } from '@/shared/infra/http/api';
-import { NavLink } from '@/shared/presentation/components/atoms';
+import { NavBar } from '@/shared/presentation/components/organisms';
 
 const Conditions: FC = () => {
   const query = api.conditions.getAll.useQuery();
 
   return (
     <div>
-      <h1>Conditions</h1>
+      <NavBar />
 
-      <NavLink href="/" active>
-        Condition
-      </NavLink>
-      <NavLink href="/">Condition</NavLink>
+      <h1>Conditions</h1>
 
       <ul>
         {query.data?.map(condition => (
