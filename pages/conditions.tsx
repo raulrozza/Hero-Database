@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Conditions from '@/modules/conditions/presentation/view/pages/Conditions';
+import Conditions from '@/modules/conditions/presentation/pages/Conditions';
 
 export default function ConditionsPage() {
   return (
