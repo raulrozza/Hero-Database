@@ -1,3 +1,9 @@
 import { ICondition } from '@/shared/domain/entities';
 
-export const conditions: ICondition[] = [];
+type MetaCondition = {
+  key: string;
+  name: string;
+  description: string;
+} & ({ type: 'basic' } | { type: 'combined'; components: string[] });
+
+export const conditions = {};
