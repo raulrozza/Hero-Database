@@ -1,5 +1,5 @@
 export type ICondition = {
-  type: 'basic' | 'combined';
+  key: string;
   name: string;
-  text: string;
-};
+  description: string;
+} & ({ type: 'basic' } | { type: 'combined'; components: ICondition[] });
