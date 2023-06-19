@@ -1,7 +1,10 @@
 import { httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
+import type { inferRouterOutputs } from '@trpc/server';
 
 import { AppRouter } from '@/shared/infra/routes';
+
+export type RouterOutputs = inferRouterOutputs<AppRouter>;
 
 const getBaseUrl = () => {
   if (typeof window !== 'undefined') return ''; // browser should use relative url
