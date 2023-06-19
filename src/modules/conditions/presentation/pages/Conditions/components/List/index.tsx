@@ -1,6 +1,9 @@
 import React from 'react';
 
+import { capitalize } from 'lodash';
+
 import { api } from '@/shared/infra/http/api';
+import { Table } from '@/shared/presentation/components/atoms';
 
 // import { Container } from './styles';
 
@@ -10,25 +13,40 @@ const List: React.FC = () => {
   if (query.isLoading) return <div>Loading...</div>;
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <tr>Name</tr>
-          <tr>Type</tr>
-          <tr>Source</tr>
-        </tr>
-      </thead>
-
-      <tbody>
-        {query.data?.map(condition => (
-          <tr key={condition.key}>
-            <td>{condition.name}</td>
-            <td>{condition.type}</td>
-            <td>{condition.source}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <Table
+      labels={[
+        {
+          title: 'Name',
+          span: 6,
+        },
+        {
+          title: 'Type',
+        },
+        {
+          title: 'Source',
+        },
+      ]}
+    >
+      {query.data?.map(condition => (
+        <Table.Row
+          key={condition.key}
+          items={[
+            {
+              key: 'name',
+              content: condition.name,
+            },
+            {
+              key: 'type',
+              content: capitalize(condition.type),
+            },
+            {
+              key: 'source',
+              content: condition.source,
+            },
+          ]}
+        />
+      ))}
+    </Table>
   );
 };
 
