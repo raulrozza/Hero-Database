@@ -27,6 +27,8 @@ const List: React.FC = () => {
         },
       ]}
     >
+      <Table.Section title="Basic conditions" />
+
       {query.data?.map(condition => (
         <Table.Row
           key={condition.key}

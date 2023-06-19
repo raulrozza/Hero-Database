@@ -38,16 +38,27 @@ export const Row = styled.tr`
   ${({ theme }) => css`
     font-weight: ${theme.typography.weight.regular};
     font-size: ${theme.typography.sizes.body1};
+  `}
+`;
 
-    td {
-      border: 1px solid ${theme.palette.neutral[300]};
-      padding: ${theme.layout.spacing(0.5, 1)};
-      text-align: center;
+export const TableContent = styled.td`
+  ${({ theme }) => css`
+    border: 1px solid ${theme.palette.neutral[300]};
+    padding: ${theme.layout.spacing(0.5, 1)};
+    text-align: center;
 
-      &:nth-child(1) {
-        font-weight: ${theme.typography.weight.bold};
-        text-align: left;
-      }
+    &:nth-child(1) {
+      font-weight: ${theme.typography.weight.bold};
+      text-align: left;
     }
+  `}
+`;
+
+export const SectionContent = styled.tr`
+  ${({ theme }) => css`
+    border: 1px solid ${theme.palette.neutral[300]};
+    padding: ${theme.layout.spacing(0.5, 1)};
+
+    color: ${theme.palette.neutral[600]};
   `}
 `;

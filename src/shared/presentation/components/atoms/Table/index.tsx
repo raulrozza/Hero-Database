@@ -12,9 +12,17 @@ interface IRowProps {
 const Row: React.FC<IRowProps> = ({ items }) => (
   <S.Row>
     {items.map(item => (
-      <td key={item.key}>{item.content}</td>
+      <S.TableContent key={item.key}>{item.content}</S.TableContent>
     ))}
   </S.Row>
+);
+
+interface ISectionProps {
+  title: string;
+}
+
+const Section: React.FC<ISectionProps> = ({ title }) => (
+  <S.SectionContent>{title}</S.SectionContent>
 );
 
 interface ITableProps {
@@ -26,6 +34,7 @@ interface ITableProps {
 
 interface ITable extends React.FC<ITableProps> {
   Row: React.FC<IRowProps>;
+  Section: React.FC<ISectionProps>;
 }
 
 const Table: ITable = (({ labels, children }) => {
@@ -48,5 +57,7 @@ const Table: ITable = (({ labels, children }) => {
 
 Table.Row = Row;
 Table.Row.displayName = 'Table.Row';
+Table.Section = Section;
+Table.Section.displayName = 'Table.Section';
 
 export default Table;
