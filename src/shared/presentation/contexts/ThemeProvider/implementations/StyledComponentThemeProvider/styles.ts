@@ -20,7 +20,7 @@ ${({ theme }) => css`
 
   body,
   html,
-  #root {
+  #__next {
     height: 100%;
   }
 

@@ -5,8 +5,6 @@ export const Table = styled.table<{ spans: number[] }>`
     display: flex;
     flex-direction: column;
 
-    background-color: ${theme.palette.neutral[50]};
-
     tbody {
       display: flex;
       flex-direction: column;
@@ -18,6 +16,7 @@ export const Table = styled.table<{ spans: number[] }>`
       grid-template-columns: ${spans.map(span => `${span}fr`).join(' ')};
       text-align: left;
       align-items: center;
+      background-color: ${theme.palette.neutral[50]};
     }
   `}
 `;
