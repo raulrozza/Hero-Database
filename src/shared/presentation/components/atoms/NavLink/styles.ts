@@ -27,7 +27,7 @@ export const Container = styled.div<{ active: boolean }>`
         active ? theme.palette.primary[800] : theme.palette.secondary[500],
       )};
 
-      color: ${theme.palette.text.white};
+      color: ${theme.palette.text.white} !important;
     }
   `}
 `;
