@@ -19,11 +19,13 @@ const Condition: React.FC = () => {
       </header>
 
       <div className="content">
-        <p>{condition.description}</p>
+        {condition.description.split('\n').map((text, index) => (
+          <p key={index}>{text}</p>
+        ))}
       </div>
 
       <footer>
-        <strong>Source: </strong>
+        <strong>{'Source: '}</strong>
         {condition.source}
       </footer>
     </Container>

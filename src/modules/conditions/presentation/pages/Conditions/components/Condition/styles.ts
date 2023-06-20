@@ -16,6 +16,9 @@ export const Container = styled.div`
     }
 
     .content {
+      display: flex;
+      flex-direction: column;
+      gap: ${theme.layout.spacing(1)};
       padding: ${theme.layout.spacing(2)};
     }
 

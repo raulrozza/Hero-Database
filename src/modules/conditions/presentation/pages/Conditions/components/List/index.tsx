@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { capitalize } from 'lodash';
 
@@ -35,6 +35,17 @@ const List: React.FC = () => {
     },
   );
 
+  const sections = [
+    {
+      title: 'Basic conditions',
+      data: conditions.basic,
+    },
+    {
+      title: 'Combined conditions',
+      data: conditions.combined,
+    },
+  ];
+
   return (
     <Table
       labels={[
@@ -50,50 +61,32 @@ const List: React.FC = () => {
         },
       ]}
     >
-      <Table.Section title="Basic conditions" />
+      {sections.map(section => (
+        <Fragment key={section.title}>
+          <Table.Section title={section.title} />
 
-      {conditions.basic.map(condition => (
-        <Table.Row
-          key={condition.key}
-          items={[
-            {
-              key: 'name',
-              content: condition.name,
-            },
-            {
-              key: 'type',
-              content: capitalize(condition.type),
-            },
-            {
-              key: 'source',
-              content: condition.source,
-            },
-          ]}
-          onClick={() => setCondition(condition)}
-          highlighted={selectedCondition?.key === condition.key}
-        />
-      ))}
-
-      <Table.Section title="Combined conditions" />
-
-      {conditions.combined.map(condition => (
-        <Table.Row
-          key={condition.key}
-          items={[
-            {
-              key: 'name',
-              content: condition.name,
-            },
-            {
-              key: 'type',
-              content: capitalize(condition.type),
-            },
-            {
-              key: 'source',
-              content: condition.source,
-            },
-          ]}
-        />
+          {section.data.map(condition => (
+            <Table.Row
+              key={condition.key}
+              items={[
+                {
+                  key: 'name',
+                  content: condition.name,
+                },
+                {
+                  key: 'type',
+                  content: capitalize(condition.type),
+                },
+                {
+                  key: 'source',
+                  content: condition.source,
+                },
+              ]}
+              onClick={() => setCondition(condition)}
+              highlighted={selectedCondition?.key === condition.key}
+            />
+          ))}
+        </Fragment>
       ))}
     </Table>
   );
