@@ -22,6 +22,7 @@
     "polished": "^4.2.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "recoil": "^0.7.7",
     "styled-components": "^5.3.0",
     "superjson": "^1.12.3",
     "zod": "^3.21.4"
