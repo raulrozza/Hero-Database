@@ -34,14 +34,25 @@ export const TableHead = styled.th`
 `;
 
 export const Row = styled.tr<{ highlighted: boolean }>`
-  ${({ theme, highlighted }) => css`
+  ${({ theme, highlighted, onClick }) => css`
     font-weight: ${theme.typography.weight.regular};
     font-size: ${theme.typography.sizes.body1};
+
+    transition: all 0.2s;
 
     ${highlighted &&
     css`
       td:nth-child(1) {
         color: ${theme.palette.primary[300]};
+      }
+    `}
+
+    ${!!onClick &&
+    css`
+      cursor: pointer;
+
+      &:hover {
+        background-color: ${theme.palette.neutral[100]};
       }
     `}
   `}
