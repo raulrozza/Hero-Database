@@ -6,9 +6,13 @@ import { ICondition } from '@/shared/domain/entities';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
 
+import { useConditionState } from '../../store';
+
 // import { Container } from './styles';
 
 const List: React.FC = () => {
+  const [selectedCondition, setCondition] = useConditionState();
+
   const query = api.conditions.getAll.useQuery(undefined, {
     initialData: [],
   });
@@ -65,6 +69,8 @@ const List: React.FC = () => {
               content: condition.source,
             },
           ]}
+          onClick={() => setCondition(condition)}
+          highlighted={selectedCondition?.key === condition.key}
         />
       ))}
 

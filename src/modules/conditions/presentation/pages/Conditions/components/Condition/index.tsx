@@ -1,29 +1,30 @@
 import React from 'react';
 
+import { capitalize } from 'lodash';
+
 import { Container } from './styles';
+import { useConditionValue } from '../../store';
 
 const Condition: React.FC = () => {
+  const condition = useConditionValue();
+
+  if (!condition) return null;
+
   return (
     <Container>
       <header>
-        <h1>Compelled</h1>
+        <h1>{condition.name}</h1>
 
-        <h2>Basic</h2>
+        <h2>{capitalize(condition.type)}</h2>
       </header>
 
       <div className="content">
-        <p>
-          A compelled character is directed by an outside force, but struggling
-          against it; the character is limited to free actions and a single
-          standard action per turn, chosen by another, controlling, character.
-          As usual, this standard action can be traded for a move or even free
-          action. Controlled supersedes compelled.
-        </p>
+        <p>{condition.description}</p>
       </div>
 
       <footer>
         <strong>Source: </strong>
-        HH
+        {condition.source}
       </footer>
     </Container>
   );

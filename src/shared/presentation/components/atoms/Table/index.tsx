@@ -7,10 +7,12 @@ interface IRowProps {
     key: string;
     content: React.ReactChild;
   }>;
+  onClick?: () => void;
+  highlighted?: boolean;
 }
 
-const Row: React.FC<IRowProps> = ({ items }) => (
-  <S.Row>
+const Row: React.FC<IRowProps> = ({ items, highlighted = false, onClick }) => (
+  <S.Row onClick={onClick} highlighted={highlighted}>
     {items.map(item => (
       <S.TableContent key={item.key}>{item.content}</S.TableContent>
     ))}

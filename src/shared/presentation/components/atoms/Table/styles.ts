@@ -33,10 +33,17 @@ export const TableHead = styled.th`
   `}
 `;
 
-export const Row = styled.tr`
-  ${({ theme }) => css`
+export const Row = styled.tr<{ highlighted: boolean }>`
+  ${({ theme, highlighted }) => css`
     font-weight: ${theme.typography.weight.regular};
     font-size: ${theme.typography.sizes.body1};
+
+    ${highlighted &&
+    css`
+      td:nth-child(1) {
+        color: ${theme.palette.primary[300]};
+      }
+    `}
   `}
 `;
 
