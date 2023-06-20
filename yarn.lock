@@ -2410,6 +2410,11 @@ react@17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
+recoil-sync-next@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/recoil-sync-next/-/recoil-sync-next-0.0.5.tgz#a474c42dc209297d540e4a6804922d60ac1e8a1e"
+  integrity sha512-EBXd79tLywZrToKwlAXuMHFUE8lcaYjbvvYUfoQetQL7sDFA/islANGEIMWxYj4LjUWR9Jj/o+GRDC/fXnAVWw==
+
 recoil-sync@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/recoil-sync/-/recoil-sync-0.2.0.tgz#915c219ae6e73ca6b973ce73c6c773d5a4273210"
