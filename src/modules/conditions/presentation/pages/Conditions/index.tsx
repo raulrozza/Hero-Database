@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { NavBar } from '@/shared/presentation/components/organisms';
 
-import { List } from './components';
+import { Condition, List } from './components';
 import { Container } from './styles';
 
 const Conditions: FC = () => {
@@ -12,6 +12,8 @@ const Conditions: FC = () => {
 
       <main>
         <List />
+
+        <Condition />
       </main>
     </Container>
   );

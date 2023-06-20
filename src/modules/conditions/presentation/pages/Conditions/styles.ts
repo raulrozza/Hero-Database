@@ -10,12 +10,16 @@ export const Container = styled.div`
 
     main {
       display: flex;
+      align-items: flex-start;
       align-self: center;
-      gap: ${theme.layout.spacing(2)};
+      justify-content: center;
+      gap: ${theme.layout.spacing(4)};
 
       height: calc(100% - 100px);
 
       table {
+        width: 100%;
+        max-width: ${theme.layout.spacing(99)};
         max-height: 100%;
         flex-grow: 0;
         tbody {

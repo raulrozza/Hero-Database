@@ -43,14 +43,6 @@ ${({ theme }) => css`
     min-height: 100vh;
   }
 
-  a {
-    color: ${theme.palette.contrast[500]};
-    transition: all 0.2s;
-    &:hover {
-      color: ${theme.palette.contrast[300]};
-    }
-  }
-
   h1,
   h2,
   h3,
