@@ -8,7 +8,14 @@ import { useConditionValue } from '../../store';
 const Condition: React.FC = () => {
   const condition = useConditionValue();
 
-  if (!condition) return null;
+  if (!condition)
+    return (
+      <Container>
+        <div className="content">
+          <p>Please, select a condition from the options</p>
+        </div>
+      </Container>
+    );
 
   return (
     <Container>
