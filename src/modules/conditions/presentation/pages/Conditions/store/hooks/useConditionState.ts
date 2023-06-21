@@ -1,21 +1,22 @@
 import { useCallback } from 'react';
 
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import { ICondition } from '@/shared/domain/entities';
+import { useSetHashKey } from '@/shared/presentation/contexts';
 
-import { conditionAtom, conditionKeyAtom } from '../atoms/conditionAtom';
+import { conditionAtom } from '../atoms/conditionAtom';
 
 export function useConditionState() {
   const [condition, setCondition] = useRecoilState(conditionAtom);
-  const setConditionKey = useSetRecoilState(conditionKeyAtom);
+  const setHashKey = useSetHashKey();
 
   const handleUpdateCondition = useCallback(
     (condition: ICondition) => {
       setCondition(condition);
-      setConditionKey(condition.key);
+      setHashKey(condition.key);
     },
-    [setCondition, setConditionKey],
+    [setCondition, setHashKey],
   );
 
   return [condition, handleUpdateCondition] as const;
