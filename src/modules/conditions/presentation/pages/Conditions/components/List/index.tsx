@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 
 import { capitalize } from 'lodash';
 
@@ -12,10 +12,27 @@ import { useConditionState } from '../../store';
 
 const List: React.FC = () => {
   const [selectedCondition, setCondition] = useConditionState();
+  const hasInitialized = useRef(false);
 
   const query = api.conditions.getAll.useQuery(undefined, {
     initialData: [],
   });
+
+  useEffect(() => {
+    if (hasInitialized.current) return;
+
+    if (!query.data.length) return;
+
+    hasInitialized.current = true;
+
+    const hashKey = location.hash.substring(1);
+
+    if (!hashKey) return;
+
+    const condition = query.data.find(condition => condition.key === hashKey);
+
+    if (condition) setCondition(condition);
+  }, [query.data, setCondition]);
 
   if (query.isLoading) return <div>Loading...</div>;
 

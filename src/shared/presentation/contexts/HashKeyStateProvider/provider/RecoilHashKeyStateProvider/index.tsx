@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { RecoilURLSyncNext } from 'recoil-sync-next';
 
@@ -8,7 +8,7 @@ const RecoilHashKeyStateProvider: React.FC = ({ children }) => (
   <RecoilURLSyncNext
     location={{ part: 'hash' }}
     storeKey={STORE_KEY}
-    serialize={data => {
+    serialize={useCallback(data => {
       if (data instanceof Object) {
         const values = Object.values(data);
 
@@ -16,14 +16,14 @@ const RecoilHashKeyStateProvider: React.FC = ({ children }) => (
       }
 
       return '';
-    }}
-    deserialize={data => {
+    }, [])}
+    deserialize={useCallback(data => {
       if (!data) return {};
 
       return {
-        itemKey: data,
+        [STORE_KEY]: data,
       };
-    }}
+    }, [])}
   >
     {children}
   </RecoilURLSyncNext>

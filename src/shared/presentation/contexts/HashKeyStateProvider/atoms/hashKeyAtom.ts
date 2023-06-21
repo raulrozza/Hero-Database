@@ -4,7 +4,7 @@ import { urlSyncEffect } from 'recoil-sync';
 
 import { STORE_KEY } from '../constants/storeKey';
 
-export const hashKeyAtom = atom({
+export const hashKeyAtom = atom<string>({
   key: STORE_KEY,
   default: '',
   effects: [
@@ -13,6 +13,7 @@ export const hashKeyAtom = atom({
       refine: string(),
       read: ({ read }) => read('hashKeyAtom'),
       write: ({ write }, newValue) => write('hashKeyAtom', newValue),
+      itemKey: STORE_KEY,
     }),
   ],
 });
