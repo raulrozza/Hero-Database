@@ -3,6 +3,7 @@ import React from 'react';
 import { capitalize } from 'lodash';
 
 import {
+  ItemCollapsible,
   ItemContent,
   ItemFooter,
   ItemHeader,
@@ -17,9 +18,29 @@ const Condition: React.FC = () => {
   if (!condition)
     return (
       <Container>
+        <ItemHeader title="Condition" />
+
         <ItemContent>
           <p>Please, select a condition from the options</p>
         </ItemContent>
+      </Container>
+    );
+
+  if (condition.type === 'basic')
+    return (
+      <Container>
+        <ItemHeader
+          title={condition.name}
+          subtitle={capitalize(condition.type)}
+        />
+
+        <ItemContent>
+          {condition.description.split('\n').map((text, index) => (
+            <p key={index}>{text}</p>
+          ))}
+        </ItemContent>
+
+        <ItemFooter source={condition.source} />
       </Container>
     );
 
@@ -35,6 +56,16 @@ const Condition: React.FC = () => {
           <p key={index}>{text}</p>
         ))}
       </ItemContent>
+
+      <ItemCollapsible title="Components">
+        {condition.components.map(component => (
+          <ItemContent key={component.key} title={component.name}>
+            {component.description.split('\n').map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
+          </ItemContent>
+        ))}
+      </ItemCollapsible>
 
       <ItemFooter source={condition.source} />
     </Container>

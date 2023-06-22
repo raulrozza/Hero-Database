@@ -2,8 +2,16 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const ItemContent: React.FC = ({ children }) => (
-  <Container>{children}</Container>
+interface IItemContentProps {
+  title?: string;
+}
+
+const ItemContent: React.FC<IItemContentProps> = ({ title, children }) => (
+  <Container>
+    {title && <strong>{title}</strong>}
+
+    {children}
+  </Container>
 );
 
 export default ItemContent;
