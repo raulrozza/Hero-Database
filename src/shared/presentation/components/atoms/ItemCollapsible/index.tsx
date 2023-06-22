@@ -3,7 +3,7 @@ import React from 'react';
 import * as Accordion from '@radix-ui/react-accordion';
 import { FaChevronDown } from 'react-icons/fa';
 
-import { Container, Header } from './styles';
+import { Container, Content, Header } from './styles';
 
 interface IItemCollapsibleProps {
   title: string;
@@ -23,7 +23,7 @@ const ItemCollapsible: React.FC<IItemCollapsibleProps> = ({
         </Header>
       </Accordion.Header>
 
-      <Accordion.Content>{children}</Accordion.Content>
+      <Content>{children}</Content>
     </Container>
   </Accordion.Root>
 );

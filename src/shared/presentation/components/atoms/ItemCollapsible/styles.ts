@@ -1,6 +1,10 @@
-import { Item, Trigger } from '@radix-ui/react-accordion';
+import {
+  Item,
+  Trigger,
+  Content as RadixContent,
+} from '@radix-ui/react-accordion';
 import { transparentize } from 'polished';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const Container = styled(Item)`
   ${({ theme }) => css`
@@ -34,4 +38,34 @@ export const Header = styled(Trigger)`
       transform: rotate(180deg);
     }
   `}
+`;
+
+const slideDown = keyframes`
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+`;
+
+const slideUp = keyframes`
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+`;
+
+export const Content = styled(RadixContent)`
+  overflow: hidden;
+
+  &[data-state='open'] {
+    animation: ${slideDown} 300ms ease-out;
+  }
+
+  &[data-state='closed'] {
+    animation: ${slideUp} 300ms ease-out;
+  }
 `;
