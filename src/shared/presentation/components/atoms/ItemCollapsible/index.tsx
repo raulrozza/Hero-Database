@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as Accordion from '@radix-ui/react-accordion';
+import { FaChevronDown } from 'react-icons/fa';
 
 import { Container, Header } from './styles';
 
@@ -17,6 +18,8 @@ const ItemCollapsible: React.FC<IItemCollapsibleProps> = ({
       <Accordion.Header>
         <Header>
           <h2>{title}</h2>
+
+          <FaChevronDown aria-hidden />
         </Header>
       </Accordion.Header>
 

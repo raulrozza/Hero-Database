@@ -15,11 +15,23 @@ export const Header = styled(Trigger)`
     color: ${theme.palette.text.white};
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+
+    cursor: pointer;
 
     padding: ${theme.layout.spacing(2)};
     background-color: ${theme.palette.secondary[500]};
     width: 100%;
     border: none;
+
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: ${theme.palette.secondary[800]};
+    }
+
+    &[data-state='open'] > svg {
+      transform: rotate(180deg);
+    }
   `}
 `;
