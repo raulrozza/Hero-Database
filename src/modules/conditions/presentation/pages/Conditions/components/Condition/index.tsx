@@ -2,6 +2,12 @@ import React from 'react';
 
 import { capitalize } from 'lodash';
 
+import {
+  ItemContent,
+  ItemFooter,
+  ItemHeader,
+} from '@/shared/presentation/components/atoms';
+
 import { Container } from './styles';
 import { useConditionValue } from '../../store';
 
@@ -11,30 +17,26 @@ const Condition: React.FC = () => {
   if (!condition)
     return (
       <Container>
-        <div className="content">
+        <ItemContent>
           <p>Please, select a condition from the options</p>
-        </div>
+        </ItemContent>
       </Container>
     );
 
   return (
     <Container>
-      <header>
-        <h1>{condition.name}</h1>
+      <ItemHeader
+        title={condition.name}
+        subtitle={capitalize(condition.type)}
+      />
 
-        <h2>{capitalize(condition.type)}</h2>
-      </header>
-
-      <div className="content">
+      <ItemContent>
         {condition.description.split('\n').map((text, index) => (
           <p key={index}>{text}</p>
         ))}
-      </div>
+      </ItemContent>
 
-      <footer>
-        <strong>{'Source: '}</strong>
-        {condition.source}
-      </footer>
+      <ItemFooter source={condition.source} />
     </Container>
   );
 };
