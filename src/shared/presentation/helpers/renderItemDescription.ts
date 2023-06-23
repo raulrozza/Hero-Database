@@ -1,10 +1,6 @@
 import React, { Fragment, ReactElement } from 'react';
 
-import Link from 'next/link';
-
-const ENTITY_TO_PAGE: Record<string, string> = {
-  Condition: 'conditions',
-};
+import { EntityLink } from '@/shared/presentation/components/atoms';
 
 export default function renderItemDescription(description: string) {
   const paragraphs = description.split('\n');
@@ -60,26 +56,15 @@ function parseReference(reference: string, reactKey: number) {
   const cleanReference = reference.replace(REPLACE_REGEX, '');
   const [type, key, text] = cleanReference.split('|');
 
-  return assembleLinkElement(type, key, text, reactKey);
-}
-
-function assembleLinkElement(
-  type: string,
-  key: string,
-  text: string | undefined,
-  reactKey: number,
-) {
   const children = text || key;
 
-  if (!(type in ENTITY_TO_PAGE))
-    return createTextElement({ text: children, key: reactKey });
-
-  const path = `${ENTITY_TO_PAGE[type]}/#${key}`;
-  const title = `${type}: ${key}`;
-
   return React.createElement(
-    Link,
-    { href: path, title, key: reactKey },
+    EntityLink,
+    {
+      type,
+      key: reactKey,
+      entityKey: key,
+    },
     children,
   );
 }
