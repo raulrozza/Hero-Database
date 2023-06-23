@@ -36,9 +36,7 @@ const Condition: React.FC = () => {
         />
 
         <ItemContent>
-          {condition.description.split('\n').map((text, index) => (
-            <p key={index}>{text}</p>
-          ))}
+          {renderItemDescription(condition.description)}
         </ItemContent>
 
         <ItemFooter source={condition.source} />

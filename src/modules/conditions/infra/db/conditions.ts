@@ -11,7 +11,7 @@ export const conditions = {
     name: 'Compelled',
     description: [
       'A compelled character is directed by an outside force, but struggling against it; the character is limited to free actions and a single standard action per turn, chosen by another, controlling, character. As usual, this standard action can be traded for a move or even free action.',
-      'Controlled supersedes compelled.',
+      '@{Condition|Controlled} supersedes compelled.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -28,7 +28,7 @@ export const conditions = {
     name: 'Dazed',
     description: [
       'A dazed character is limited to free actions and a single standard action per turn, although the character may use that action to perform a move, as usual.',
-      'Stunned supersedes dazed.',
+      '@{Condition|Stunned} supersedes dazed.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -43,7 +43,7 @@ export const conditions = {
     name: 'Defenseless',
     description: [
       'A defenseless character has active defense bonuses of 0. Attackers can make attacks on defenseless opponents as routine checks. If the attacker chooses to forgo the routine check and make a normal attack check, any hit is treated as a critical hit.',
-      'Defenseless characters are often prone, providing opponents with an additional bonus to attack checks.',
+      'Defenseless characters are often @{Condition|Prone|prone}, providing opponents with an additional bonus to attack checks.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -52,7 +52,7 @@ export const conditions = {
     name: 'Disabled',
     description: [
       'A disabled character is at a –5 circumstance penalty on checks. If the penalty applies to specific checks, they are added to the name of the condition, such as Attack Disabled, Fighting Disabled, Perception Disabled, and so forth.',
-      'Debilitated, if it applies to the same trait(s), supersedes disabled.',
+      '@{Condition|Debilitated}, if it applies to the same trait(s), supersedes disabled.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -60,7 +60,7 @@ export const conditions = {
     type: 'basic',
     name: 'Fatigued',
     description: [
-      'Fatigued characters are hindered. Characters recover from a fatigued condition after an hour of rest.',
+      'Fatigued characters are @{Condition|Hindered|hindered}. Characters recover from a fatigued condition after an hour of rest.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -69,7 +69,7 @@ export const conditions = {
     name: 'Hindered',
     description: [
       'A hindered character moves at half normal speed (–1 speed rank).',
-      'Immobile supersedes hindered.',
+      '@{Condition|Immobile} supersedes hindered.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -86,7 +86,7 @@ export const conditions = {
     name: 'Impaired',
     description: [
       'An impaired character is at a –2 circumstance penalty on checks. If the impairment applies to specific checks, they are added to the name of the condition, such as Attack Impaired, Fighting Impaired, Perception Impaired, and so forth.',
-      'If it applies to the same trait(s), disabled supersedes impaired.',
+      'If it applies to the same trait(s), @{Condition|Disabled|disabled}  supersedes impaired.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -128,7 +128,7 @@ export const conditions = {
     name: 'Vulnerable',
     description: [
       'Vulnerable characters are limited in their ability to defend themselves, halving their active defenses (round up the final value).',
-      'Defenseless supersedes vulnerable.',
+      '@{Condition|Defenseless} supersedes vulnerable.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -137,7 +137,7 @@ export const conditions = {
     name: 'Weakened',
     description: [
       'The character has temporarily lost character points in a trait. See Weaken effect in Powers for more information.',
-      'Debilitated supersedes weakened.',
+      '@{Condition|Debilitated} supersedes weakened.',
     ],
     source: 'HH',
   } as MetaCondition,
@@ -155,7 +155,7 @@ export const conditions = {
     type: 'combined',
     name: 'Blind',
     description: [
-      'The character cannot see. Everything effectively has full visual concealment from him. He is hindered, visually unaware, and vulnerable, and may be impaired or disabled for activities where vision is a factor.',
+      'The character cannot see. Everything effectively has full visual concealment from him. He is @{Condition|Hindered|hindered}, visually @{Condition|Unaware|unaware}, and @{Condition|Vulnerable|vulnerable}, and may be @{Condition|Impaired|impaired} or @{Condition|Disabled|disabled} for activities where vision is a factor.',
     ],
     components: ['Disabled', 'Hindered', 'Impaired', 'Unaware', 'Vulnerable'],
     source: 'HH',
@@ -163,7 +163,9 @@ export const conditions = {
   Bound: {
     type: 'combined',
     name: 'Bound',
-    description: ['A bound character is defenseless, immobile, and impaired.'],
+    description: [
+      'A bound character is @{Condition|Defenseless|defenseless}, @{Condition|Immobile|immobile}, and @{Condition|Impaired|impaired}.',
+    ],
     components: ['Defenseless', 'Immobile', 'Impaired'],
     source: 'HH',
   } as MetaCondition,
@@ -171,7 +173,7 @@ export const conditions = {
     type: 'combined',
     name: 'Deaf',
     description: [
-      'The character cannot hear, giving everything total auditory concealment from him. This may allow for surprise attacks on the unaware character. Interaction with other characters is limited to sign-language and lip-reading.',
+      'The character cannot hear, giving everything total auditory concealment from him. This may allow for surprise attacks on the @{Condition|Unaware|unaware} character. Interaction with other characters is limited to sign-language and lip-reading.',
     ],
     components: ['Unaware'],
     source: 'HH',
@@ -190,7 +192,7 @@ export const conditions = {
     type: 'combined',
     name: 'Entranced',
     description: [
-      'An entranced character is stunned, taking no actions other than paying attention to the entrancing effect. Any obvious threat automatically breaks the trance. An ally can also shake a character free of the condition with an interaction skill check (DC 10 + effect rank).',
+      'An entranced character is @{Condition|Stunned|stunned}, taking no actions other than paying attention to the entrancing effect. Any obvious threat automatically breaks the trance. An ally can also shake a character free of the condition with an interaction skill check (DC 10 + effect rank).',
     ],
     components: ['Stunned'],
     source: 'HH',
@@ -199,7 +201,7 @@ export const conditions = {
     type: 'combined',
     name: 'Exhausted',
     description: [
-      'Exhausted characters are near collapse. They are impaired and hindered. Characters recover from an exhausted condition after an hour of rest in comfortable surroundings.',
+      'Exhausted characters are near collapse. They are @{Condition|Impaired|impaired} and @{Condition|Hindered|hindered}. Characters recover from an exhausted condition after an hour of rest in comfortable surroundings.',
     ],
     components: ['Impaired', 'Hindered'],
     source: 'HH',
@@ -208,7 +210,7 @@ export const conditions = {
     type: 'combined',
     name: 'Incapacitated',
     description: [
-      'An incapacitated character is defenseless, stunned, and unaware. Incapacitated characters generally also fall prone, unless some outside force or aid keeps them standing.',
+      'An incapacitated character is @{Condition|Defenseless|defenseless}, @{Condition|Stunned|stunned}, and @{Condition|Unaware|unaware}. Incapacitated characters generally also fall prone, unless some outside force or aid keeps them standing.',
     ],
     components: ['Defenseless', 'Stunned', 'Unaware', 'Prone'],
     source: 'HH',
@@ -217,7 +219,7 @@ export const conditions = {
     type: 'combined',
     name: 'Paralyzed',
     description: [
-      'A paralyzed character is defenseless, immobile, and physically stunned, frozen in place and unable to move, but still aware and able to take purely mental actions, involving no physical movement whatsoever.',
+      'A paralyzed character is @{Condition|Defenseless|defenseless}, @{Condition|Immobile|immobile}, and physically @{Condition|Stunned|stunned}, frozen in place and unable to move, but still aware and able to take purely mental actions, involving no physical movement whatsoever.',
     ],
     components: ['Defenseless', 'Immobile', 'Stunned'],
     source: 'HH',
@@ -226,7 +228,7 @@ export const conditions = {
     type: 'combined',
     name: 'Prone',
     description: [
-      'A prone character is lying on the ground, receiving a –5 circumstance penalty on close attack checks. Opponents receive a +5 circumstance bonus to close attack checks but a –5 penalty to ranged attack checks (effectively giving the prone character total cover against ranged attacks). Prone characters are hindered.',
+      'A prone character is lying on the ground, receiving a –5 circumstance penalty on close attack checks. Opponents receive a +5 circumstance bonus to close attack checks but a –5 penalty to ranged attack checks (effectively giving the prone character total cover against ranged attacks). Prone characters are @{Condition|Hindered|hindered}.',
       'Standing up from a prone position is a move action.',
     ],
     components: ['Hindered'],
@@ -236,7 +238,7 @@ export const conditions = {
     type: 'combined',
     name: 'Restrained',
     description: [
-      'A restrained character is hindered and vulnerable. If the restraints are anchored to an immobile object, the character is immobile rather than hindered. If restrained by another character, the restrained character is immobile but may be moved by the restraining character.',
+      'A restrained character is @{Condition|Hindered|hindered} and @{Condition|Vulnerable|vulnerable}. If the restraints are anchored to an immobile object, the character is @{Condition|Immobile|immobile} rather than @{Condition|Hindered|hindered}. If restrained by another character, the restrained character is @{Condition|Immobile|immobile} but may be moved by the restraining character.',
     ],
     components: ['Hindered', 'Immobile', 'Vulnerable'],
     source: 'HH',
@@ -244,7 +246,9 @@ export const conditions = {
   Staggered: {
     type: 'combined',
     name: 'Staggered',
-    description: ['A staggered character is dazed and hindered.'],
+    description: [
+      'A staggered character is @{Condition|Dazed|dazed} and @{Condition|Hindered|hindered}.',
+    ],
     components: ['Dazed', 'Hindered'],
     source: 'HH',
   } as MetaCondition,
@@ -252,7 +256,7 @@ export const conditions = {
     type: 'combined',
     name: 'Surprised',
     description: [
-      'A surprised character is stunned and vulnerable, caught off-guard and therefore unable to act, and less able to avoid attacks.',
+      'A surprised character is @{Condition|Stunned|stunned} and @{Condition|Vulnerable|vulnerable}, caught off-guard and therefore unable to act, and less able to avoid attacks.',
     ],
     components: ['Stunned', 'Vulnerable'],
     source: 'HH',
