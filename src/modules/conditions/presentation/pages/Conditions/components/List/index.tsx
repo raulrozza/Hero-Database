@@ -18,9 +18,9 @@ const List: React.FC = () => {
     initialData: [],
   });
 
-  useEffect(() => {
-    if (hasInitialized.current) return;
+  const hash = location.hash;
 
+  useEffect(() => {
     if (!query.data.length) return;
 
     hasInitialized.current = true;
@@ -32,7 +32,7 @@ const List: React.FC = () => {
     const condition = query.data.find(condition => condition.key === hashKey);
 
     if (condition) setCondition(condition);
-  }, [query.data, setCondition]);
+  }, [query.data, setCondition, hash]);
 
   if (query.isLoading) return <div>Loading...</div>;
 

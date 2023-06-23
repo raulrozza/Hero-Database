@@ -8,6 +8,7 @@ import {
   ItemFooter,
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
+import { renderItemDescription } from '@/shared/presentation/helpers';
 
 import { Container } from './styles';
 import { useConditionValue } from '../../store';
@@ -51,18 +52,12 @@ const Condition: React.FC = () => {
         subtitle={capitalize(condition.type)}
       />
 
-      <ItemContent>
-        {condition.description.split('\n').map((text, index) => (
-          <p key={index}>{text}</p>
-        ))}
-      </ItemContent>
+      <ItemContent>{renderItemDescription(condition.description)}</ItemContent>
 
       <ItemCollapsible title="Components">
         {condition.components.map(component => (
           <ItemContent key={component.key} title={component.name}>
-            {component.description.split('\n').map((text, index) => (
-              <p key={index}>{text}</p>
-            ))}
+            {renderItemDescription(component.description)}
           </ItemContent>
         ))}
       </ItemCollapsible>

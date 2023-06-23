@@ -146,7 +146,7 @@ export const conditions = {
     type: 'combined',
     name: 'Asleep',
     description: [
-      'While asleep, a character is defenseless, stunned, and unaware. A hearing Perception check with three or more degrees of success wakes the character and removes all these conditions, as does any sudden movement (such as shaking the sleeping character) or any effect allowing a resistance check.',
+      'While asleep, a character is @{Condition|Defenseless|defenseless}, @{Condition|Stunned|stunned}, and @{Condition|Unaware|unaware}. A hearing Perception check with three or more degrees of success wakes the character and removes all these conditions, as does any sudden movement (such as shaking the sleeping character) or any effect allowing a resistance check.',
     ],
     components: ['Defenseless', 'Stunned', 'Unaware'],
     source: 'HH',
@@ -180,7 +180,7 @@ export const conditions = {
     type: 'combined',
     name: 'Dying',
     description: [
-      'A dying character is incapacitated nd near death. When the character gains this condition, immediately make a Fortitude check (DC 15). If the check succeeds, nothing happens. With two degrees of success, the character stabilizes, removing this condition. If the check fails, the character remains dying. Three or more total degrees of failure mean the character dies: so three failed Fortitude checks or one or two checks adding up to three degrees.',
+      'A dying character is @{Condition|Incapacitated|incapacitated} and near death. When the character gains this condition, immediately make a Fortitude check (DC 15). If the check succeeds, nothing happens. With two degrees of success, the character stabilizes, removing this condition. If the check fails, the character remains dying. Three or more total degrees of failure mean the character dies: so three failed Fortitude checks or one or two checks adding up to three degrees.',
       'Dying characters make a Fortitude check each round until they either die or stabilize. Another character can stabilize a dying character with a successful Treatment check (DC 15) or use of a Healing effect.',
     ],
     components: ['Incapacitated'],
