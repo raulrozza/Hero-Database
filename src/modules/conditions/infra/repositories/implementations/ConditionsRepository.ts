@@ -4,9 +4,17 @@ import { ICondition } from '@/shared/domain/entities';
 
 export default class ConditionsRepository implements IConditionsRepository {
   public async findAll(): Promise<ICondition[]> {
-    return Object.entries(conditions).map(([key, condition]) =>
+    return [...conditions.entries()].map(([key, condition]) =>
       this.convertCondition(key, condition),
     );
+  }
+
+  public async findByKey(key: string): Promise<ICondition | null> {
+    const condition = conditions.get(key);
+
+    if (condition) return this.convertCondition(key, condition);
+
+    return null;
   }
 
   private convertCondition(key: string, condition: MetaCondition): ICondition {
@@ -25,7 +33,9 @@ export default class ConditionsRepository implements IConditionsRepository {
       description: condition.description.join('\n'),
       type: condition.type,
       components: condition.components.map(key => {
-        const data = conditions[key as keyof typeof conditions];
+        const data = conditions.get(key);
+
+        if (!data) throw new Error(`Condition ${key} does not exist`);
 
         return this.convertCondition(key, data);
       }),
