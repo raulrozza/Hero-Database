@@ -1,10 +1,7 @@
 import React from 'react';
 
 import { ConditionItem } from '@/modules/conditions/presentation/components/molecules';
-import {
-  ItemContent,
-  ItemHeader,
-} from '@/shared/presentation/components/atoms';
+import { EmptyItemCard } from '@/shared/presentation/components/molecules';
 
 import { Container } from './styles';
 import { useConditionValue } from '../../store';
@@ -15,11 +12,10 @@ const Condition: React.FC = () => {
   if (!condition)
     return (
       <Container>
-        <ItemHeader title="Condition" />
-
-        <ItemContent>
-          <p>Please, select a condition from the options</p>
-        </ItemContent>
+        <EmptyItemCard
+          title="Condition"
+          text="Please, select a condition from the options"
+        />
       </Container>
     );
 
