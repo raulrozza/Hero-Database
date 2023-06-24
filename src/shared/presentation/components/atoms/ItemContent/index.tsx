@@ -8,7 +8,7 @@ interface IItemContentProps {
 
 const ItemContent: React.FC<IItemContentProps> = ({ title, children }) => (
   <Container>
-    {title && <strong>{title}</strong>}
+    {title && <h4>{title}</h4>}
 
     {children}
   </Container>
