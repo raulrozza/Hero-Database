@@ -1,14 +1,10 @@
 import React from 'react';
 
-import { capitalize } from 'lodash';
-
+import { ConditionItem } from '@/modules/conditions/presentation/components/molecules';
 import {
-  ItemCollapsible,
   ItemContent,
-  ItemFooter,
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
-import { renderItemDescription } from '@/shared/presentation/helpers';
 
 import { Container } from './styles';
 import { useConditionValue } from '../../store';
@@ -27,40 +23,9 @@ const Condition: React.FC = () => {
       </Container>
     );
 
-  if (condition.type === 'basic')
-    return (
-      <Container>
-        <ItemHeader
-          title={condition.name}
-          subtitle={capitalize(condition.type)}
-        />
-
-        <ItemContent>
-          {renderItemDescription(condition.description)}
-        </ItemContent>
-
-        <ItemFooter source={condition.source} />
-      </Container>
-    );
-
   return (
     <Container>
-      <ItemHeader
-        title={condition.name}
-        subtitle={capitalize(condition.type)}
-      />
-
-      <ItemContent>{renderItemDescription(condition.description)}</ItemContent>
-
-      <ItemCollapsible title="Components">
-        {condition.components.map(component => (
-          <ItemContent key={component.key} title={component.name}>
-            {renderItemDescription(component.description)}
-          </ItemContent>
-        ))}
-      </ItemCollapsible>
-
-      <ItemFooter source={condition.source} />
+      <ConditionItem {...condition} />
     </Container>
   );
 };

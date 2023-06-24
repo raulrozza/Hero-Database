@@ -69,7 +69,7 @@ ${({ theme }) => css`
     font-weight: ${theme.typography.weight.regular};
   }
 
-  h3 {
+  h4 {
     font-size: ${theme.typography.sizes.subtitle};
     font-weight: ${theme.typography.weight.regular};
   }
