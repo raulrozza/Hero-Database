@@ -1,6 +1,11 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { FC, Fragment, ReactElement } from 'react';
 
-import { EntityLink } from '@/shared/presentation/components/atoms';
+import { ConditionPopoverContainer } from '@/modules/conditions/presentation/components/organisms';
+import { EntityLink } from '@/shared/presentation/components/molecules';
+
+const ENTITY_TOOLTIP_COMPONENTS: Record<string, FC<{ entityKey: string }>> = {
+  Condition: ConditionPopoverContainer,
+};
 
 export default function renderItemDescription(description: string) {
   const paragraphs = description.split('\n');
@@ -58,12 +63,15 @@ function parseReference(reference: string, reactKey: number) {
 
   const children = text || key;
 
+  const tooltipComponent = ENTITY_TOOLTIP_COMPONENTS[type];
+
   return React.createElement(
     EntityLink,
     {
       type,
       key: reactKey,
       entityKey: key,
+      tooltipComponent,
     },
     children,
   );

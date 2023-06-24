@@ -1,4 +1,3 @@
-export { default as EntityLink } from './EntityLink';
 export { default as ItemCollapsible } from './ItemCollapsible';
 export { default as ItemContent } from './ItemContent';
 export { default as ItemFooter } from './ItemFooter';
