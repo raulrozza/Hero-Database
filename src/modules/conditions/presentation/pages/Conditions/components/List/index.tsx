@@ -8,8 +8,6 @@ import { Table } from '@/shared/presentation/components/atoms';
 
 import { useConditionState } from '../../store';
 
-// import { Container } from './styles';
-
 const List: React.FC = () => {
   const [selectedCondition, setCondition] = useConditionState();
   const hasInitialized = useRef(false);
