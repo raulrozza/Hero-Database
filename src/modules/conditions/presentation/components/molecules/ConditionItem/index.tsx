@@ -10,7 +10,7 @@ import {
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
 import { renderItemDescription } from '@/shared/presentation/helpers';
-import useMediaQuery from '@/shared/presentation/hooks/useMediaQuery';
+import { useMediaQuery } from '@/shared/presentation/hooks';
 
 import { Container } from './styles';
 
