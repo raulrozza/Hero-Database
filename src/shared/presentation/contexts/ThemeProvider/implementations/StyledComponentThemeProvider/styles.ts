@@ -71,7 +71,7 @@ ${({ theme }) => css`
 
   h4 {
     font-size: ${theme.typography.sizes.subtitle};
-    font-weight: ${theme.typography.weight.regular};
+    font-weight: ${theme.typography.weight.extraBold};
     letter-spacing: ${theme.typography.letterSpacing.subtitle};
   }
 `}
