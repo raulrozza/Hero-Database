@@ -32,10 +32,12 @@ ${({ theme }) => css`
     font-family: ${theme.typography.family.text};
     color: ${theme.palette.text.main};
     font-size: ${theme.typography.sizes.body1};
+    letter-spacing: ${theme.typography.letterSpacing.body1};
   }
 
   caption {
     font-size: ${theme.typography.sizes.caption};
+    letter-spacing: ${theme.typography.letterSpacing.caption};
   }
 
   body {
@@ -52,23 +54,25 @@ ${({ theme }) => css`
   h1 {
     font-size: ${theme.typography.sizes.title1};
     font-weight: ${theme.typography.weight.regular};
-    letter-spacing: 2%;
+    letter-spacing: ${theme.typography.letterSpacing.title1};
   }
 
   h2 {
     font-size: ${theme.typography.sizes.title2};
     font-weight: ${theme.typography.weight.regular};
-    letter-spacing: 0.25px;
+    letter-spacing: ${theme.typography.letterSpacing.title2};
   }
 
   h3 {
     font-size: ${theme.typography.sizes.title3};
     font-weight: ${theme.typography.weight.regular};
+    letter-spacing: ${theme.typography.letterSpacing.title3};
   }
 
   h4 {
     font-size: ${theme.typography.sizes.subtitle};
     font-weight: ${theme.typography.weight.regular};
+    letter-spacing: ${theme.typography.letterSpacing.subtitle};
   }
 `}
 `;

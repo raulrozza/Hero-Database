@@ -8,16 +8,24 @@ const typography = {
     body2: '0.875rem',
     caption: '0.75rem',
   },
-
+  letterSpacing: {
+    title1: '0.75px',
+    title2: '0.25px',
+    title3: '0px',
+    subtitle: '0.15px',
+    body1: '0.5px',
+    body2: '0.25px',
+    caption: '0.4px',
+  },
   family: {
     title: 'Newsflash-BB, script, serif',
     text: 'Biryani, sans-serif',
   },
   weight: {
-    extraBold: 'ExtraBold',
-    bold: 'Bold',
-    regular: 'Regular',
-    light: 'Light',
+    extraBold: '700',
+    bold: '600',
+    regular: '400',
+    light: '300',
   },
 };
 
