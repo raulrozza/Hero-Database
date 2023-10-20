@@ -23,6 +23,9 @@ const spacing =
 
 const layout = {
   spacing: spacing(0.5),
+  breakpoints: {
+    md: '998px',
+  },
 };
 
 export default layout;

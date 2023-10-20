@@ -27,5 +27,20 @@ export const Container = styled.div`
         }
       }
     }
+
+    @media (max-width: ${theme.layout.breakpoints.md}) {
+      main {
+        flex-direction: column-reverse;
+        width: 100%;
+        height: auto;
+        padding: ${theme.layout.spacing(1)};
+        padding-top: 0;
+
+        table {
+          max-height: none;
+          max-width: none;
+        }
+      }
+    }
   `}
 `;

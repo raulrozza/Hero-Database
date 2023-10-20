@@ -10,5 +10,9 @@ export const Container = styled.div`
     &::-webkit-scrollbar {
       display: none;
     }
+
+    @media (max-width: ${theme.layout.breakpoints.md}) {
+      width: 100%;
+    }
   `}
 `;
