@@ -13,12 +13,18 @@ import { renderItemDescription } from '@/shared/presentation/helpers';
 
 import { Container } from './styles';
 
-type TConditionItemProps = ICondition & { showComponents?: boolean };
+type TConditionItemProps = ICondition & {
+  showComponents?: boolean;
+  showTooltip?: boolean;
+};
 
 const ConditionItem: React.FC<TConditionItemProps> = ({
   showComponents = true,
+  showTooltip = true,
   ...condition
 }) => {
+  const renderConfig = { showTooltip };
+
   if (condition.type === 'basic')
     return (
       <Container>
@@ -28,7 +34,7 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
         />
 
         <ItemContent>
-          {renderItemDescription(condition.description)}
+          {renderItemDescription(condition.description, renderConfig)}
         </ItemContent>
 
         <ItemFooter source={condition.source} />
@@ -42,13 +48,15 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
         subtitle={capitalize(condition.type)}
       />
 
-      <ItemContent>{renderItemDescription(condition.description)}</ItemContent>
+      <ItemContent>
+        {renderItemDescription(condition.description, renderConfig)}
+      </ItemContent>
 
       {showComponents && (
         <ItemCollapsible title="Components">
           {condition.components.map(component => (
             <ItemContent key={component.key} title={component.name}>
-              {renderItemDescription(component.description)}
+              {renderItemDescription(component.description, renderConfig)}
             </ItemContent>
           ))}
         </ItemCollapsible>

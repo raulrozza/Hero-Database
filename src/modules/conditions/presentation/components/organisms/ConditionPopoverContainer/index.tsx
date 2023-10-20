@@ -30,7 +30,11 @@ const ConditionPopoverContainer: React.FC<IConditionPopoverContainerProps> = ({
 
   return (
     <Container>
-      <ConditionItem {...query.data} showComponents={false} />
+      <ConditionItem
+        {...query.data}
+        showComponents={false}
+        showTooltip={false}
+      />
     </Container>
   );
 };

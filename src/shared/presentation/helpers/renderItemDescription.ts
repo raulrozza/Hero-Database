@@ -7,15 +7,26 @@ const ENTITY_TOOLTIP_COMPONENTS: Record<string, FC<{ entityKey: string }>> = {
   Condition: ConditionPopoverContainer,
 };
 
-export default function renderItemDescription(description: string) {
+type TRenderConfig = {
+  showTooltip?: boolean;
+};
+
+export default function renderItemDescription(
+  description: string,
+  config: TRenderConfig = { showTooltip: true },
+) {
   const paragraphs = description.split('\n');
 
   return paragraphs.map((paragraph, index) =>
-    React.createElement('p', { key: index }, toElementsArray(paragraph)),
+    React.createElement(
+      'p',
+      { key: index },
+      toElementsArray(paragraph, config),
+    ),
   );
 }
 
-function toElementsArray(text: string) {
+function toElementsArray(text: string, config: TRenderConfig) {
   const references = extractReferences(text);
 
   if (!references) return [createTextElement({ text, key: 0 })];
@@ -29,7 +40,8 @@ function toElementsArray(text: string) {
     const reference = references.pop();
 
     if (text) elements.push(createTextElement({ text, key: elements.length }));
-    if (reference) elements.push(parseReference(reference, elements.length));
+    if (reference)
+      elements.push(parseReference(reference, elements.length, config));
   }
 
   return elements.reverse();
@@ -57,13 +69,19 @@ function splitByReferences(text: string, references: string[]) {
 
 const REPLACE_REGEX = /^@{|}$/g;
 
-function parseReference(reference: string, reactKey: number) {
+function parseReference(
+  reference: string,
+  reactKey: number,
+  config: TRenderConfig,
+) {
   const cleanReference = reference.replace(REPLACE_REGEX, '');
   const [type, key, text] = cleanReference.split('|');
 
   const children = text || key;
 
-  const tooltipComponent = ENTITY_TOOLTIP_COMPONENTS[type];
+  const tooltipComponent = config.showTooltip
+    ? ENTITY_TOOLTIP_COMPONENTS[type]
+    : undefined;
 
   return React.createElement(
     EntityLink,
