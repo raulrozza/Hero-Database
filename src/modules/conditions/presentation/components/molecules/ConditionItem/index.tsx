@@ -10,6 +10,7 @@ import {
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
 import { renderItemDescription } from '@/shared/presentation/helpers';
+import useMediaQuery from '@/shared/presentation/hooks/useMediaQuery';
 
 import { Container } from './styles';
 
@@ -24,6 +25,7 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
   ...condition
 }) => {
   const renderConfig = { showTooltip };
+  const isMobile = useMediaQuery('md');
 
   if (condition.type === 'basic')
     return (
@@ -53,7 +55,7 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
       </ItemContent>
 
       {showComponents && (
-        <ItemCollapsible title="Components">
+        <ItemCollapsible title="Components" defaultOpen={!isMobile}>
           {condition.components.map(component => (
             <ItemContent key={component.key} title={component.name}>
               {renderItemDescription(component.description, renderConfig)}
