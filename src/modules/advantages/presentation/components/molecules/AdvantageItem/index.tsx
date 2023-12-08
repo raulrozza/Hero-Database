@@ -6,7 +6,6 @@ import {
   ItemFooter,
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
-import { renderItemDescription } from '@/shared/presentation/helpers';
 
 import { getSubtitle } from './helpers';
 import { Container } from './styles';
@@ -27,9 +26,7 @@ const AdvantageItem: React.FC<TAdvantageItemProps> = ({
     <Container>
       <ItemHeader title={advantage.name} subtitle={getSubtitle(advantage)} />
 
-      <ItemContent>
-        {renderItemDescription(advantage.description, renderConfig)}
-      </ItemContent>
+      <ItemContent description={advantage.description} config={renderConfig} />
 
       <ItemFooter source={advantage.source} />
     </Container>

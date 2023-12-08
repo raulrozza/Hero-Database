@@ -16,9 +16,7 @@ const EmptyItemCard: React.FC<IEmptyItemCardProps> = ({ title, text }) => (
   <Container>
     <ItemHeader title={title} />
 
-    <ItemContent>
-      <p>{text}</p>
-    </ItemContent>
+    <ItemContent description={[text]} />
   </Container>
 );
 

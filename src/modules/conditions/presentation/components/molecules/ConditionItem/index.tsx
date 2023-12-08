@@ -9,7 +9,6 @@ import {
   ItemFooter,
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
-import { renderItemDescription } from '@/shared/presentation/helpers';
 import { useMediaQuery } from '@/shared/presentation/hooks';
 
 import { Container } from './styles';
@@ -35,9 +34,10 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
           subtitle={capitalize(condition.type)}
         />
 
-        <ItemContent>
-          {renderItemDescription(condition.description, renderConfig)}
-        </ItemContent>
+        <ItemContent
+          description={condition.description}
+          config={renderConfig}
+        />
 
         <ItemFooter source={condition.source} />
       </Container>
@@ -50,16 +50,16 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
         subtitle={capitalize(condition.type)}
       />
 
-      <ItemContent>
-        {renderItemDescription(condition.description, renderConfig)}
-      </ItemContent>
+      <ItemContent description={condition.description} config={renderConfig} />
 
       {showComponents && (
         <ItemCollapsible title="Components" defaultOpen={!isMobile}>
           {condition.components.map(component => (
-            <ItemContent key={component.key} title={component.name}>
-              {renderItemDescription(component.description, renderConfig)}
-            </ItemContent>
+            <ItemContent
+              key={component.key}
+              description={condition.description}
+              config={renderConfig}
+            />
           ))}
         </ItemCollapsible>
       )}
