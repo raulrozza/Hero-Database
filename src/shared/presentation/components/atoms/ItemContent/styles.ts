@@ -6,5 +6,10 @@ export const Container = styled.div`
     flex-direction: column;
     gap: ${theme.layout.spacing(1)};
     padding: ${theme.layout.spacing(2)};
+
+    h2 {
+      border-bottom: 1px solid ${theme.palette.text.main};
+      padding-bottom: ${theme.layout.spacing(0.5)};
+    }
   `}
 `;

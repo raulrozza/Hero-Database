@@ -7,18 +7,18 @@ const ENTITY_TOOLTIP_COMPONENTS: Record<string, FC<{ entityKey: string }>> = {
   Condition: ConditionPopoverContainer,
 };
 
-type TRenderConfig = {
+export type RenderItemDescriptionConfig = {
   showTooltip?: boolean;
 };
 
 export default function renderItemDescription(
   description: string,
-  config: TRenderConfig = { showTooltip: true },
+  config: RenderItemDescriptionConfig = { showTooltip: true },
 ) {
   return toElementsArray(description, config);
 }
 
-function toElementsArray(text: string, config: TRenderConfig) {
+function toElementsArray(text: string, config: RenderItemDescriptionConfig) {
   const references = extractReferences(text);
 
   if (!references) return [createTextElement({ text, key: 0 })];
@@ -64,7 +64,7 @@ const REPLACE_REGEX = /^@{|}$/g;
 function parseReference(
   reference: string,
   reactKey: number,
-  config: TRenderConfig,
+  config: RenderItemDescriptionConfig,
 ) {
   const cleanReference = reference.replace(REPLACE_REGEX, '');
   const [type, key, text] = cleanReference.split('|');

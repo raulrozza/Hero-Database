@@ -10,8 +10,8 @@ const typography = {
   },
   letterSpacing: {
     title1: '0.75px',
-    title2: '0.25px',
-    title3: '0px',
+    title2: '0.35px',
+    title3: '0.15px',
     subtitle: '0.15px',
     body1: '0.5px',
     body2: '0.25px',

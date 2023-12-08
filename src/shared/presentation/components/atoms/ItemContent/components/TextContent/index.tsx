@@ -1,10 +1,14 @@
 import React from 'react';
 
-import { renderItemDescription } from '@/shared/presentation/helpers';
+import { TextItemContent } from '@/shared/domain/valueObjects';
+import {
+  RenderItemDescriptionConfig,
+  renderItemDescription,
+} from '@/shared/presentation/helpers';
 
 interface ITextContentProps {
-  description: string;
-  config: Parameters<typeof renderItemDescription>[1];
+  description: TextItemContent;
+  config: RenderItemDescriptionConfig | undefined;
 }
 
 const TextContent: React.FC<ITextContentProps> = ({ description, config }) => (

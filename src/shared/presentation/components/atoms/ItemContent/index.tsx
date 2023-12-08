@@ -1,14 +1,15 @@
-import React, { ComponentProps } from 'react';
+import React from 'react';
 
 import type { ItemContent as ItemContentType } from '@/shared/domain/valueObjects';
+import { RenderItemDescriptionConfig } from '@/shared/presentation/helpers';
 
-import { TextContent } from './components';
+import ContentFactory from './components';
 import { Container } from './styles';
 
 interface IItemContentProps {
   title?: string;
   description: ItemContentType[];
-  config?: ComponentProps<typeof TextContent>['config'];
+  config?: RenderItemDescriptionConfig;
   children?: never;
 }
 
@@ -20,14 +21,7 @@ const ItemContent: React.FC<IItemContentProps> = ({
   <Container>
     {title && <h4>{title}</h4>}
 
-    {description.map((content, index) => {
-      if (typeof content === 'string')
-        return (
-          <TextContent key={index} description={content} config={config} />
-        );
-
-      return null;
-    })}
+    <ContentFactory description={description} config={config} />
   </Container>
 );
 
