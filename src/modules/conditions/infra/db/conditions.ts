@@ -1,7 +1,9 @@
+import { Source } from '@/shared/domain/entities';
+
 export type MetaCondition = {
   name: string;
   description: string[];
-  source: string;
+  source: Source;
 } & ({ type: 'basic' } | { type: 'combined'; components: string[] });
 
 export const conditions = new Map<string, MetaCondition>([

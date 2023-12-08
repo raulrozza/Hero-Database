@@ -1,10 +1,12 @@
+import { Source } from '@/shared/domain/entities/sources';
+
 /* eslint-disable no-use-before-define */
 interface IBaseCondition {
   type: string;
   key: string;
   name: string;
   description: string;
-  source: string;
+  source: Source;
 }
 
 export interface IBasicCondition extends IBaseCondition {
