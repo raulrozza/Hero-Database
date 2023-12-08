@@ -116,7 +116,7 @@ export const advantages = new Map<string, MetaAdvantage>([
       description: [
         'By spending a Victory point, you gain an effective 5 ranks in one skill of your choice you currently have at 4 or fewer ranks, including skills you have no ranks in, even if they can’t be used untrained. These temporary skill ranks last for the duration of the scene and grant you their normal benefits.',
       ],
-      maxRanks: 1,
+      maxRanks: -1,
       source: 'HH',
     },
   ],
