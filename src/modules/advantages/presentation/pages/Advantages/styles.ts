@@ -9,6 +9,8 @@ export const Container = styled.div`
     height: 100%;
 
     main {
+      width: 100%;
+      max-width: ${theme.layout.spacing(160)};
       display: flex;
       align-items: flex-start;
       align-self: center;

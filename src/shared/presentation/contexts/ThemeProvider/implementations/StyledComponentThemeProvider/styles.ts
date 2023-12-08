@@ -16,6 +16,24 @@ ${({ theme }) => css`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      display: block;
+      height: 0.5rem;
+      width: 0.5rem;
+      overflow: auto;
+      background-color: ${theme.palette.neutral[100]};
+
+      &-thumb {
+        transition: 0.5s;
+        background-color: ${theme.palette.neutral[400]};
+        &:hover {
+          background-color: ${theme.palette.neutral[500]};
+        }
+      }
+    }
   }
 
   body,
