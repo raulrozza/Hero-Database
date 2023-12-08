@@ -3,19 +3,18 @@ import { MetaCondition, conditions } from '@/modules/conditions/infra/db';
 import { ICondition } from '@/shared/domain/entities';
 
 export default class ConditionsRepository implements IConditionsRepository {
-  public async findAll(): Promise<ICondition[]> {
-    return [...conditions.entries()].map(([key, condition]) =>
+  public findAll: IConditionsRepository['findAll'] = async () =>
+    [...conditions.entries()].map(([key, condition]) =>
       this.convertCondition(key, condition),
     );
-  }
 
-  public async findByKey(key: string): Promise<ICondition | null> {
+  public findByKey: IConditionsRepository['findByKey'] = async key => {
     const condition = conditions.get(key);
 
     if (condition) return this.convertCondition(key, condition);
 
     return null;
-  }
+  };
 
   private convertCondition(key: string, condition: MetaCondition): ICondition {
     if (condition.type === 'basic')
