@@ -4,10 +4,8 @@ import dynamic from 'next/dynamic';
 
 import { NavBar } from '@/shared/presentation/components/organisms';
 
+import { Advantage } from './components';
 import { Container } from './styles';
-
-/* import { Condition } from './components';
- */
 
 const List = dynamic(() => import('./components/List'), { ssr: false });
 
@@ -19,8 +17,7 @@ const Advantages: FC = () => {
       <main>
         <List />
 
-        {/*
-        <Condition /> */}
+        <Advantage />
       </main>
     </Container>
   );
