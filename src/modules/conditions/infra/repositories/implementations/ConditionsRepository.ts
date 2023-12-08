@@ -21,7 +21,7 @@ export default class ConditionsRepository implements IConditionsRepository {
       return {
         key,
         name: condition.name,
-        description: condition.description.join('\n'),
+        description: condition.description,
         type: condition.type,
         source: condition.source,
       };
@@ -29,7 +29,7 @@ export default class ConditionsRepository implements IConditionsRepository {
     return {
       key,
       name: condition.name,
-      description: condition.description.join('\n'),
+      description: condition.description,
       type: condition.type,
       components: condition.components.map(key => {
         const data = conditions.get(key);

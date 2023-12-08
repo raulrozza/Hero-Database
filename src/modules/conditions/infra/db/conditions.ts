@@ -1,8 +1,9 @@
 import { Source } from '@/shared/domain/entities';
+import { ItemContent } from '@/shared/domain/valueObjects';
 
 export type MetaCondition = {
   name: string;
-  description: string[];
+  description: ItemContent[];
   source: Source;
 } & ({ type: 'basic' } | { type: 'combined'; components: string[] });
 

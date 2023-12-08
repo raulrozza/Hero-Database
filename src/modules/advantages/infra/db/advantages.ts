@@ -1,9 +1,10 @@
 import { AdvantageType, Source } from '@/shared/domain/entities';
+import { ItemContent } from '@/shared/domain/valueObjects';
 
 export type MetaAdvantage = {
   name: string;
   type: AdvantageType;
-  description: string[];
+  description: ItemContent[];
   maxRanks: number;
   source: Source;
 };

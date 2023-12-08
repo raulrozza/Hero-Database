@@ -20,7 +20,7 @@ export default class AdvantagesRepository implements IAdvantagesRepository {
     return {
       key,
       name: advantage.name,
-      description: advantage.description.join('\n'),
+      description: advantage.description,
       type: advantage.type,
       maxRanks: advantage.maxRanks,
       source: advantage.source,

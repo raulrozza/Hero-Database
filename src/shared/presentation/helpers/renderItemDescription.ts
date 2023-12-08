@@ -1,6 +1,7 @@
 import React, { FC, Fragment, ReactElement } from 'react';
 
 import { ConditionPopoverContainer } from '@/modules/conditions/presentation/components/organisms';
+import { ItemContent } from '@/shared/domain/valueObjects';
 import { EntityLink } from '@/shared/presentation/components/molecules';
 
 const ENTITY_TOOLTIP_COMPONENTS: Record<string, FC<{ entityKey: string }>> = {
@@ -12,18 +13,19 @@ type TRenderConfig = {
 };
 
 export default function renderItemDescription(
-  description: string,
+  description: ItemContent[],
   config: TRenderConfig = { showTooltip: true },
 ) {
-  const paragraphs = description.split('\n');
+  return description.map((paragraph, index) => {
+    if (typeof paragraph === 'string')
+      return React.createElement(
+        'p',
+        { key: index },
+        toElementsArray(paragraph, config),
+      );
 
-  return paragraphs.map((paragraph, index) =>
-    React.createElement(
-      'p',
-      { key: index },
-      toElementsArray(paragraph, config),
-    ),
-  );
+    return null;
+  });
 }
 
 function toElementsArray(text: string, config: TRenderConfig) {
