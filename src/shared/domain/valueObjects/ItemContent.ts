@@ -6,5 +6,12 @@ export type SectionItemContent = {
   title: string;
   description: ItemContent[];
 };
+export type ListItemContent = {
+  type: 'list';
+  items: string[];
+};
 
-export type ItemContent = TextItemContent | SectionItemContent;
+export type ItemContent =
+  | TextItemContent
+  | SectionItemContent
+  | ListItemContent;

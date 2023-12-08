@@ -121,6 +121,18 @@ export const advantages = new Map<string, MetaAdvantage>([
           title: 'Sample benefits',
           description: [
             'The following are some potential Benefits. The GM is free to choose any suitable Benefit for the series.',
+            {
+              type: 'list',
+              items: [
+                'Alternate Identity: You have an alternate identity, complete with legal paperwork (driver’s license, birth certificate, etc.). This is different from a costumed identity, which doesn’t necessarily have any special legal status (but may in some settings).',
+                'Ambidexterity: You are equally adept using either hand, suffering no circumstance penalty for using your off-hand (as you don’t have one).',
+                'Cipher: Your true history is well hidden, making it difficult to dig up information about you. @{Skill|Investigation} checks concerning you are made at a –5 circumstance penalty per rank in this benefit.',
+                'Diplomatic Immunity: By dint of your diplomatic status, you cannot be prosecuted for crimes in nations other than your own. All another nation can do is deport you to your home nation.',
+                'Security Clearance: You have access to classified government information, installations, and possibly equipment and personnel.',
+                'Status: By virtue of birth or achievement, you have special status. Examples include nobility, knight-hood, aristocracy, and so forth.',
+                'Wealth: You have greater than average wealth or material resources, such as well-off (rank 1), independently wealthy (rank 2), a millionaire (rank 3), multi-millionaire (rank 4), or billionaire (rank 5).',
+              ],
+            },
           ],
         },
       ],

@@ -3,11 +3,13 @@ import React from 'react';
 import { ItemContent } from '@/shared/domain/valueObjects';
 import { RenderItemDescriptionConfig } from '@/shared/presentation/helpers';
 
+import ListContent from './ListContent';
 import SectionContent from './SectionContent';
 import TextContent from './TextContent';
 
 const CONTENTS = {
   section: SectionContent,
+  list: ListContent,
 };
 
 interface IContentFactoryProps {
@@ -29,7 +31,7 @@ const ContentFactory: React.FC<IContentFactoryProps> = ({
 
         const Component = CONTENTS[content.type];
 
-        return <Component key={index} {...content} config={config} />;
+        return <Component key={index} config={config} {...(content as any)} />;
       })}
     </>
   );

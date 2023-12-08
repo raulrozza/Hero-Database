@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { ItemContent } from '@/shared/domain/valueObjects';
+import { SectionItemContent } from '@/shared/domain/valueObjects';
 import { RenderItemDescriptionConfig } from '@/shared/presentation/helpers';
 
 import ContentFactory from '..';
 
-interface ISectionContentProps {
-  title: string;
-  description: ItemContent[];
+interface ISectionContentProps extends SectionItemContent {
   config: RenderItemDescriptionConfig | undefined;
 }
 
