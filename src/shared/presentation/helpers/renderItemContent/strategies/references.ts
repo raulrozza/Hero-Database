@@ -4,7 +4,7 @@ export const referenceStrategy: ExtractStrategy = {
   extract(text: string) {
     const references = extractReferences(text);
 
-    if (!references) return null;
+    if (!references) return [{ type: 'text', text }];
 
     const splittenText = splitByReferences(text, references);
 

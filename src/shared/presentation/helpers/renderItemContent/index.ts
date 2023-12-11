@@ -1,8 +1,9 @@
-import React, { FC, Fragment } from 'react';
+import React, { FC, Fragment, ReactNode } from 'react';
 
 import { ConditionPopoverContainer } from '@/modules/conditions/presentation/components/organisms';
 import { EntityLink } from '@/shared/presentation/components/molecules';
 
+import { htmlElementStrategy } from './strategies/htmlElements';
 import { referenceStrategy } from './strategies/references';
 
 const ENTITY_TOOLTIP_COMPONENTS: Record<string, FC<{ entityKey: string }>> = {
@@ -21,10 +22,8 @@ export default function renderItemContent(
 }
 
 function toElementsArray(text: string, config: RenderItemContentConfig) {
-  const strategy = referenceStrategy;
+  const strategy = htmlElementStrategy;
   const textElements = strategy.extract(text);
-
-  if (!textElements) return [createTextElement({ text, key: 0 })];
 
   return textElements.map((element, index) => {
     if (element.type === 'text')
@@ -32,6 +31,9 @@ function toElementsArray(text: string, config: RenderItemContentConfig) {
 
     if (element.type === 'reference')
       return parseReference(element.reference, index, config);
+
+    if (element.type === 'html')
+      return parseHtml(element.element, index, element.children);
 
     return null;
   });
@@ -67,4 +69,8 @@ function parseReference(
     },
     children,
   );
+}
+
+function parseHtml(element: string, reactKey: number, children: ReactNode[]) {
+  return React.createElement(element, { key: reactKey }, children);
 }

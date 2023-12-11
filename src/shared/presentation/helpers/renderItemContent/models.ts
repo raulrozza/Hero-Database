@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type TextElement =
   | {
       type: 'text';
@@ -6,8 +8,13 @@ export type TextElement =
   | {
       type: 'reference';
       reference: string;
+    }
+  | {
+      type: 'html';
+      element: string;
+      children: ReactNode[];
     };
 
 export type ExtractStrategy = {
-  extract(text: string): TextElement[] | null;
+  extract(text: string): TextElement[];
 };
