@@ -1,7 +1,9 @@
-import React, { FC, Fragment, ReactElement } from 'react';
+import React, { FC, Fragment } from 'react';
 
 import { ConditionPopoverContainer } from '@/modules/conditions/presentation/components/organisms';
 import { EntityLink } from '@/shared/presentation/components/molecules';
+
+import extractReferencesFromText from './extractReferencesFromText';
 
 const ENTITY_TOOLTIP_COMPONENTS: Record<string, FC<{ entityKey: string }>> = {
   Condition: ConditionPopoverContainer,
@@ -19,44 +21,23 @@ export default function renderItemDescription(
 }
 
 function toElementsArray(text: string, config: RenderItemDescriptionConfig) {
-  const references = extractReferences(text);
+  const textElements = extractReferencesFromText(text);
 
-  if (!references) return [createTextElement({ text, key: 0 })];
+  if (!textElements) return [createTextElement({ text, key: 0 })];
 
-  const splittenText = splitByReferences(text, references);
+  return textElements.map((element, index) => {
+    if (element.type === 'text')
+      return createTextElement({ text: element.text, key: index });
 
-  const elements: ReactElement[] = [];
+    if (element.type === 'reference')
+      return parseReference(element.reference, index, config);
 
-  while (splittenText.length) {
-    const text = splittenText.pop();
-    const reference = references.pop();
-
-    if (text) elements.push(createTextElement({ text, key: elements.length }));
-    if (reference)
-      elements.push(parseReference(reference, elements.length, config));
-  }
-
-  return elements.reverse();
+    return null;
+  });
 }
 
 function createTextElement(params: { text: string; key: number }) {
   return React.createElement(Fragment, { key: params.key }, params.text);
-}
-
-const CAPTURE_REGEX = /@{(.*?)}/g;
-
-function extractReferences(text: string) {
-  return text.match(CAPTURE_REGEX);
-}
-
-function splitByReferences(text: string, references: string[]) {
-  const escapedReferences = references.map(reference =>
-    reference.replaceAll('|', '\\|'),
-  );
-
-  const splitRegex = new RegExp(escapedReferences.join('|'), 'g');
-
-  return text.split(splitRegex);
 }
 
 const REPLACE_REGEX = /^@{|}$/g;
