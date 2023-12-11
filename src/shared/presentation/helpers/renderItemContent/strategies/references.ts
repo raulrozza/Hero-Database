@@ -1,7 +1,7 @@
 import { ExtractStrategy, TextElement } from '../models';
 
 export const referenceStrategy: ExtractStrategy = {
-  extract(text: string) {
+  extract(text: string, next) {
     const references = extractReferences(text);
 
     if (!references) return [{ type: 'text', text }];
@@ -14,7 +14,12 @@ export const referenceStrategy: ExtractStrategy = {
       const text = splittenText.pop();
       const reference = references.pop();
 
-      if (text) elements.push({ type: 'text', text });
+      if (text) {
+        if (next) {
+          const extracted = next(text);
+          elements.push(...extracted);
+        } else elements.push({ type: 'text', text });
+      }
       if (reference) elements.push({ type: 'reference', reference });
     }
 

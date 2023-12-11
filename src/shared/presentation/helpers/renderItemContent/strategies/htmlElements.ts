@@ -1,32 +1,56 @@
-import { ExtractStrategy } from '@/shared/presentation/helpers/renderItemContent/models';
+import {
+  ExtractStrategy,
+  TextElement,
+} from '@/shared/presentation/helpers/renderItemContent/models';
+
+const validElements = ['strong', 'i'];
 
 export const htmlElementStrategy: ExtractStrategy = {
-  extract(text: string) {
-    const startTagMatch = text.match(/(.*)<(\w*)>(.*)/);
+  extract(text: string, next) {
+    const tag = extractTag(text);
 
-    if (!startTagMatch) return [{ type: 'text', text }];
+    if (!tag) return textIntoTextElement(text, next);
 
-    const [, beforeElementText, element, textWithEndingTag] = startTagMatch;
-
-    const endTagMatch = textWithEndingTag.match(
-      new RegExp(`(.*)</${element}>(.*)`),
-    );
-
-    if (!endTagMatch) return [{ type: 'text', text }];
-
-    const [, elementText, afterElementText] = endTagMatch;
+    const { afterElementText, beforeElementText, element, elementText } = tag;
 
     return [
-      { type: 'text', text: beforeElementText },
+      ...textIntoTextElement(beforeElementText, next),
       { type: 'html', element, children: [elementText] },
-      { type: 'text', text: afterElementText },
+      ...textIntoTextElement(afterElementText, next),
     ];
   },
 };
 
-const testItems = [
-  '<strong>Alternate Identity:</strong> You have an alternate identity, complete with legal paperwork (driver’s license, birth certificate, etc.). This is different from a costumed identity, which doesn’t necessarily have any special legal status (but may in some settings).',
-  '<strong>Diplomatic Immunity: By dint of your diplomatic <i>status, you cannot be prosecuted</i> for crimes in nations other than your own.</strong> All another nation can do is deport you to your home nation.',
-  'Security Clearance: You have access to classified government information, installations, and possibly equipment and personnel.',
-];
-testItems.forEach(item => console.log(htmlElementStrategy.extract(item)));
+function extractTag(text: string) {
+  const startTagMatch = text.match(/(.*)<(\w*)>(.*)/);
+
+  if (!startTagMatch) return null;
+
+  const [, beforeElementText, element, textWithEndingTag] = startTagMatch;
+
+  if (!validElements.includes(element)) return null;
+
+  const endTagMatch = textWithEndingTag.match(
+    new RegExp(`(.*)</${element}>(.*)`),
+  );
+
+  if (!endTagMatch) return null;
+
+  const [, elementText, afterElementText] = endTagMatch;
+
+  return {
+    beforeElementText,
+    element,
+    elementText,
+    afterElementText,
+  };
+}
+
+function textIntoTextElement(
+  text: string,
+  next?: ExtractStrategy['extract'],
+): TextElement[] {
+  if (!next) return [{ type: 'text', text }];
+
+  return next(text);
+}

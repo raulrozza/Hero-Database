@@ -22,8 +22,10 @@ export default function renderItemContent(
 }
 
 function toElementsArray(text: string, config: RenderItemContentConfig) {
-  const strategy = htmlElementStrategy;
-  const textElements = strategy.extract(text);
+  const textElements = htmlElementStrategy.extract(
+    text,
+    referenceStrategy.extract,
+  );
 
   return textElements.map((element, index) => {
     if (element.type === 'text')

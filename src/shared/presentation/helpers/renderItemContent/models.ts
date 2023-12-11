@@ -16,5 +16,5 @@ export type TextElement =
     };
 
 export type ExtractStrategy = {
-  extract(text: string): TextElement[];
+  extract(text: string, next?: ExtractStrategy['extract']): TextElement[];
 };
