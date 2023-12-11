@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ItemContent } from '@/shared/domain/valueObjects';
-import { RenderItemDescriptionConfig } from '@/shared/presentation/helpers';
+import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import ListContent from './ListContent';
 import SectionContent from './SectionContent';
@@ -14,7 +14,7 @@ const CONTENTS = {
 
 interface IContentFactoryProps {
   description: ItemContent[];
-  config?: RenderItemDescriptionConfig;
+  config?: RenderItemContentConfig;
 }
 
 const ContentFactory: React.FC<IContentFactoryProps> = ({

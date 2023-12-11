@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { SectionItemContent } from '@/shared/domain/valueObjects';
-import { RenderItemDescriptionConfig } from '@/shared/presentation/helpers';
+import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import ContentFactory from '..';
 
 interface ISectionContentProps extends SectionItemContent {
-  config: RenderItemDescriptionConfig | undefined;
+  config: RenderItemContentConfig | undefined;
 }
 
 const SectionContent: React.FC<ISectionContentProps> = ({

@@ -2,17 +2,17 @@ import React from 'react';
 
 import { TextItemContent } from '@/shared/domain/valueObjects';
 import {
-  RenderItemDescriptionConfig,
-  renderItemDescription,
+  RenderItemContentConfig,
+  renderItemContent,
 } from '@/shared/presentation/helpers';
 
 interface ITextContentProps {
   description: TextItemContent;
-  config: RenderItemDescriptionConfig | undefined;
+  config: RenderItemContentConfig | undefined;
 }
 
 const TextContent: React.FC<ITextContentProps> = ({ description, config }) => (
-  <p>{renderItemDescription(description, config)}</p>
+  <p>{renderItemContent(description, config)}</p>
 );
 
 export default TextContent;

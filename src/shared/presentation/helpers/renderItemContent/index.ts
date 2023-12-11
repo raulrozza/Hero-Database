@@ -3,25 +3,26 @@ import React, { FC, Fragment } from 'react';
 import { ConditionPopoverContainer } from '@/modules/conditions/presentation/components/organisms';
 import { EntityLink } from '@/shared/presentation/components/molecules';
 
-import extractReferencesFromText from './extractReferencesFromText';
+import { referenceStrategy } from './strategies/references';
 
 const ENTITY_TOOLTIP_COMPONENTS: Record<string, FC<{ entityKey: string }>> = {
   Condition: ConditionPopoverContainer,
 };
 
-export type RenderItemDescriptionConfig = {
+export type RenderItemContentConfig = {
   showTooltip?: boolean;
 };
 
-export default function renderItemDescription(
+export default function renderItemContent(
   description: string,
-  config: RenderItemDescriptionConfig = { showTooltip: true },
+  config: RenderItemContentConfig = { showTooltip: true },
 ) {
   return toElementsArray(description, config);
 }
 
-function toElementsArray(text: string, config: RenderItemDescriptionConfig) {
-  const textElements = extractReferencesFromText(text);
+function toElementsArray(text: string, config: RenderItemContentConfig) {
+  const strategy = referenceStrategy;
+  const textElements = strategy.extract(text);
 
   if (!textElements) return [createTextElement({ text, key: 0 })];
 
@@ -45,7 +46,7 @@ const REPLACE_REGEX = /^@{|}$/g;
 function parseReference(
   reference: string,
   reactKey: number,
-  config: RenderItemDescriptionConfig,
+  config: RenderItemContentConfig,
 ) {
   const cleanReference = reference.replace(REPLACE_REGEX, '');
   const [type, key, text] = cleanReference.split('|');

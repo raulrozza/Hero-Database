@@ -1,2 +1,2 @@
-export { default as renderItemDescription } from './renderItemDescription';
-export type { RenderItemDescriptionConfig } from './renderItemDescription';
+export { default as renderItemContent } from './renderItemContent';
+export type { RenderItemContentConfig } from './renderItemContent';

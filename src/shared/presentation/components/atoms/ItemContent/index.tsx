@@ -1,7 +1,7 @@
 import React from 'react';
 
 import type { ItemContent as ItemContentType } from '@/shared/domain/valueObjects';
-import { RenderItemDescriptionConfig } from '@/shared/presentation/helpers';
+import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import ContentFactory from './components';
 import { Container } from './styles';
@@ -9,7 +9,7 @@ import { Container } from './styles';
 interface IItemContentProps {
   title?: string;
   description: ItemContentType[];
-  config?: RenderItemDescriptionConfig;
+  config?: RenderItemContentConfig;
   children?: never;
 }
 

@@ -2,18 +2,18 @@ import React from 'react';
 
 import { ListItemContent } from '@/shared/domain/valueObjects';
 import {
-  RenderItemDescriptionConfig,
-  renderItemDescription,
+  RenderItemContentConfig,
+  renderItemContent,
 } from '@/shared/presentation/helpers';
 
 interface IListContentProps extends ListItemContent {
-  config: RenderItemDescriptionConfig | undefined;
+  config: RenderItemContentConfig | undefined;
 }
 
 const ListContent: React.FC<IListContentProps> = ({ items, config }) => (
   <ul>
     {items.map((item, index) => (
-      <li key={index}>{renderItemDescription(item, config)}</li>
+      <li key={index}>{renderItemContent(item, config)}</li>
     ))}
   </ul>
 );
