@@ -335,4 +335,40 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Grabbing Finesse',
+    {
+      name: 'Grabbing Finesse',
+      type: 'combat',
+      description: [
+        'You can use your @{Skill|Dexterity} bonus, rather than your @{Skill|Strength} bonus, to make grab attacks. You are not @{Condition|Vulnerable|vulnerable} while grabbing. See @{Advantage|Grab}, for details. This is a good advantage for skilled unarmed combatants focused more on speed than strength.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Great Endurance',
+    {
+      name: 'Great Endurance',
+      type: 'general',
+      description: [
+        'You have a +5 bonus on checks to avoid becoming @{Condition|Fatigued|fatigued} and checks to hold your breath, avoid damage from starvation or thirst, avoid damage from hot or cold environments, and to resist suffocation and drowning.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Hide in Plain Sight',
+    {
+      name: 'Hide in Plain Sight',
+      type: 'skill',
+      description: [
+        'You can @{Action|Hide|hide} without any need for a @{Condition|Deception} or @{Condition|Intimidation} check or any sort of diversion, and without penalty to your @{Condition|Stealth} check. You’re literally there one moment, and gone the next. You must still have some form of cover or concealment within range of your normal movement speed in order to hide.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
