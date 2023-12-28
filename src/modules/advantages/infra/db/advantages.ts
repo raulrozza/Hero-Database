@@ -273,4 +273,66 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Fascinate',
+    {
+      name: 'Fascinate',
+      type: 'skill',
+      description: [
+        'One of your interaction skills is so effective you can capture and hold other’s attention with it. Choose @{Skill|Deception}, @{Skill|Intimidation}, or @{Skill|Persuasion} when you acquire this advantage. You can also use Fascinate with an appropriate @{Skill|Expertise} skill, like musician or singer, at the GM’s discretion.',
+        'You are subject to the normal guidelines for interaction skills, and combat or other immediate danger makes this advantage ineffective. Take a standard action and make an interaction skill check against your target’s opposing check (@{Skill|Insight} or @{Defense|Will} defense). If you succeed, the target is entranced. You can maintain the effect with a standard action each round, giving the target a new resistance check. The effect ends when you stop performing, the target successfully resists, or any immediate danger presents itself. Like all interaction skills, you can use Fascinate on a group, but you must affect everyone in the group in the same way.',
+        'You may take this advantage more than once. Each time, it applies to a different skill.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Fast Grab',
+    {
+      name: 'Fast Grab',
+      type: 'combat',
+      description: [
+        'When you hit with an unarmed attack you can immediately make a @{Action|Grab|grab} check against that opponent as a free action. Your unarmed attack inflicts its normal damage and counts as the initial attack check required to grab your opponent.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Favored Environment',
+    {
+      name: 'Favored Environment',
+      type: 'combat',
+      description: [
+        'You have an environment you’re especially suited for fighting in. Examples include in the air, underwater, in space, in extreme heat or cold, in jungles or woodlands, and so forth. While you are in your favored environment, you gain a +2 circumstance bonus to attack checks or your active defenses. Choose at the start of the round whether the bonus applies to attack or defense. The choice remains until the start of your next round. This circumstance bonus is not affected by power level.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Favored Foe',
+    {
+      name: 'Favored Foe',
+      type: 'skill',
+      description: [
+        'You have a particular type of opponent you’ve studied or are especially effective against. It may be a type of creature (aliens, animals, constructs, mutants, undead, etc.), a profession (soldiers, police officers, Yakuza, etc.) or any other category the GM approves. Especially broad categories like “humans” or “villains” are not permitted. You gain a +2 circumstance bonus on @{Skill|Deception}, @{Skill|Intimidation}, @{Skill|Insight}, and @{Skill|Perception} checks dealing with your Favored Foe. This circumstance bonus is not limited by power level.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Fearless',
+    {
+      name: 'Fearless',
+      type: 'general',
+      description: [
+        'You are immune to fear effects of all sorts, essentially the same as an @{Effect|Immunity} to Fear effect.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
