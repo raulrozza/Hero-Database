@@ -371,4 +371,148 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Improved Aim',
+    {
+      name: 'Improved Aim',
+      type: 'combat',
+      description: [
+        'You have an even keener eye when it comes to ranged combat. When you take a standard action to @{Action|Aim|aim}, you gain double the normal circumstance bonus: +10 for a close attack or ranged attack adjacent to the target, +5 for a ranged attack at a greater distance.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improved Critical',
+    {
+      name: 'Improved Critical',
+      type: 'combat',
+      description: [
+        'Increase your critical threat range with a particular attack (chosen when you acquire this advantage) by 1, allowing you to score a critical hit on a natural 19 or 20. Only a natural 20 is an automatic hit, however, and an attack that misses is not a critical. Each additional rank applies to a different attack or increases your threat range with an existing attack by one more, to a maximum threat range of 16-20 with 4 ranks.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improved Defense',
+    {
+      name: 'Improved Defense',
+      type: 'combat',
+      description: [
+        'When you take the @{Action|Defend|defend} action in combat you gain a +2 circumstance bonus to your active defense checks for the round.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improved Disarm',
+    {
+      name: 'Improved Disarm',
+      type: 'combat',
+      description: [
+        'You have no penalty to your attack check when attempting to @{Action|Disarm|disarm} an opponent and they do not get the opportunity to disarm you.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improved Grab',
+    {
+      name: 'Improved Grab',
+      type: 'combat',
+      description: [
+        'You can make @{Action|Grab|grab} attacks with only one arm, leaving the other free. You can also maintain the grab while using your other hand to perform actions. You are not @{Condition|Vulnerable|vulnerable} while grabbing.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improved Hold',
+    {
+      name: 'Improved Hold',
+      type: 'combat',
+      description: [
+        'Your @{Action|Grab|grab} attacks are particularly difficult to escape. Opponents you grab suffer a –5 circumstance penalty on checks to escape.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improved Initiative',
+    {
+      name: 'Improved Initiative',
+      type: 'combat',
+      description: [
+        'You have a +4 bonus to your initiative checks per rank in this advantage.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improved Smash',
+    {
+      name: 'Improved Smash',
+      type: 'combat',
+      description: [
+        'You have no penalty to attack checks to hit an object held by another character (see @{Action|Smash}).',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improved Trip',
+    {
+      name: 'Improved Trip',
+      type: 'combat',
+      description: [
+        'You have no penalty to your attack check to @{Action|Trip|trip} an opponent and they do not get the opportunity to trip you. When making a trip attack, make an opposed check of your @{Skill|Acrobatics} or @{Skill|Athletics} against your opponent’s Acrobatics or Athletics, you choose which your opponent uses to defend, rather than the target choosing. This is a good martial arts advantage for unarmed fighters.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improvised Tools',
+    {
+      name: 'Improvised Tools',
+      type: 'skill',
+      description: [
+        'You ignore the circumstance penalty for using skills without proper tools, since you can improvise sufficient tools with whatever is at hand. If you’re forced to work without tools at all, you suffer only a –2 penalty.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Improvised Weapon',
+    {
+      name: 'Improvised Weapon',
+      type: 'combat',
+      description: [
+        'When wielding an improvised close combat weapon—anything from a chair to a telephone pole or entire car—you use your @{Skill|Close Combat}: Unarmed skill bonus for attack checks with the “weapon” rather than relying on your general Close Combat skill bonus. Additional ranks in this advantage give you a +1 bonus to Damage with improvised weapons per rank. Your maximum Damage bonus is still limited by power level, as usual.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Inspire',
+    {
+      name: 'Inspire',
+      type: 'fortune',
+      description: [
+        'You can inspire your allies to greatness. Once per scene, by taking a standard action and spending a Victory point, allies able to interact with you gain a +1 circumstance bonus per Inspire rank on all checks until the start of your next round, with a maximum bonus of +5. You do not gain the bonus, only your allies do. The inspiration bonus ignores power level limits, like other uses of Victory points. Multiple uses of Inspire do not stack, only the highest bonus applies.',
+      ],
+      maxRanks: 5,
+      source: 'HH',
+    },
+  ],
 ]);
