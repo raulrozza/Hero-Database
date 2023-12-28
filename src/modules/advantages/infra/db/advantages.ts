@@ -176,4 +176,53 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Daze',
+    {
+      name: 'Daze',
+      type: 'skill',
+      description: [
+        'You can make a @{Skill|Deception} or @{Skill|Intimidation} check as a standard action (choose which skill when you acquire the advantage) to cause an opponent to hesitate in combat. Make a skill check as a standard action against your target’s resistance check (the same skill, @{Skill|Insight}, or @{Defense|Will} defense, whichever has the highest bonus). If you win, your target is @{Condition|Dazed|dazed} until the end of your next round. The ability to Daze with Deception and with Intimidation are separate advantages. Take this advantage twice in order to be able to do both.',
+      ],
+      maxRanks: 2,
+      source: 'HH',
+    },
+  ],
+  [
+    'Defensive Attack',
+    {
+      name: 'Defensive Attack',
+      type: 'combat',
+      description: [
+        'When you make a @{Maneuver|Defensive Attack|defensive attack}, you can take a penalty of up to –5 on your attack bonus and add the same number (up to +5) to both your active defenses (@{Defense|Dodge} and @{Defense|Parry}).',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Defensive Roll',
+    {
+      name: 'Defensive Roll',
+      type: 'combat',
+      description: [
+        'You can avoid damage through agility and “rolling” with an attack. You receive a bonus to your @{Defense|Toughness} equal to your advantage rank, but it is considered an active defense similar to @{Defense|Dodge} and @{Defense|Parry}, so you lose this bonus whenever you are @{Condition|Vulnerable|vulnerable} or @{Condition|Defenseless|defenseless}. Your total Toughness, including this advantage, is still limited by power level.',
+        'This advantage is common for heroes who lack either superhuman speed or toughness, relying on their agility and training to avoid harm.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Dyehard',
+    {
+      name: 'Dyehard',
+      type: 'general',
+      description: [
+        'When your condition becomes @{Condition|Dying|dying} you automatically stabilize on the following round without any need for a @{Ability|Stamina} check, although further damage—such as a finishing attack—can still kill you',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
