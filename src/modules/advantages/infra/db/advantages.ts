@@ -225,4 +225,52 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Eidetic Memory',
+    {
+      name: 'Eidetic Memory',
+      type: 'general',
+      description: [
+        'You have perfect recall of everything you’ve experienced. You have a +5 circumstance bonus on checks to remember things, including resistance checks against effects that alter or erase memories. You can also make @{Skill|Expertise} skill checks to answer questions and provide information as if you were trained, meaning you can answer questions involving difficult or obscure knowledge even without ranks in the skill, due to the sheer amount of trivia you have picked up.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Equipment',
+    {
+      name: 'Equipment',
+      type: 'general',
+      description: [
+        'You have 5 points per rank in this advantage to spend on equipment. This includes vehicles and headquarters. See Gadgets & Gear for details on equipment and its costs. Many heroes rely almost solely on Equipment in conjunction with their skills and other advantages.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Evasion',
+    {
+      name: 'Evasion',
+      type: 'combat',
+      description: [
+        'You have a +2 circumstance bonus to @{Defense|Dodge} resistance checks to avoid area effects (see @{Extra|Area} extra in Powers). If you have 2 ranks in this advantage, your circumstance bonus increases to +5.',
+      ],
+      maxRanks: 2,
+      source: 'HH',
+    },
+  ],
+  [
+    'Extraordinary Effort',
+    {
+      name: 'Extraordinary Effort',
+      type: 'general',
+      description: [
+        'When using extra effort, you can gain two of the listed benefits, even stacking two of the same type of benefit. However, you also double the cost of the effort; you’re @{Condition|Exhausted|exhausted} starting the turn after your extraordinary effort. If you are already @{Condition|Fatigued|fatigued}, you are @{Condition|Incapacitated|incapacitated}. If you are already exhausted, you cannot use extraordinary effort. Spending a Victory point at the start of your next turn reduces the cost of your extraordinary effort to merely fatigued, the same as a regular extra effort.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
