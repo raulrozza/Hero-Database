@@ -515,4 +515,89 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Jack-Of-All-Trades',
+    {
+      name: 'Jack-Of-All-Trades',
+      type: 'skill',
+      description: [
+        'You can use any skill untrained, even skills or aspects of skills that normally cannot be used untrained, although you must still have proper tools if the skill requires them.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Languages',
+    {
+      name: 'Languages',
+      type: 'skill',
+      description: [
+        'You can speak and understand additional languages. With one rank in this advantage, you know an additional language. For each additional rank, you double your additional known languages: two at rank 2, four at rank 3, eight at rank 4, etc. So a character with Languages 7 is fluent in 64 languages! Characters are assumed to be fluent in any languages they know, including being able to read and write in them.',
+        'For the ability to understand any language, see @{Effect|Comprehend} effect.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Leadership',
+    {
+      name: 'Leadership',
+      type: 'fortune',
+      description: [
+        'Your presence reassures and lends courage to your allies. As a standard action, you can spend a Victory point to remove one of the following conditions from an ally with whom you can interact: @{Condition|Dazed|dazed}, @{Condition|Fatigued|fatigued}, or @{Condition|Stunned|stunned}.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Instant Up',
+    {
+      name: 'Instant Up',
+      type: 'general',
+      description: [
+        'You can go from prone to standing as a free action without the need for an @{Skill|Acrobatics} skill check.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Interpose',
+    {
+      name: 'Interpose',
+      type: 'general',
+      description: [
+        'Once per round, when an ally within range of your normal movement is hit by an attack, you can choose to place yourself between the attacker and your ally as a reaction, making you the target of the attack instead. The attack hits you rather than your ally, and you suffer the effects normally. You cannot use this advantage against area effects or perception range attacks, only those requiring an attack check.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Inventor',
+    {
+      name: 'Inventor',
+      type: 'skill',
+      description: [
+        'You can use the @{Skill|Technology} skill to create inventions. See Inventing for details.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Luck',
+    {
+      name: 'Luck',
+      type: 'fortune',
+      description: [
+        'Once per round, you can choose to reroll a die roll, like spending a Victory point (see Victory points), including adding 10 to rerolls of 10 or less. You can do this a number of times per game session equal to your Luck rank, with a maximum rank of half the series power level (rounded down). Your Luck ranks refresh when your Victory points “reset” at the start of an adventure. The GM may choose to set a different limit on ranks in this advantage, depending on the series.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
 ]);
