@@ -600,4 +600,77 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Minion',
+    {
+      name: 'Minion',
+      type: 'general',
+      description: [
+        'You have a follower or minion. This minion is an independent character with a Character point total of (advantage rank x 15). Minions are subject to the normal power level limits, and cannot have minions themselves. Your minions (if capable of independent thought) automatically have a helpful attitude toward you. They are subject to the normal rules for minions.',
+        'Minions do not earn Character points. Instead, you must spend earned Character points to increase your rank in this advantage to improve the minion’s Character point total and traits. Minions also do not have Victory points. Any lost minions are replaced in between adventures with other followers with similar abilities at the Gamemaster’s discretion.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Move-By Action',
+    {
+      name: 'Move-By Action',
+      type: 'combat',
+      description: [
+        'When taking a standard action and a move action you can move both before and after your standard action, provided the total distance moved isn’t greater than your normal movement speed.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Power Attack',
+    {
+      name: 'Power Attack',
+      type: 'combat',
+      description: [
+        'When you make a @{Maneuver|Power Attack|power attack} you can take a penalty of up to –5 on your attack bonus and add the same number (up to +5) to the effect bonus of your attack.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Precise Attack',
+    {
+      name: 'Precise Attack',
+      type: 'combat',
+      description: [
+        'When you make close or ranged attacks (choose one) you ignore attack check penalties for cover or concealment (choose one), although total cover still prevents you from making attacks. Each additional rank in this advantage lets you choose an additional option, so with Precise Attack 4, all your attacks (both close and ranged) ignore penalties for both cover and concealment.',
+      ],
+      maxRanks: 4,
+      source: 'HH',
+    },
+  ],
+  [
+    'Prone Fighting',
+    {
+      name: 'Prone Fighting',
+      type: 'combat',
+      description: [
+        'You suffer no circumstance penalty to attack checks for being @{Condition|Prone|prone}, and adjacent opponents do not gain the usual circumstance bonus for close attacks against you.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Quick Draw',
+    {
+      name: 'Quick Draw',
+      type: 'combat',
+      description: [
+        'You can draw a weapon from a holster or sheath as a free action, rather than a move action.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
