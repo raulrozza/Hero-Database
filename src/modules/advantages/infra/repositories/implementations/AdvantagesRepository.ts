@@ -4,9 +4,13 @@ import { IAdvantage } from '@/shared/domain/entities';
 
 export default class AdvantagesRepository implements IAdvantagesRepository {
   public findAll: IAdvantagesRepository['findAll'] = async () =>
-    [...advantages.entries()].map(([key, advantage]) =>
-      this.convertAdvantage(key, advantage),
-    );
+    [...advantages.entries()]
+      .map(([key, advantage]) => this.convertAdvantage(key, advantage))
+      .sort((a, b) => {
+        if (a.name < b.name) return -1;
+
+        return 1;
+      });
 
   public findByKey: IAdvantagesRepository['findByKey'] = async key => {
     const advantage = advantages.get(key);

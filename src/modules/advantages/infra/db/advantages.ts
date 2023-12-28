@@ -140,4 +140,40 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Chokehold',
+    {
+      name: 'Chokehold',
+      type: 'combat',
+      description: [
+        'If you successfully @{Action|Grab|grab} and @{Condition|Restrained|restrain} an opponent, you can apply a chokehold, causing your opponent to begin suffocating for as long as you continue to restrain your target.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Close Attack',
+    {
+      name: 'Close Attack',
+      type: 'combat',
+      description: [
+        'You have a +1 bonus to close attacks checks per rank in this advantage. Your total attack bonus is still limited by power level. This advantage best suits characters with a level of overall close combat skill (armed and unarmed). For capability with a particular type of attack, use the @{Skill|Close Combat} skill.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Connected',
+    {
+      name: 'Connected',
+      type: 'skill',
+      description: [
+        'You have such extensive and well-informed contacts you can make an @{Skill|Investigation} check to gather information in only one minute, assuming you have some means of getting in touch with your contacts. Further Investigation checks to gather information on the same subject require the normal length of time, since you must go beyond your immediate network of contacts.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
