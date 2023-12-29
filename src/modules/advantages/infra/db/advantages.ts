@@ -673,4 +673,113 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Ranged Attack',
+    {
+      name: 'Ranged Attack',
+      type: 'combat',
+      description: [
+        'You have a +1 bonus to ranged attacks checks per rank in this advantage. Your total attack bonus is still limited by power level.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Redirect',
+    {
+      name: 'Redirect',
+      type: 'combat',
+      description: [
+        'If you successfully @{Action|Trick|trick} an opponent, you can redirect a missed attack against you from that opponent at another target as a reaction. The new target must be adjacent to you and within range of the attack. The attacker makes a new attack check with the same modifiers as the first against the new target.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Ritualist',
+    {
+      name: 'Ritualist',
+      type: 'skill',
+      description: [
+        'You can use the @{Skill|Expertise}: Magic skill to create and cast magical rituals. This advantage is often a back-up or secondary magical power for superhuman sorcerers, and may be the only form of magic available to some “dabbler” types.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Second Chance',
+    {
+      name: 'Second Chance',
+      type: 'general',
+      description: [
+        'Choose a particular hazard, such as falling, being tripped, triggering traps, mind control (or another fairly specific power effect, such as Damage with the fire descriptor) or a particular skill with consequences for failure. If you fail a check against that hazard, you can make another immediately and use the better of the two results. You only get one second chance for any given check, and the GM decides if a particular hazard or skill is an appropriate focus for this advantage. You can take this advantage multiple times, each for a different hazard.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Seize Initiative',
+    {
+      name: 'Seize Initiative',
+      type: 'fortune',
+      description: [
+        'You can spend a Victory point to automatically go first in the initiative order. You may only do so at the start of combat, when you would normally make your initiative check. If more than one character uses this advantage, they all make initiative checks normally and act in order of their initiative result, followed by all the other characters who do not have this advantage.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Set-Up',
+    {
+      name: 'Set-Up',
+      type: 'combat',
+      description: [
+        'You can transfer the benefits of a successful combat use of an interaction skill to your teammate(s). For example, you can feint and have your target vulnerable against one or more allies next attack(s), rather than yours. Each rank in the advantage lets you transfer the benefit to one ally. The interaction skill check requires its normal action, and the affected allies must be capable of interacting with you (or at least seeing the set-up) to benefit from it.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Sidekick',
+    {
+      name: 'Sidekick',
+      type: 'general',
+      description: [
+        'You have another character serving as your partner and aide. Create your sidekick as an independent character with (advantage rank x 5) Character points, and subject to the series power level. A sidekick’s Character point total must be less than yours. Your sidekick is an NPC, but automatically helpful and loyal to you. Gamemasters should generally allow you to control your sidekick, although sidekicks remain NPCs and the GM has final say in their actions.',
+        'Sidekicks do not earn Character points. Instead, you must spend earned Character points to increase your rank in Side-kick to improve the sidekick’s Character point total and traits; each point you spend to increase your rank in Sidekick grants the sidekick 5 additional Character points. Sidekicks also do not have Victory points, but you can spend your own Victory points on the sidekick’s behalf with the usual benefits. Sidekicks are not minions, but full-fledged characters, so they are not subject to the minion rules.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Skill Mastery',
+    {
+      name: 'Skill Mastery',
+      type: 'skill',
+      description: [
+        'Choose a skill. You can make routine checks with that skill even when under pressure. This advantage does not allow you to make routine checks with skills that do not normally allow you to do so. You can take this advantage multiple times for different skills.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Startle',
+    {
+      name: 'Startle',
+      type: 'skill',
+      description: [
+        'You can use @{Skill|Intimidation} rather than @{Skill|Deception} to @{Action|Feint|feint} in combat. Targets resist with @{Skill|Insight}, @{Skill|Intimidation}, or @{Defense|Will} defense.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
