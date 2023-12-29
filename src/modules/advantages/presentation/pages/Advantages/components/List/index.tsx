@@ -4,6 +4,7 @@ import { capitalize } from 'lodash';
 
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
+import { useListSorter } from '@/shared/presentation/hooks';
 
 import { getRanksTextFromMaxRanks } from './helpers';
 import { useAdvantageState } from '../../store';
@@ -14,6 +15,10 @@ const List: React.FC = () => {
 
   const query = api.advantages.getAll.useQuery(undefined, {
     initialData: [],
+  });
+
+  const sortedQuery = useListSorter(query.data, {
+    sortKeys: ['name', 'type', 'ranks', 'source'],
   });
 
   const hash = location.hash;
@@ -40,22 +45,26 @@ const List: React.FC = () => {
         {
           title: 'Name',
           span: 6,
+          onClick: () => sortedQuery.sortBy('name'),
         },
         {
           title: 'Type',
           span: 2,
+          onClick: () => sortedQuery.sortBy('type'),
         },
         {
           title: 'Ranks',
           span: 2,
+          onClick: () => sortedQuery.sortBy('ranks'),
         },
         {
           title: 'Source',
           span: 2,
+          onClick: () => sortedQuery.sortBy('source'),
         },
       ]}
     >
-      {query.data.map(advantage => (
+      {sortedQuery.items.map(advantage => (
         <Table.Row
           key={advantage.key}
           items={[
