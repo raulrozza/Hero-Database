@@ -46,21 +46,33 @@ const List: React.FC = () => {
           title: 'Name',
           span: 6,
           onClick: () => sortedQuery.sortBy('name'),
+          sortingKey: 'name',
+          active: sortedQuery.currentKey === 'name',
+          sorting: sortedQuery.order,
         },
         {
           title: 'Type',
           span: 2,
           onClick: () => sortedQuery.sortBy('type'),
+          sortingKey: 'type',
+          active: sortedQuery.currentKey === 'type',
+          sorting: sortedQuery.order,
         },
         {
           title: 'Ranks',
           span: 2,
           onClick: () => sortedQuery.sortBy('ranks'),
+          sortingKey: 'ranks',
+          active: sortedQuery.currentKey === 'ranks',
+          sorting: sortedQuery.order,
         },
         {
           title: 'Source',
           span: 2,
           onClick: () => sortedQuery.sortBy('source'),
+          sortingKey: 'source',
+          active: sortedQuery.currentKey === 'source',
+          sorting: sortedQuery.order,
         },
       ]}
     >

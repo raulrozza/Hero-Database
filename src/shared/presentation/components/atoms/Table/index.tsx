@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+
 import * as S from './styles';
 
 interface IRowProps {
@@ -31,6 +33,9 @@ interface ITableProps {
   labels: Array<{
     title: string;
     span?: number;
+    sortingKey?: string;
+    active?: boolean;
+    sorting?: 'asc' | 'desc';
     onClick?: () => void;
   }>;
 }
@@ -47,13 +52,26 @@ const Table: ITable = (({ labels, children }) => {
     <S.Table spans={spans}>
       <thead>
         <tr>
-          {labels.map(label => (
-            <th key={label.title}>
-              <S.TableHeadButton type="button" onClick={label.onClick}>
-                {label.title}
-              </S.TableHeadButton>
-            </th>
-          ))}
+          {labels.map(label => {
+            const Icon =
+              label.active && label.sorting === 'desc'
+                ? FiChevronUp
+                : FiChevronDown;
+
+            return (
+              <th key={label.title}>
+                <S.TableHeadButton
+                  type="button"
+                  onClick={label.onClick}
+                  active={label.active}
+                >
+                  {label.title}
+
+                  {!!label.sortingKey && <Icon aria-hidden />}
+                </S.TableHeadButton>
+              </th>
+            );
+          })}
         </tr>
       </thead>
 

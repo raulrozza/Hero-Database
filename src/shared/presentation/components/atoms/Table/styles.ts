@@ -25,10 +25,16 @@ export const Table = styled.table<{ spans: number[] }>`
   `}
 `;
 
-export const TableHeadButton = styled.button`
-  ${({ theme, onClick }) => css`
+export const TableHeadButton = styled.button<{ active?: boolean }>`
+  ${({ theme, onClick, active }) => css`
     flex: 1;
-    background-color: ${theme.palette.neutral[100]};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: ${active
+      ? theme.palette.neutral[200]
+      : theme.palette.neutral[100]};
     padding: ${theme.layout.spacing(0.5, 1)};
     font-size: ${theme.typography.sizes.subtitle};
     color: ${theme.palette.text.light};
