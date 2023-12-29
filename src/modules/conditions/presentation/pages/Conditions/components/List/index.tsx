@@ -5,6 +5,7 @@ import { capitalize } from 'lodash';
 import { ICondition } from '@/shared/domain/entities';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
+import { useListSorter } from '@/shared/presentation/hooks';
 
 import { useConditionState } from '../../store';
 
@@ -32,9 +33,13 @@ const List: React.FC = () => {
     if (condition) setCondition(condition);
   }, [query.data, setCondition, hash]);
 
+  const sortedQuery = useListSorter(query.data, {
+    sortKeys: ['name', 'source'],
+  });
+
   if (query.isLoading) return <div>Loading...</div>;
 
-  const conditions = query.data.reduce(
+  const conditions = sortedQuery.items.reduce(
     (acc, condition) => {
       const list = acc[condition.type];
       list.push(condition);
@@ -67,12 +72,20 @@ const List: React.FC = () => {
         {
           title: 'Name',
           span: 6,
+          onClick: () => sortedQuery.sortBy('name'),
+          sortingKey: 'name',
+          active: sortedQuery.currentKey === 'name',
+          sorting: sortedQuery.order,
         },
         {
           title: 'Type',
         },
         {
           title: 'Source',
+          onClick: () => sortedQuery.sortBy('source'),
+          sortingKey: 'source',
+          active: sortedQuery.currentKey === 'source',
+          sorting: sortedQuery.order,
         },
       ]}
     >
