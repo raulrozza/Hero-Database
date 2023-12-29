@@ -782,4 +782,77 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Takedown',
+    {
+      name: 'Takedown',
+      type: 'combat',
+      description: [
+        'If you render a minion incapacitated with an attack, you get an immediate extra attack as a free action against another minion within range and adjacent to the previous target’s location. The extra attack is with the same attack and bonus as the first. You can continue using this advantage until you miss or there are no more minions within range of your attack or your last target.',
+        'A second rank in this advantage allows you to attack non-adjacent minion targets, moving between attacks if necessary to do so. You cannot move more than your total speed in the round, regardless of the number of attacks you make. You stop attacking once you miss, run out of movement, or there are no more minions within range of your attack.',
+      ],
+      maxRanks: 2,
+      source: 'HH',
+    },
+  ],
+  [
+    'Taunt',
+    {
+      name: 'Taunt',
+      type: 'skill',
+      description: [
+        'You can @{Action|Demoralize|demoralize} an opponent with @{Skill|Deception} rather than @{Skill|Intimidation}, disparaging and undermining confidence rather than threatening. Targets resist using @{Skill|Deception}, @{Skill|Insight}, or @{Defense|Will} defense.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Teamwork',
+    {
+      name: 'Teamwork',
+      type: 'general',
+      description: [
+        'You’re effective at helping out your friends. When you support a team check you have a +5 circumstance bonus to your check. This bonus also applies to the @{Action|Aid} action and Team Attacks.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Throwing Mastery',
+    {
+      name: 'Throwing Mastery',
+      type: 'combat',
+      description: [
+        'You have a +1 damage bonus with thrown weapons per rank in this advantage. You can also throw normally harmless objects—playing cards, pens, paper clips, and so forth—as weapons with a damage bonus equal to your advantage rank and range based on the higher of your advantage rank or @{Ability|Strength}. Your maximum damage bonus with any given weapon or attack is still limited by power level.',
+      ],
+      maxRanks: -1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Tracking',
+    {
+      name: 'Tracking',
+      type: 'skill',
+      description: [
+        'You can use the @{Skill|Perception} skill to visually follow tracks like the @{Effect|Senses|Tracking Senses} effect.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Trance',
+    {
+      name: 'Trance',
+      type: 'general',
+      description: [
+        'Through breathing and bodily control, you can slip into a deep trance. This takes a minute of uninterrupted meditation and a DC 15 @{Ability|Awareness} check. While in the trance you add your Awareness rank to your @{Ability|Stamina} rank to determine how long you can hold your breath and you use the higher of your @{Defense|Fortitude} or @{Defense|Will} defenses for resistance checks against suffocation. Poison and disease effects are suspended for the duration of the trance. It requires a @{Skill|Perception} check with a DC equal to your Awareness check result to determine you’re not dead because your bodily functions are so slow. You are aware of your surroundings while in trance and can come out of it at any time at will. You cannot take any actions while in the trance, but your GM may allow mental communication while in a trance.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
