@@ -18,7 +18,13 @@ export default function useListSorter<T extends any[], U extends string>(
   const [order, setOrder] = useState<TSortOrder>('asc');
 
   const sortedList = useMemo(
-    () => list.sort(handleSortByKey(currentSortKey, defaultKey.current, order)),
+    () =>
+      list.sort(
+        handleSortByKey(currentSortKey, {
+          defaultKey: defaultKey.current,
+          order,
+        }),
+      ),
     [list, currentSortKey, order],
   );
 
@@ -44,9 +50,14 @@ export default function useListSorter<T extends any[], U extends string>(
   };
 }
 
-function handleSortByKey(key: string, defaultKey: string, order: TSortOrder) {
+type TSortConfig = {
+  defaultKey: string;
+  order: TSortOrder;
+};
+
+function handleSortByKey(key: string, config: TSortConfig) {
   return (a: unknown, b: unknown): number => {
-    const [itemA, itemB] = order === 'asc' ? [a, b] : [b, a];
+    const [itemA, itemB] = config.order === 'asc' ? [a, b] : [b, a];
 
     const keyA = get(itemA, key);
     const keyB = get(itemB, key);
@@ -55,8 +66,8 @@ function handleSortByKey(key: string, defaultKey: string, order: TSortOrder) {
 
     if (keyA < keyB) return -1;
 
-    if (key === defaultKey) return 0;
+    if (key === config.defaultKey) return 0;
 
-    return handleSortByKey(defaultKey, defaultKey, order)(a, b);
+    return handleSortByKey(config.defaultKey, config)(a, b);
   };
 }

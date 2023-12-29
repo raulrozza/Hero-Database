@@ -18,7 +18,7 @@ const List: React.FC = () => {
   });
 
   const sortedQuery = useListSorter(query.data, {
-    sortKeys: ['name', 'type', 'ranks', 'source'],
+    sortKeys: ['name', 'type', 'maxRanks', 'source'],
   });
 
   const hash = location.hash;
@@ -61,9 +61,9 @@ const List: React.FC = () => {
         {
           title: 'Ranks',
           span: 2,
-          onClick: () => sortedQuery.sortBy('ranks'),
-          sortingKey: 'ranks',
-          active: sortedQuery.currentKey === 'ranks',
+          onClick: () => sortedQuery.sortBy('maxRanks'),
+          sortingKey: 'maxRanks',
+          active: sortedQuery.currentKey === 'maxRanks',
           sorting: sortedQuery.order,
         },
         {
