@@ -31,6 +31,7 @@ interface ITableProps {
   labels: Array<{
     title: string;
     span?: number;
+    onClick?: () => void;
   }>;
 }
 
@@ -47,7 +48,11 @@ const Table: ITable = (({ labels, children }) => {
       <thead>
         <tr>
           {labels.map(label => (
-            <S.TableHead key={label.title}>{label.title}</S.TableHead>
+            <th key={label.title}>
+              <S.TableHeadButton type="button" onClick={label.onClick}>
+                {label.title}
+              </S.TableHeadButton>
+            </th>
           ))}
         </tr>
       </thead>

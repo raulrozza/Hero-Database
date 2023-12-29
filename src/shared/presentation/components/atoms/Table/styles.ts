@@ -18,11 +18,16 @@ export const Table = styled.table<{ spans: number[] }>`
       align-items: center;
       background-color: ${theme.palette.neutral[50]};
     }
+
+    th {
+      display: flex;
+    }
   `}
 `;
 
-export const TableHead = styled.th`
-  ${({ theme }) => css`
+export const TableHeadButton = styled.button`
+  ${({ theme, onClick }) => css`
+    flex: 1;
     background-color: ${theme.palette.neutral[100]};
     padding: ${theme.layout.spacing(0.5, 1)};
     font-size: ${theme.typography.sizes.subtitle};
@@ -30,6 +35,11 @@ export const TableHead = styled.th`
     font-weight: ${theme.typography.weight.regular};
     border: 1px solid ${theme.palette.neutral[300]};
     text-align: center;
+
+    ${!!onClick &&
+    css`
+      cursor: pointer;
+    `}
   `}
 `;
 
