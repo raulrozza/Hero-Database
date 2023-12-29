@@ -855,4 +855,79 @@ export const advantages = new Map<string, MetaAdvantage>([
       source: 'HH',
     },
   ],
+  [
+    'Ultimate Effort',
+    {
+      name: 'Ultimate Effort',
+      type: 'fortune',
+      description: [
+        'You can spend a Victory point on a particular check and treat the roll as a 20 (meaning you don’t need to roll the die at all, just apply a result of 20 to your modifier). This is not a natural 20, but is treated as a roll of 20 in all other respects. You choose the particular check the advantage applies to when you acquire it and the GM must approve it. You can take Ultimate Effort multiple times, each time, it applies to a different check. This advantage may not be used after you’ve rolled the die to determine if you succeed.',
+        {
+          type: 'section',
+          title: 'Sample Ultimate Efforts',
+          description: [
+            'The following are some potential Ultimate Efforts. The GM is free to add others suitable to the series.',
+            {
+              type: 'list',
+              items: [
+                '<strong>Ultimate Aim:</strong> When you take a standard action to @{Action|Aim|aim} an attack, you can spend a Victory point to apply a 20 result to the attack check on the following round. Since the Ultimate Aim bonus is not a natural 20, it also does not qualify as an automatic or critical hit.',
+                '<strong>Ultimate Resistance:</strong> You can spend a Victory point to apply a 20 result to a resistance check with one defense determined when you acquire this advantage.',
+                '<strong>Ultimate Skill:</strong> You can spend a Victory point to apply a 20 result to checks with a particular skill.',
+              ],
+            },
+          ],
+        },
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Uncanny Dodge',
+    {
+      name: 'Uncanny Dodge',
+      type: 'combat',
+      description: [
+        'You are especially attuned to danger. You are not @{Condition|Vulnerable|vulnerable} when @{Condition|Surprised|surprised} or otherwise caught off-guard. You are still made vulnerable by effects that limit your mobility.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Weapon Bind',
+    {
+      name: 'Weapon Bind',
+      type: 'combat',
+      description: [
+        'If you take the @{Action|Defend|defend} action and successfully defend against a close weapon attack, you can make a @{Action|Disarm|disarm} attempt against the attacker immediately as a reaction. The disarm attempt is carried out normally, including the attacker getting the opportunity to disarm you.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Weapon Break',
+    {
+      name: 'Weapon Break',
+      type: 'combat',
+      description: [
+        'If you take the @{Action|Defend|defend} action and successfully defend against a close weapon attack, you can make an attack against the attacker’s weapon immediately as a reaction. This requires an attack check and inflicts normal damage to the weapon if it hits (see @{Action|Smash}).',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
+  [
+    'Well-Informed',
+    {
+      name: 'Well-Informed',
+      type: 'skill',
+      description: [
+        'You are exceptionally well-informed. When encountering an individual, group, or organization for the first time, you can make an immediate @{Skill|Investigation} or @{Skill|Persuasion} skill check to see if your character has heard something about the subject. Use the guidelines for gathering information in the Investigation Skill description to determine the level of information you gain. You receive only one check per subject upon first encountering them, although the GM may allow another upon encountering the subject again once significant time has passed.',
+      ],
+      maxRanks: 1,
+      source: 'HH',
+    },
+  ],
 ]);
