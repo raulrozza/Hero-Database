@@ -6,7 +6,7 @@ export default function ModifiersPage() {
   return (
     <>
       <Head>
-        <title>modifiers</title>
+        <title>Modifiers</title>
       </Head>
 
       <Modifiers />

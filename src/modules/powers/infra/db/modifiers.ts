@@ -26,4 +26,20 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Affects Corporeal',
+    {
+      name: 'Affects Corporeal',
+      type: 'extra',
+      description: [
+        'An incorporeal being can use an effect with this extra on the corporeal world (see @{Effect|Insubstantial}). When an effect is used against a corporeal target, the effect’s rank is equal to the rank of this extra, up to a maximum of the effect’s full rank. Characters with lower ranks 1–3 of Insubstantial do not require this extra for their effects to work on the physical world, although they can apply it to their Strength rank to allow them to exert some Strength while Insubstantial.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
 ]);

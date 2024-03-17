@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { NavBar } from '@/shared/presentation/components/organisms';
 
-import { List } from './components';
+import { List, Modifier } from './components';
 import { Container } from './styles';
 
 const Modifiers: FC = () => (
@@ -11,9 +11,8 @@ const Modifiers: FC = () => (
 
     <main>
       <List />
-      {/*
 
-      <Advantage /> */}
+      <Modifier />
     </main>
   </Container>
 );

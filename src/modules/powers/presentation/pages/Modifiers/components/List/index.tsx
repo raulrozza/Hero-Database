@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useRef } from 'react';
 
 import { capitalize } from 'lodash';
 
+import { getCostText } from '@/modules/powers/presentation/helpers';
 import { IModifier } from '@/shared/domain/entities';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
@@ -71,7 +72,7 @@ const List: React.FC = () => {
       labels={[
         {
           title: 'Name',
-          span: 6,
+          span: 3,
           onClick: () => sortedQuery.sortBy('name'),
           sortingKey: 'name',
           active: sortedQuery.currentKey === 'name',
@@ -114,7 +115,7 @@ const List: React.FC = () => {
                 },
                 {
                   key: 'type',
-                  content: 'TODO',
+                  content: getCostText(modifier.cost),
                 },
                 {
                   key: 'source',
