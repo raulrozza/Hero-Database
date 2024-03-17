@@ -1,1 +1,1 @@
-export type * from './IGetmodifierByKeyDTO';
+export type * from './IGetModifierByKeyDTO';
