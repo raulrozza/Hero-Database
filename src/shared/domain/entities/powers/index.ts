@@ -1,1 +1,1 @@
-export * from './Imodifier';
+export * from './IModifier';

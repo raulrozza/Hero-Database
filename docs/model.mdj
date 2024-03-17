@@ -811,7 +811,7 @@
 											"top": 175,
 											"width": 136.93798828125,
 											"height": 13,
-											"text": "Modification"
+											"text": "Modifier"
 										},
 										{
 											"_type": "LabelView",
@@ -917,7 +917,7 @@
 											"top": 228,
 											"width": 136.93798828125,
 											"height": 13,
-											"text": "+type: ModificationType",
+											"text": "+type: ModifierType",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1058,7 +1058,7 @@
 											"top": 204,
 											"width": 105.92333984375,
 											"height": 13,
-											"text": "ModificationType"
+											"text": "ModifierType"
 										},
 										{
 											"_type": "LabelView",
@@ -3086,7 +3086,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Modification",
+					"name": "Modifier",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -3223,9 +3223,7 @@
 								"$ref": "AAAAAAGMSTe5pVOnpVs="
 							},
 							"name": "type",
-							"type": {
-								"$ref": "AAAAAAGOSG++rLwKEX8="
-							}
+							"type": "ModifierType"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3286,7 +3284,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "ModificationType",
+					"name": "ModifierType",
 					"literals": [
 						{
 							"_type": "UMLEnumerationLiteral",
