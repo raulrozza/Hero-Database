@@ -20,6 +20,10 @@ const LINKS: ComponentPropsWithoutRef<typeof NavLink>[] = [
     href: '/powers',
     children: 'Powers',
   },
+  {
+    href: '/modifications',
+    children: 'Modifications',
+  },
 ];
 
 const NavBar: React.FC = () => {
