@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { capitalize } from 'lodash';
+
 import { IModifier } from '@/shared/domain/entities';
 import {
   ItemContent,
@@ -8,7 +10,7 @@ import {
 } from '@/shared/presentation/components/atoms';
 
 import { getSubtitle } from './helpers';
-import { Container } from './styles';
+import { Container, Subtitle } from './styles';
 
 type TModifierItemProps = IModifier & {
   showTooltip?: boolean;
@@ -23,6 +25,10 @@ const ModifierItem: React.FC<TModifierItemProps> = ({
   return (
     <Container>
       <ItemHeader title={modifier.name} subtitle={getSubtitle(modifier)} />
+
+      <Subtitle>
+        <h2>{capitalize(modifier.type)}</h2>
+      </Subtitle>
 
       <ItemContent description={modifier.description} config={renderConfig} />
 
