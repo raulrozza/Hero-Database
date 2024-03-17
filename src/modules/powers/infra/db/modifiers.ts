@@ -32,7 +32,7 @@ export const modifiers = new Map<string, MetaModifier>([
       name: 'Affects Corporeal',
       type: 'extra',
       description: [
-        'An incorporeal being can use an effect with this extra on the corporeal world (see @{Effect|Insubstantial}). When an effect is used against a corporeal target, the effect’s rank is equal to the rank of this extra, up to a maximum of the effect’s full rank. Characters with lower ranks 1–3 of Insubstantial do not require this extra for their effects to work on the physical world, although they can apply it to their Strength rank to allow them to exert some Strength while Insubstantial.',
+        'An incorporeal being can use an effect with this extra on the corporeal world (see @{Effect|Insubstantial}). When an effect is used against a corporeal target, the effect’s rank is equal to the rank of this extra, up to a maximum of the effect’s full rank. Characters with lower ranks 1–3 of Insubstantial do not require this extra for their effects to work on the physical world, although they can apply it to their @{Ability|Strength} rank to allow them to exert some Strength while Insubstantial.',
       ],
       cost: {
         costs: [1],
@@ -54,6 +54,23 @@ export const modifiers = new Map<string, MetaModifier>([
         costs: [1],
         maxRanks: 2,
         type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Affects Objects',
+    {
+      name: 'Affects Objects',
+      type: 'extra',
+      description: [
+        'This modifier allows effects normally resisted by @{Defense|Fortitude} to work on non-living objects (those with no @{Ability|Stamina}). Generally, this extra applies to effects like @{Effect|Heal} or @{Effect|Weaken}, allowing them to work on objects in the same way as they do living creatures. If the effect Affects Only Objects, working on objects but not on living creatures, it has a net modifier of +0.',
+        'Objects do not get resistance checks; the effect works on the targeted object at its maximum degree of success. At the GM’s discretion, someone holding, carrying, or wearing an object can make a @{Defense|Dodge} resistance check against the effect, representing pulling the object out of the way at the last moment.',
+      ],
+      cost: {
+        costs: [0, 1],
+        maxRanks: -1,
+        type: 'standard',
       },
       source: 'HH',
     },

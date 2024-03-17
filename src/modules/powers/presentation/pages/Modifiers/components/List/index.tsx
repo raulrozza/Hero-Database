@@ -72,7 +72,7 @@ const List: React.FC = () => {
       labels={[
         {
           title: 'Name',
-          span: 3,
+          span: 4,
           onClick: () => sortedQuery.sortBy('name'),
           sortingKey: 'name',
           active: sortedQuery.currentKey === 'name',
@@ -80,6 +80,7 @@ const List: React.FC = () => {
         },
         {
           title: 'Type',
+          span: 2,
           onClick: () => sortedQuery.sortBy('type'),
           sortingKey: 'type',
           active: sortedQuery.currentKey === 'type',
@@ -87,6 +88,7 @@ const List: React.FC = () => {
         },
         {
           title: 'Cost',
+          span: 2,
         },
         {
           title: 'Source',

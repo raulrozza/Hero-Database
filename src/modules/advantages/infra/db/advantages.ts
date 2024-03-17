@@ -341,7 +341,7 @@ export const advantages = new Map<string, MetaAdvantage>([
       name: 'Grabbing Finesse',
       type: 'combat',
       description: [
-        'You can use your @{Skill|Dexterity} bonus, rather than your @{Skill|Strength} bonus, to make grab attacks. You are not @{Condition|Vulnerable|vulnerable} while grabbing. See @{Advantage|Grab}, for details. This is a good advantage for skilled unarmed combatants focused more on speed than strength.',
+        'You can use your @{Skill|Dexterity} bonus, rather than your @{Ability|Strength} bonus, to make grab attacks. You are not @{Condition|Vulnerable|vulnerable} while grabbing. See @{Advantage|Grab}, for details. This is a good advantage for skilled unarmed combatants focused more on speed than strength.',
       ],
       maxRanks: 1,
       source: 'HH',
