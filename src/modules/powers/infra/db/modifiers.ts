@@ -42,4 +42,20 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Affects Insubstantial',
+    {
+      name: 'Affects Insubstantial',
+      type: 'extra',
+      description: [
+        'An effect with this extra works on @{Effect|Insubstantial|insubstantial} targets, in addition to having its normal effect on corporeal targets. Rank 1 allows the effect to work at half its normal rank against insubstantial targets (rounded down); rank 2 allows the effect to function at its full rank against them.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: 2,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
 ]);

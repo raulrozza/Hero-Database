@@ -20,6 +20,12 @@ function getStandardText(cost: RankCost, config: Config) {
 }
 
 function getFlatText(cost: RankCost, config: Config) {
+  if (cost.maxRanks > 1) {
+    const costNumbers = costsToText(cost.costs, { showPositiveSign: false });
+
+    return `${costNumbers} to ${cost.maxRanks}`;
+  }
+
   const costNumbers = costsToText(cost.costs, config);
 
   return `${costNumbers} per rank`;
