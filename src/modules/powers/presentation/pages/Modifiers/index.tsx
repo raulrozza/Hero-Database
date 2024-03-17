@@ -4,7 +4,7 @@ import { NavBar } from '@/shared/presentation/components/organisms';
 
 import { Container } from './styles';
 
-const Modifications: FC = () => (
+const Modifiers: FC = () => (
   <Container>
     <NavBar />
 
@@ -16,4 +16,4 @@ const Modifications: FC = () => (
   </Container>
 );
 
-export default Modifications;
+export default Modifiers;

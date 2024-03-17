@@ -21,8 +21,8 @@ const LINKS: ComponentPropsWithoutRef<typeof NavLink>[] = [
     children: 'Powers',
   },
   {
-    href: '/modifications',
-    children: 'Modifications',
+    href: '/modifiers',
+    children: 'modifiers',
   },
 ];
 
