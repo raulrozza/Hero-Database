@@ -1,20 +1,26 @@
 import { FC } from 'react';
 
+import dynamic from 'next/dynamic';
+
 import { NavBar } from '@/shared/presentation/components/organisms';
 
-import { List, Modifier } from './components';
+import { Modifier } from './components';
 import { Container } from './styles';
 
-const Modifiers: FC = () => (
-  <Container>
-    <NavBar />
+const List = dynamic(() => import('./components/List'), { ssr: false });
 
-    <main>
-      <List />
+const Modifiers: FC = () => {
+  return (
+    <Container>
+      <NavBar />
 
-      <Modifier />
-    </main>
-  </Container>
-);
+      <main>
+        <List />
+
+        <Modifier />
+      </main>
+    </Container>
+  );
+};
 
 export default Modifiers;

@@ -29,7 +29,9 @@ const List: React.FC = () => {
 
     if (!hashKey) return;
 
-    const modifier = query.data.find(modifier => modifier.key === hashKey);
+    const modifier = query.data.find(
+      modifier => modifier.key === decodeURI(hashKey),
+    );
 
     if (modifier) setModifier(modifier);
   }, [query.data, setModifier, hash]);
@@ -116,7 +118,7 @@ const List: React.FC = () => {
                   content: capitalize(modifier.cost.type),
                 },
                 {
-                  key: 'type',
+                  key: 'cost',
                   content: getCostText(modifier.cost),
                 },
                 {
