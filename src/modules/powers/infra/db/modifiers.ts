@@ -211,4 +211,72 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Dimensional',
+    {
+      name: 'Dimensional',
+      type: 'extra',
+      description: [
+        'This modifier allows an effect to work on targets in other dimensions (if any exist in the series). You affect your proximate location in the other dimension as if you were actually there, figuring range modifiers from that point.',
+        'One rank in Dimensional can affect a single other dimension. Two ranks can affect any of a related group of dimensions (mythic dimensions, mystic dimensions, fiendish planes, and so forth). Three ranks can reach into any other dimension in the setting.',
+        'For many effects, you may need a @{Effect|Remote Sensing|Dimensional Remote Sensing} effect to target them. Targets in other dimensions you cannot sense have total concealment from you.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: 3,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Extended Range',
+    {
+      name: 'Extended Range',
+      type: 'extra',
+      description: [
+        'This modifier extends the distance over which a ranged effect works. Each rank of Extended Range doubles all of the effect’s range categories. So 1 rank makes short range (rank x 50 ft.), medium range (rank x 100 ft.) and long range (rank x 200 ft.). Each additional rank further doubles range.',
+        'The GM may set limits on the maximum Extended Range an effect can have; as a general guideline, effects used on a planetary surface are limited to the distance to the horizon (beyond which the curvature of the planet makes it impossible to see anything to target it). On Earth at sea level, this is roughly three miles (distance rank 10).',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Feature',
+    {
+      name: 'Feature',
+      type: 'extra',
+      description: [
+        'The @{Effect|Feature} effect can also serve as an effect modifier, essentially adding on some minor additional capability or benefit to a basic effect. Although listed here as an extra, this is essentially the same as having the Feature @{Modifier|Linked} to the base effect; the Feature is an intrinsic part of the overall power, rather than separate.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Homing',
+    {
+      name: 'Homing',
+      type: 'extra',
+      description: [
+        'This modifier grants a ranged effect an additional opportunity to hit. If an attack check with a Homing effect fails, it attempts to hit again on the start of your next turn, requiring only a free action to maintain and allowing you to take other actions, including making another attack. Each rank in Homing grants the effect one additional attack check, but it still only gets one check per round.',
+        'The Homing effect uses the same accurate sense as the original attack to “track” its target, so concealment effective against that sense may confuse the effect and cause it to miss. If a Homing attack misses due to concealment, it has lost its “lock” on the target and does not get any further chances to hit. You can take @{Effect|Senses} @{Modifier|Linked} to the Homing effect, if desired (to create things like radar-guided or heat-seeking missiles, for example). If a Homing attack is countered before it hits, it loses any remaining chances to hit. The same is true if it hits a different target.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
 ]);
