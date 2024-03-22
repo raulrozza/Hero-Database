@@ -18,6 +18,10 @@ export const Content = styled(RadixContent)`
     animation: ${scaleIn} 0.2s ease-out;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 
+    max-height: var(--radix-tooltip-content-available-height);
+
+    overflow: auto;
+
     .arrow {
       fill: ${theme.palette.neutral[50]};
     }
