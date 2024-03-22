@@ -195,4 +195,20 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Contagious',
+    {
+      name: 'Contagious',
+      type: 'extra',
+      description: [
+        'Contagious effects work on both the target and anyone coming into contact with the target. New targets resist the effect normally. They also become contagious, and the effect lingers until all traces of it have been eliminated. A Contagious effect is also eliminated if its duration expires. Examples of effects with this extra include “sticky” Afflictions trapping anyone touching them, disease- or toxin-based @{Effect|Weaken} effects, or even a @{Effect|Nullify} effect spreading from one victim to another.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
 ]);
