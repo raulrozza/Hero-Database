@@ -37,7 +37,7 @@ const List: React.FC = () => {
   }, [query.data, setModifier, hash]);
 
   const sortedQuery = useListSorter(query.data, {
-    sortKeys: ['name', 'source', 'type'],
+    sortKeys: ['name', 'source'],
   });
 
   if (query.isLoading) return <div>Loading...</div>;
@@ -83,10 +83,6 @@ const List: React.FC = () => {
         {
           title: 'Type',
           span: 2,
-          onClick: () => sortedQuery.sortBy('type'),
-          sortingKey: 'type',
-          active: sortedQuery.currentKey === 'type',
-          sorting: sortedQuery.order,
         },
         {
           title: 'Cost',
