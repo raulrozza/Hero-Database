@@ -279,4 +279,199 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Impervious',
+    {
+      name: 'Impervious',
+      type: 'extra',
+      description: [
+        'A defense with this modifier is highly resistant. Any effect with a resistance difficulty modifier equal to or less than half the Impervious rank (rounded up) has no effect. So, for example, Impervious @{Resistance|Toughness} 9 ignores any @{Effect|Damage} with a rank of 5 or less. @{Modifier|Penetrating} effects can overcome Impervious Resistance.',
+        'Impervious is primarily intended for Toughness resistance checks, to handle characters immune to a certain threshold of damage, but it can be applied to other defenses with the GM’s permission, to reflect characters with certain reliable capabilities in terms of resisting particular effects or hazards.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Increased Duration',
+    {
+      name: 'Increased Duration',
+      type: 'extra',
+      description: [
+        'Effects have a standard duration: instant, sustained, continuous, or permanent. See <strong>Duration</strong> for details. This modifier increases an effect’s duration. Choose one of the following options:',
+        '<strong>Concentration:</strong> When applied to an instant duration effect, this modifier makes it maintainable with concentration, taking a standard action each turn to do so. If the effect requires an initial attack check, no additional attack check is needed to maintain it on a target, but subsequent rounds of effect also do not benefit from critical hits. The target is affected on each of the effect user’s turns, making a normal resistance check (if any). Once the user stops concentrating for any reason, the effect ends and the target recovers normally, including resistance checks to remove ongoing effects.',
+        '<strong>Continuous:</strong> When applied to a sustained duration effect, this modifier makes it continuous.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Increased Mass',
+    {
+      name: 'Increased Mass',
+      type: 'extra',
+      description: [
+        'This modifier may apply to an effect that allows you to carry or affect a set amount of mass, typically a movement effect like @{Effect|Movement|Dimensional Travel} or @{Effect|Teleport}. Each rank of this extra increases the mass rank you can carry or move with the effect by 1. So Increased Mass 3 on Teleport allows you to carry up to 400 lbs. of extra mass with you when you teleport, for example.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Increased Range',
+    {
+      name: 'Increased Range',
+      type: 'extra',
+      description: [
+        'Effects have a standard range: personal, close, ranged, or perception. See <strong>Range</strong> for details. This modifier increases an effect’s range. Choose one of the following options. Increasing the range of an effect from personal to close requires either the @{Modifier|Affects Others} or @{Modifier|Attack} extras. Making a close effect into a perception ranged effect requires two applications of this extra, for +2 cost per rank.',
+        '<strong>Ranged:</strong> Applied to a close effect, this modifier makes it a ranged effect.',
+        '<strong>Perception:</strong> When applied to a ranged effect, this modifier makes it perception range.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Incurable',
+    {
+      name: 'Incurable',
+      type: 'extra',
+      description: [
+        'Effects such as @{Effect|Healing} and @{Effect|Regeneration} cannot heal the damage caused by an effect with this modifier; the target must recover at the normal rate. Effects with the @{Modifier|Persistent} extra can heal Incurable damage.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: 1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Indirect',
+    {
+      name: 'Indirect',
+      type: 'extra',
+      description: [
+        'A ranged effect with this modifier can originate from a point other than the user, ignoring cover between the user and the target, such as walls and other intervening barriers, so long as they do not provide cover between the effect’s origin point and the target. An Indirect effect normally originates from a fixed point directed away from you. In some cases, an Indirect effect may count as a surprise attack.',
+        '<strong>Indirect 1:</strong> The effect originates from a fixed point away from you.',
+        '<strong>Indirect 2:</strong> The effect can come from any point away from you or a fixed point in a fixed direction (not away from you).',
+        '<strong>Indirect 3:</strong> The effect can come from any point in a fixed direction (not away from you) or a fixed point in any direction.',
+        '<strong>Indirect 4:</strong> The effect can originate from any point and aim in any direction, including towards you (hitting a target in front of you from behind, for example).',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: 4,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Innate',
+    {
+      name: 'Innate',
+      type: 'extra',
+      description: [
+        'An effect with this modifier is an innate part of your nature and unaffected by @{Effect|Nullify}. Gamemasters should exercise caution in allowing the application of Innate; the effect must be a truly inborn or essential trait, such as an elephant’s size or a ghost’s incorporeal nature. If the effect is not something normal to the character’s species or type, it probably isn’t innate.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: 1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Insidious',
+    {
+      name: 'Insidious',
+      type: 'extra',
+      description: [
+        'This modifier is similar to the @{Modifier|Subtle} modifier, except Insidious makes the result of an effect harder to detect rather than the effect itself. For example, a target suffering from Insidious @{Effect|Damage} isn’t even aware he’s been damaged. Someone affected by an Insidious @{Effect|Weaken} feels fine until some deficiency makes it obvious that he’s weaker, and so forth. A target of an Insidious effect may remain unaware of the danger until it’s too late!',
+        'An Insidious effect is detectable either by a DC 20 skill check (usually @{Skill|Perception}, although skills like @{Skill|Expertise}, @{Skill|Insight}, or @{Skill|Treatment} may apply in other cases) or a particular unusual sense, such as an Insidious magical effect noticeable by @{Effect|Senses|Detect Magic} or Magical Awareness.',
+        'Note that Insidious does not make the effect itself harder to notice; apply the Subtle modifier for that. So it is possible for an active Insidious effect to be noticeable: the target can perceive the use of the effect, but not its results: the effect appears “harmless” or doesn’t seem to “do anything” since the target cannot detect the results.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: 1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Linked',
+    {
+      name: 'Linked',
+      type: 'extra',
+      description: [
+        'This modifier applies to two or more effects, linking them together so they only work in conjunction as one.',
+        'The Linked effects must operate at the same range. The action required to use the combined effects is the longest of its components and they use a single attack check (if one is required) and resistance check (if both effects use the same type of check). If the effects have different resistances, targets check against each effect separately. Different @{Effect|Alternate Effect|Alternate Effects} cannot be Linked since they can’t be used at the same time by definition. Generally, the same effect cannot be Linked to itself to “multiply” the results of a failed resistance check (such as two Linked @{Effect|Damage} effects causing “double damage” on a failed check).',
+        'This modifier does not change the cost of the component effects; simply add their costs together to get the combined effect’s cost.',
+      ],
+      cost: {
+        costs: [0],
+        maxRanks: 0,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Multiattack',
+    {
+      name: 'Multiattack',
+      type: 'extra',
+      description: [
+        'A Multiattack effect allows you to hit multiple targets, or a single target multiple times, in the same standard action. Multiattack can apply to any effect requiring an attack check. There are three ways in which a Multiattack effect can be used:',
+        {
+          type: 'section',
+          title: 'Single Target',
+          description: [
+            'To use a Multiattack against a single target, make your attack check normally. If successful, increase the attack’s resistance check DC by +2 for two degrees of success, and +5 for three or more. This circumstance bonus does not count against power level limits.',
+            'If an @{Modifier|Impervious} Resistance would ignore the attack before any increase in the DC, then the attack still has no effect as usual; a volley of multiple shots is no more likely to penetrate Impervious Resistance than just one.',
+          ],
+        },
+        {
+          type: 'section',
+          title: 'Multiple Targets',
+          description: [
+            'You can use Multiattack to hit multiple targets at once by “walking” or “spraying” the Multiattack across an arc. Roll one attack check per target in the arc. You suffer a penalty to each check equal to the total number of targets. So making a Multiattack against five targets is a –5 penalty to each attack check. If you miss one target, you may still attempt to hit the others.',
+          ],
+        },
+        {
+          type: 'section',
+          title: 'Covering Attack',
+          description: [
+            'A Multiattack can provide cover for an ally. Take a standard action and choose an ally in your line of sight, who receives the benefits of cover against enemies in your line of sight and in range of your Multiattack. (You have to be able to shoot at them to get them to keep their heads down or this maneuver won’t work.) You cannot lay down a covering attack for an ally in close combat. An opponent can choose to ignore the cover provided by your covering attack at the cost of being automatically attacked by it; make a normal attack check to hit that opponent.',
+          ],
+        },
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
 ]);
