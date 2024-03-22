@@ -3,11 +3,13 @@ import React, { FC, Fragment } from 'react';
 import Link from 'next/link';
 
 import { Tooltip } from '@/shared/presentation/components/atoms';
+import { PopovableEntity } from '@/shared/presentation/models';
 
 import { Container } from './styles';
 
-const ENTITY_TO_PAGE: Record<string, string> = {
+const ENTITY_TO_PAGE: Record<PopovableEntity, string> = {
   Condition: 'conditions',
+  Modifier: 'modifiers',
 };
 
 interface IEntityLinkProps {
@@ -24,7 +26,7 @@ const EntityLink: React.FC<IEntityLinkProps> = ({
 }) => {
   if (!(type in ENTITY_TO_PAGE)) return <Fragment>{children}</Fragment>;
 
-  const path = `${ENTITY_TO_PAGE[type]}/#${entityKey}`;
+  const path = `${ENTITY_TO_PAGE[type as PopovableEntity]}/#${entityKey}`;
   const title = `${type}: ${entityKey}`;
 
   if (TooltipComponent)

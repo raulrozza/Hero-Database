@@ -1,13 +1,19 @@
 import React, { FC, Fragment, ReactNode } from 'react';
 
 import { ConditionPopoverContainer } from '@/modules/conditions/presentation/components/organisms';
+import { ModifierPopoverContainer } from '@/modules/powers/presentation/components/organisms';
 import { EntityLink } from '@/shared/presentation/components/molecules';
+import { PopovableEntity } from '@/shared/presentation/models';
 
 import { htmlElementStrategy } from './strategies/htmlElements';
 import { referenceStrategy } from './strategies/references';
 
-const ENTITY_TOOLTIP_COMPONENTS: Record<string, FC<{ entityKey: string }>> = {
+const ENTITY_TOOLTIP_COMPONENTS: Record<
+  PopovableEntity,
+  FC<{ entityKey: string }>
+> = {
   Condition: ConditionPopoverContainer,
+  Modifier: ModifierPopoverContainer,
 };
 
 export type RenderItemContentConfig = {
@@ -58,8 +64,12 @@ function parseReference(
   const children = text || key;
 
   const tooltipComponent = config.showTooltip
-    ? ENTITY_TOOLTIP_COMPONENTS[type]
+    ? ENTITY_TOOLTIP_COMPONENTS[type as PopovableEntity]
     : undefined;
+
+  console.log(cleanReference);
+  console.log(type, key, text, children);
+  console.log(tooltipComponent);
 
   return React.createElement(
     EntityLink,
