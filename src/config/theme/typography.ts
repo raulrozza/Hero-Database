@@ -22,8 +22,8 @@ const typography = {
     text: 'Biryani, sans-serif',
   },
   weight: {
-    extraBold: '700',
-    bold: '600',
+    extraBold: '800',
+    bold: '700',
     regular: '400',
     light: '300',
   },
