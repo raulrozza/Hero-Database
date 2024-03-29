@@ -21,12 +21,7 @@ const ConditionPopoverContainer: React.FC<IConditionPopoverContainerProps> = ({
       </Container>
     );
 
-  if (!query.data)
-    return (
-      <Container>
-        <span>Not found</span>
-      </Container>
-    );
+  if (!query.data) return null;
 
   return (
     <Container>
