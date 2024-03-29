@@ -814,4 +814,69 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Fades',
+    {
+      name: 'Fades',
+      type: 'flaw',
+      description: [
+        'Each time you use an effect with this flaw, it loses 1 rank of effectiveness. For effects with a duration longer than instant, each round is considered “one use.” Once the effect reaches 0 ranks, it stops working. A faded effect can be “recovered” in some fashion, such as recharging, rest, repair, reloading, and so forth. The GM decides when and how a faded effect recovers, but it should generally occur outside of combat and take at least an hour’s time. The GM may allow a hero to recover a faded effect immediately and completely by spending a victory point.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Feedback',
+    {
+      name: 'Feedback',
+      type: 'flaw',
+      description: [
+        'You suffer damage when a manifestation of your effect is damaged. This flaw only applies to effects with physical (or apparently physical) manifestations, such as @{Effect|Create}, @{Effect|Illusion}, or @{Effect|Summon}, for example. If your power’s manifestation is damaged, make a resistance check against the attack’s damage rank, using your effect’s rank as the resistance check bonus. For example, if a manifestation of a rank 10 effect is attacked for damage 12, you must make a resistance check against damage 12 with a +10 bonus (the effect’s rank) in place of your normal @{Resistance|Toughness}.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Grab-Based',
+    {
+      name: 'Grab-Based',
+      type: 'flaw',
+      description: [
+        'An attack effect with this flaw requires you to successfully @{Action|Grab|grab} a target before using the effect. This generally applies to an effect that is close range, since you have to be in close combat to grab anyway. If the effect’s default range is not close, apply the @{Modifier|Reduced Range|Close} modifier as well. If you do not succeed on the grab, you cannot use the effect. If your grab attempt succeeds, the effect occurs automatically as a reaction.',
+        'This flaw is essentially a form of @{Modifier|Resistible}, with a grab check rather than a regular resistance check.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Innacurate',
+    {
+      name: 'Innacurate',
+      type: 'flaw',
+      description: [
+        'An effect with this flaw is hard to control or wildly inaccurate. Each rank gives you a –2 penalty to attack checks with the effect.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
 ]);
