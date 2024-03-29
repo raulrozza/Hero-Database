@@ -490,4 +490,87 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Precise',
+    {
+      name: 'Precise',
+      type: 'extra',
+      description: [
+        'You can use a Precise effect to perform tasks requiring delicacy and fine control, such as using Precise @{Effect|Damage} to spot-weld or carve your initials, Precise @{Effect|Move Object} to type or pick a lock, Precise @{Effect|Environment} to match a particular temperature exactly, and so forth. The GM has final say as to what tasks can be performed with a Precise effect and may require an ability, skill, or power check to determine the degree of precision with any given task.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: 1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Reach',
+    {
+      name: 'Reach',
+      type: 'extra',
+      description: [
+        'Each time you apply this modifier to a close range effect, you extend its reach by 5 feet. This may represent a short-ranged effect or one with a somewhat greater reach, like a whip, spear, or similar weapon.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Reaction',
+    {
+      name: 'Reaction',
+      type: 'extra',
+      description: [
+        'Each effect has a default action required to use it: standard, free, or none (for permanent effects). See Action for details. This modifier changes an effect’s required action from a standard or free to a reaction, occurring automatically when a specific triggering event occurs. This is similar to the @{Modifier|Triggered} modifier but reaction effects do not need to be “set,” originate from their user, and can function repeatedly, so long as their triggering requirement is met.',
+        'Specify a triggering circumstance that activates the effect, such as someone touching or attacking the user, activating a particular effect or power in the user’s presence, and so forth. The GM is the final arbiter as to whether or not a triggering circumstance is suitable for a particular effect in the context of the series. Caution should be used to keep this option from being abused.',
+        'When the triggering circumstance occurs, the effect activates automatically, even if it is not the character’s turn. The user can only prevent the reaction effect from occurring by choosing to deactivate the effect entirely (as a free action), in which case no circumstance will trigger it. For the ability to choose to have some triggering circumstances activate the effect and some not, apply the Selective modifier as well.',
+        'The Reaction modifier applies +1 cost per rank to effects with a default action of free, +3 cost per rank to effects with a default standard action.',
+      ],
+      cost: {
+        costs: [1, 3],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Reversible',
+    {
+      name: 'Reversible',
+      type: 'extra',
+      description: [
+        'You can remove conditions caused by a Reversible effect at will as a free action, so long as the subject is within the effect’s range. Examples include removing the damage conditions caused by a @{Effect|Damage} effect, repairing damage done by @{Effect|Weaken} @{Resistance|Toughness}, or removing an @{Effect|Affliction} instantly. Normally, you have no control over the results of such effects.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: 1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Ricochet',
+    {
+      name: 'Ricochet',
+      type: 'extra',
+      description: [
+        'You can ricochet or bounce an attack effect with this modifier off of a solid surface to change its direction. This allows you to attack around corners, overcome cover and possibly make a surprise attack against an opponent. It does not allow you to affect multiple targets. The “bounce” has no effect apart from changing the attack’s direction. You must be able to define a clear path for your attack, which must follow a straight line between each ricochet. Each rank in Ricochet allows you to bounce the attack once before it hits. Ricochet may grant a bonus to hit due to surprise, at the GM’s discretion.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
 ]);
