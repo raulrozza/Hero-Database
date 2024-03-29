@@ -14,7 +14,7 @@ const Tooltip: React.FC<ITooltipProps> = ({ children, content }) => {
       <RadixTooltip.Root>
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
         <RadixTooltip.Portal>
-          <Content>
+          <Content side="left">
             <RadixTooltip.Arrow className="arrow" />
 
             {content}

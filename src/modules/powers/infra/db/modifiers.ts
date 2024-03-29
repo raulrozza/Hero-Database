@@ -430,7 +430,7 @@ export const modifiers = new Map<string, MetaModifier>([
       ],
       cost: {
         costs: [0],
-        maxRanks: 0,
+        maxRanks: 1,
         type: 'flat',
       },
       source: 'HH',
@@ -470,6 +470,22 @@ export const modifiers = new Map<string, MetaModifier>([
         costs: [1],
         maxRanks: -1,
         type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Penetrating',
+    {
+      name: 'Penetrating',
+      type: 'extra',
+      description: [
+        'Your effect overcomes @{Modifier|Impervious|Impervious Resistance} to a degree; the target must make a resistance check against an effect rank equal to your Penetrating rank. So, if a rank 4 (Penetrating 2) effect hits a target with Impervious 9, the target must resist a rank 2 effect (equal to the Penetrating rank). If the effect were rank 6, the target would have to resist the full effect anyway, since its rank is greater than half the Impervious rank. You cannot have a Penetrating rank greater than your effect rank.',
+      ],
+      cost: {
+        costs: [1],
+        maxRanks: -1,
+        type: 'flat',
       },
       source: 'HH',
     },

@@ -26,7 +26,7 @@ function getFlatText(cost: RankCost, config: Config) {
     return `${costNumbers} to ${cost.maxRanks}`;
   }
 
-  if (cost.costs.length === 1 && cost.costs[0] === cost.maxRanks) {
+  if (cost.maxRanks === 1) {
     const costNumbers = costsToText(cost.costs, { showPositiveSign: false });
 
     return `${costNumbers} point`;
