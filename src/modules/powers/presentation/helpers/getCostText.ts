@@ -23,7 +23,9 @@ function getFlatText(cost: RankCost, config: Config) {
   if (cost.maxRanks > 1) {
     const costNumbers = costsToText(cost.costs, { showPositiveSign: false });
 
-    return `${costNumbers} to ${cost.maxRanks}`;
+    const maxRanksMultiplier = cost.costs[0] >= 0 ? 1 : -1;
+
+    return `${costNumbers} to ${maxRanksMultiplier * cost.maxRanks}`;
   }
 
   if (cost.maxRanks === 1) {

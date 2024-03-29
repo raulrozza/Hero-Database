@@ -707,4 +707,23 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Activation',
+    {
+      name: 'Activation',
+      type: 'flaw',
+      description: [
+        'A power with this flaw requires an action to prepare or activate before any of its effects are usable. If the power requires a move action to activate, the flaw is –1 point. If it requires a standard action, it is –2 points. Activation taking less than a move action is not a flaw, although may qualify as a complication (see the Power Loss complication for details).',
+        'Activation has no effect other than making all of the power’s effects available for use. The effects themselves still require their normal actions to use. You can use a power’s effects in the same turn as you activate it, provided you have sufficient actions to do so. If the power is deactivated—either voluntarily or involuntarily via effects like @{Effect|Nullify} — you must activate it again in order to use any of its effects.',
+        'Activation applies to an entire power and all of its effects. Activating the power brings all of its effects “online” and makes them available. If you have to activate different effects separately, apply this flaw to each of them, requiring separate actions for each.',
+        'If Activation is not automatic, apply the @{Modifier|Check Required} flaw to the entire power as well and have the player make the necessary check in order to activate the power. If the check fails, the power does not activate, and the character has to take the activation action to try again.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: 2,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
 ]);
