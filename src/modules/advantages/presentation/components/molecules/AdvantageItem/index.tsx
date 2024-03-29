@@ -11,12 +11,10 @@ import { getSubtitle } from './helpers';
 import { Container } from './styles';
 
 type TAdvantageItemProps = IAdvantage & {
-  showComponents?: boolean;
   showTooltip?: boolean;
 };
 
 const AdvantageItem: React.FC<TAdvantageItemProps> = ({
-  showComponents = true,
   showTooltip = true,
   ...advantage
 }) => {

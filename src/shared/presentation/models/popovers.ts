@@ -1,1 +1,1 @@
-export type PopovableEntity = 'Condition' | 'Modifier';
+export type PopovableEntity = 'Advantage' | 'Condition' | 'Modifier';

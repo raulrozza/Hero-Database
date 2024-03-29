@@ -1,5 +1,6 @@
 import React, { FC, Fragment, ReactNode } from 'react';
 
+import { AdvantagePopoverContainer } from '@/modules/advantages/presentation/components/organisms';
 import { ConditionPopoverContainer } from '@/modules/conditions/presentation/components/organisms';
 import { ModifierPopoverContainer } from '@/modules/powers/presentation/components/organisms';
 import { EntityLink } from '@/shared/presentation/components/molecules';
@@ -12,6 +13,7 @@ const ENTITY_TOOLTIP_COMPONENTS: Record<
   PopovableEntity,
   FC<{ entityKey: string }>
 > = {
+  Advantage: AdvantagePopoverContainer,
   Condition: ConditionPopoverContainer,
   Modifier: ModifierPopoverContainer,
 };

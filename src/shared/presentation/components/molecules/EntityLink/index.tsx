@@ -8,6 +8,7 @@ import { PopovableEntity } from '@/shared/presentation/models';
 import { Container } from './styles';
 
 const ENTITY_TO_PAGE: Record<PopovableEntity, string> = {
+  Advantage: 'advantages',
   Condition: 'conditions',
   Modifier: 'modifiers',
 };
