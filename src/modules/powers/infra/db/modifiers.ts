@@ -864,9 +864,9 @@ export const modifiers = new Map<string, MetaModifier>([
     },
   ],
   [
-    'Innacurate',
+    'Inacurate',
     {
-      name: 'Innacurate',
+      name: 'Inacurate',
       type: 'flaw',
       description: [
         'An effect with this flaw is hard to control or wildly inaccurate. Each rank gives you a –2 penalty to attack checks with the effect.',
@@ -875,6 +875,22 @@ export const modifiers = new Map<string, MetaModifier>([
         costs: [-1],
         maxRanks: -1,
         type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Increased Action',
+    {
+      name: 'Increased Action',
+      type: 'flaw',
+      description: [
+        'Using an effect requires one of the following types of actions: standard, move, free, or reaction. Each increase in the required action from that effect’s base action type (free to move, for example) is a –1 cost per rank modifier.',
+      ],
+      cost: {
+        costs: [-1, -2, -3],
+        maxRanks: -1,
+        type: 'standard',
       },
       source: 'HH',
     },

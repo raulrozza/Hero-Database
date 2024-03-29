@@ -31,7 +31,9 @@ function getFlatText(cost: RankCost, config: Config) {
   if (cost.maxRanks === 1) {
     const costNumbers = costsToText(cost.costs, { showPositiveSign: false });
 
-    return `${costNumbers} point`;
+    const pointsText = getPointsText(cost.costs);
+
+    return `${costNumbers} ${pointsText}`;
   }
 
   const costNumbers = costsToText(cost.costs, config);
@@ -40,11 +42,27 @@ function getFlatText(cost: RankCost, config: Config) {
 }
 
 function costsToText(costs: number[], config: Config) {
-  return costs
+  const hasMoreThanTwoCosts = costs.length > 2;
+
+  const printableCosts = hasMoreThanTwoCosts
+    ? [costs[0], costs[costs.length - 1]]
+    : costs;
+
+  return printableCosts
     .map(cost => {
       if (cost >= 0 && config.showPositiveSign) return `+${cost}`;
 
       return String(cost);
     })
-    .join('/');
+    .join(hasMoreThanTwoCosts ? ' to ' : '/');
+}
+
+function getPointsText(costs: number[]) {
+  if (costs.length > 1) return 'points';
+
+  const cost = costs[0];
+
+  if (cost > 1 || cost === 0) return 'points';
+
+  return 'point';
 }
