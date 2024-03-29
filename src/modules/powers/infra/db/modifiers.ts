@@ -895,4 +895,78 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Limited',
+    {
+      name: 'Limited',
+      type: 'flaw',
+      description: [
+        'An effect with this flaw is not effective all the time. Limited powers generally break down into two types: those usable only in certain situations and those usable only on certain things. For example Only While Singing Loudly, Only While Flying, Only on Men (or Women), Only Against Fire, Not Usable on Yellow Things, and so forth. As a general rule, the effect must lose about half its usefulness to qualify for this modifier. Anything less limiting is better handled as an occasional complication.',
+        {
+          type: 'section',
+          title: 'Partially Limited',
+          description: [
+            'If your effect is only somewhat effective in particular circumstances, apply the flaw to only some of its ranks. For example, an attack effect that does less damage against targets with @{Effect|Protection} (to represent a diminished ability to penetrate armor, for example) applies the Limited flaw to only those ranks that are ineffective.',
+          ],
+        },
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Noticeable',
+    {
+      name: 'Noticeable',
+      type: 'flaw',
+      description: [
+        'A continuous or permanent effect with this modifier is noticeable in some sort of way (see Noticing Power Effects). Choose a noticeable display for the effect. For example Noticeable @{Effect|Protection} may take the form of armored plates or a tough, leathery-looking hide, making it clear the character is tougher than normal.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: 1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Permanent',
+    {
+      name: 'Permanent',
+      type: 'flaw',
+      description: [
+        'A continuous effect with this flaw becomes permanent in duration. It cannot be turned off, it is always on by default. If some outside force — usually a @{Effect|Nullify} effect — does turn it off, it turns back on automatically at the earliest opportunity. Additionally, you cannot improve a permanent effect using extra effort.',
+        'Permanent effects may be inconvenient at times (including things like being permanently incorporeal or 30 feet tall); this is included in the value of the flaw.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Quirk',
+    {
+      name: 'Quirk',
+      type: 'flaw',
+      description: [
+        'A Quirk is some minor nuisance attached to an effect, essentially the reverse of a @{Modifier|Feature}. A Quirk is generally worth, at most, 2–3 character points, and many are simply 1-point flaws.',
+        'As with Features, the GM should ensure a Quirk is truly a flaw (albeit a minor one) and not simply part of the power’s descriptors. For example, the fact that an attack with a “sonic” descriptor likely will not travel through a vacuum is not a Quirk, simply part of the “sonic” descriptor (especially since the attack may be enhanced by a medium such as water). On the other hand, a shapeshifter unable to change color (losing some of the power’s utility), or a telepath unable to lie while using @{Effect|Communication|Mental Communication}, do have Quirks to their powers.',
+        'The GM sets the rank (and therefore value) of any given Quirk for an effect, based on how troublesome it may be, similar to setting ranks for the @{Advantage|Benefit} advantage and Feature effect (see those trait descriptions for details).',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
 ]);
