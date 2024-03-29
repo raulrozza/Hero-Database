@@ -717,11 +717,99 @@ export const modifiers = new Map<string, MetaModifier>([
         'Activation has no effect other than making all of the power’s effects available for use. The effects themselves still require their normal actions to use. You can use a power’s effects in the same turn as you activate it, provided you have sufficient actions to do so. If the power is deactivated—either voluntarily or involuntarily via effects like @{Effect|Nullify} — you must activate it again in order to use any of its effects.',
         'Activation applies to an entire power and all of its effects. Activating the power brings all of its effects “online” and makes them available. If you have to activate different effects separately, apply this flaw to each of them, requiring separate actions for each.',
         'If Activation is not automatic, apply the @{Modifier|Check Required} flaw to the entire power as well and have the player make the necessary check in order to activate the power. If the check fails, the power does not activate, and the character has to take the activation action to try again.',
+        {
+          type: 'section',
+          title: 'Activation and Permanent Effects',
+          description: [
+            'The Activation flaw does allow permanent effects that are part of a power to be turned off, but only if the power as a whole is deactivated. It does not affect the other aspects of permanent duration, including the inability to improve the effect with extra effort. The GM should decide if allowing a permanent effect to have an Activation is appropriate based on the specific effect and any others it is combined with in the power.',
+          ],
+        },
       ],
       cost: {
         costs: [-1],
         maxRanks: 2,
         type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Check Required',
+    {
+      name: 'Check Required',
+      type: 'flaw',
+      description: [
+        'An effect with this flaw requires a check of some sort — usually a skill check — with a difficulty class of 10 + ranks in Check Required. If the check fails, the effect doesn’t work, although the action required to use it is expended (so attempting to activate a standard action effect takes a standard action whether the check is successful or not).',
+        'If the check succeeds, the character gains the use of 1 effect rank per point the check exceeds the DC. Thus a check result of 14 allows the character to use up to 4 ranks of the effect. If a lesser rank of the effect doesn’t do anything, then it’s the same as failing the check.',
+        'The required check occurs as part of the action to use the effect and provides no benefit other than helping to activate it. Normal modifiers apply to the check, and if you are unable to make the required check for any reason, the effect doesn’t work.',
+        'A natural 1 rolled on the check means it fails automatically, regardless of the check result. So there is always a small chance the effect won’t work, regardless of the character’s check bonus.',
+        'This check must be in addition to any check(s) normally required for the effect. So, for example, the normal @{Skill|Perception|perception} check made in conjunction with a sensory effect does not count as an application of this flaw, and applying it means an additional check is required before the effect’s normally required check(s).',
+        {
+          type: 'section',
+          title: 'Check Examples',
+          description: [
+            'Skill checks an effect may require include:',
+            '@{Skill|Acrobatics}: Suitable for effects requiring a measure of coordination or complex maneuvering.',
+            '@{Skill|Deception}: Good for effects intended to deceive, particularly sensory effects like @{Effect|Concealment} or @{Effect|Illusion}, and disguise or form-altering effects like @{Effect|Morph}.',
+            '@{Skill|Expertise}: An Expertise skill check might represent having to know something about the subject of the effect or having to know something about the effect itself.',
+            '@{Skill|Intimidation}: Useful for effects intended to inspire fear as well as similar offensive effects like @{Effect|Affliction}.',
+            '@{Skill|Stealth}: Best suited to sensory effects, particularly @{Effect|Concealment}.',
+            '@{Skill|Technology}: Operating a complex device may require a Technology check.',
+          ],
+        },
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Concentration',
+    {
+      name: 'Concentration',
+      type: 'flaw',
+      description: [
+        'Applied to a sustained duration effect, this modifier makes it concentration duration, requiring a standard action, rather than a free action, each turn to maintain.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Diminished Range',
+    {
+      name: 'Diminished Range',
+      type: 'flaw',
+      description: [
+        'Each rank of Diminished Range reduces the effect’s short, medium, and long ranges. One rank in this flaw gives the effect a short range of 10 feet x power rank, medium range of 25 feet x power rank, and long range of 50 feet x power rank. A second rank reduces the multipliers to 5 feet, 10 feet, and 25 feet, and a third rank reduces them to 2 feet, 5 feet, and 10 feet. Three ranks is the maximum a character can have in this flaw.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: 3,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Distracting',
+    {
+      name: 'Distracting',
+      type: 'flaw',
+      description: [
+        'Using a Distracting effect requires more concentration than usual, causing you become @{Condition|Vulnerable|vulnerable} when you use the effect, until the start of your next turn.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
       },
       source: 'HH',
     },
