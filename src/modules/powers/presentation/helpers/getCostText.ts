@@ -36,6 +36,12 @@ function getFlatText(cost: RankCost, config: Config) {
     return `${costNumbers} ${pointsText}`;
   }
 
+  if (!!cost.ranksRatio && cost.ranksRatio !== 1) {
+    const costNumbers = costsToText(cost.costs, config);
+
+    return `${costNumbers} per ${cost.ranksRatio} points`;
+  }
+
   const costNumbers = costsToText(cost.costs, config);
 
   return `${costNumbers} per rank`;

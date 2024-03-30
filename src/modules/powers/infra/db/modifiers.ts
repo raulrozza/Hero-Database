@@ -969,4 +969,55 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Reduced Range',
+    {
+      name: 'Reduced Range',
+      type: 'flaw',
+      description: [
+        'An effect has a range of close, ranged, or perception. Decreasing an effect’s range by one step (from ranged to close, for example) is worth 1 point per rank. Some effects have their range determined by rank. To change the effect’s range, increase or decrease its rank; this flaw does not apply. Effects that are close range by default cannot further decrease their range.',
+      ],
+      cost: {
+        costs: [-1, -2],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Removable',
+    {
+      name: 'Removable',
+      type: 'flaw',
+      description: [
+        'Effects with this flaw can be “taken away” from you, removing your access to the effects until you regain it. Typically, this means a power that resides in an object, called a <strong>device</strong>, which someone else can remove. There are two different versions of this flaw covered in the following paragraphs; the first is <strong>Removable</strong> and the second is <strong>Easily Removable</strong>.',
+        'A removable power may only be removed when you are both @{Condition|Stunned|stunned} and @{Condition|Defenseless|defenseless}, essentially unable to resist, and cannot be removed during action time. This means opponents can generally only remove the power after defeating you (leaving you @{Condition|Incapacitated|incapacitated}) or through some sort of scheme outside of a conflict, such as a plot to break into your headquarters and steal a device kept there, for example.',
+        'An easily removable power can be taken away with a @{Action|Disarm|disarm} or @{Action|Grab|grab} action. This typically represents a hand-held device (such as a weapon, magic wand, remote control, or the like) or some worn item easily snatched from you, like a hat or cloak.',
+        'Removable applies to the power as a whole and not individual effects, although it may apply to a power with only one effect. The flaw is worth –1 point (–2 points for Easily Removable) per 5 total character points of the power’s final cost, after applying extras and flaws to its effects.',
+        {
+          type: 'section',
+          title: 'Removable and Damage',
+          description: [
+            'Removable devices can be @{Effect|Damage|damaged}, possibly even destroyed. So long as the character has character points invested in the device, it can be repaired, eventually. This usually requires time between adventures, perhaps even a special adventure to find certain rare parts, specialized help, or other components.',
+            'For a flat 1-point reduction in the value of the Removable flaw, you can define a device as <strong>Indestructible</strong>. It can still be taken away, but cannot be damaged or destroyed, except as a GM-imposed complication (earning the player a victory point as usual). This reduction can lower the value of the flaw to 0, in which case the character gets no character point discount for the device.',
+          ],
+        },
+        {
+          type: 'section',
+          title: 'Removable and Complications',
+          description: [
+            'The temporary loss of a removable power does not constitute a complication, any more than the result of any other flaw. You can have a device or power-object as a descriptor without this flaw, if you wish, in which case the power cannot be removed or taken away from you without a complication applied by the GM (earning you a victory point) or the use of an effect like @{Effect|Nullify}, which has predefined conditions for recovery.',
+          ],
+        },
+      ],
+      cost: {
+        costs: [-1, -2],
+        maxRanks: -1,
+        ranksRatio: 5,
+        type: 'flat',
+      },
+      source: 'HH',
+    },
+  ],
 ]);

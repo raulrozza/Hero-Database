@@ -4,4 +4,5 @@ export interface RankCost {
   type: CostType;
   costs: number[];
   maxRanks: number;
+  ranksRatio?: number;
 }
