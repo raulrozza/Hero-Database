@@ -1,3 +1,4 @@
+import { Content } from '@radix-ui/react-navigation-menu';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.nav`
@@ -24,5 +25,11 @@ export const Container = styled.nav`
     .links {
       display: flex;
     }
+  `}
+`;
+
+export const Menu = styled(Content)`
+  ${({ theme }) => css`
+    position: absolute;
   `}
 `;
