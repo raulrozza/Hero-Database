@@ -14,9 +14,9 @@ export const htmlElementStrategy: ExtractStrategy = {
     const { afterElementText, beforeElementText, element, elementText } = tag;
 
     return [
-      ...textIntoTextElement(beforeElementText, next),
+      ...htmlElementStrategy.extract(beforeElementText, next),
       { type: 'html', element, children: [elementText] },
-      ...textIntoTextElement(afterElementText, next),
+      ...htmlElementStrategy.extract(afterElementText, next),
     ];
   },
 };
