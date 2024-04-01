@@ -7,20 +7,26 @@ import { NavLink } from '@/shared/presentation/components/atoms';
 
 import { Container } from './styles';
 
-const LINKS: ComponentPropsWithoutRef<typeof NavLink>[] = [
+type MenuItem = ComponentPropsWithoutRef<typeof NavLink> & { type: 'link' };
+
+const LINKS: MenuItem[] = [
   {
+    type: 'link',
     href: '/conditions',
     children: 'Conditions',
   },
   {
+    type: 'link',
     href: '/advantages',
     children: 'Advantages',
   },
   {
+    type: 'link',
     href: '/powers',
     children: 'Powers',
   },
   {
+    type: 'link',
     href: '/modifiers',
     children: 'modifiers',
   },
