@@ -7,15 +7,19 @@ export const Container = styled.div`
   `}
 `;
 
-export const Subtitle = styled.div`
-  ${({ theme }) => css`
+interface ISubtitleProps {
+  color: 'secondary' | 'contrast';
+}
+
+export const Subtitle = styled.div<ISubtitleProps>`
+  ${({ theme, color }) => css`
     color: ${theme.palette.text.white};
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     padding: ${theme.layout.spacing(2)};
-    background-color: ${theme.palette.secondary[500]};
+    background-color: ${theme.palette[color][500]};
     width: 100%;
   `}
 `;

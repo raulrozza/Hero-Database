@@ -26,7 +26,7 @@ const ModifierItem: React.FC<TModifierItemProps> = ({
     <Container>
       <ItemHeader title={modifier.name} subtitle={getSubtitle(modifier)} />
 
-      <Subtitle>
+      <Subtitle color={modifier.type === 'extra' ? 'secondary' : 'contrast'}>
         <h2>{capitalize(modifier.type)}</h2>
       </Subtitle>
 
