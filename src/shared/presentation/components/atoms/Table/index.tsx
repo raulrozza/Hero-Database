@@ -26,7 +26,9 @@ interface ISectionProps {
 }
 
 const Section: React.FC<ISectionProps> = ({ title }) => (
-  <S.SectionContent>{title}</S.SectionContent>
+  <S.SectionContent>
+    <th>{title}</th>
+  </S.SectionContent>
 );
 
 interface ITableProps {

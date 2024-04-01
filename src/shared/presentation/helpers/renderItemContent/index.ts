@@ -69,10 +69,6 @@ function parseReference(
     ? ENTITY_TOOLTIP_COMPONENTS[type as PopovableEntity]
     : undefined;
 
-  console.log(cleanReference);
-  console.log(type, key, text, children);
-  console.log(tooltipComponent);
-
   return React.createElement(
     EntityLink,
     {
