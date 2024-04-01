@@ -29,7 +29,5 @@ export const Container = styled.nav`
 `;
 
 export const Menu = styled(Content)`
-  ${({ theme }) => css`
-    position: absolute;
-  `}
+  position: absolute;
 `;

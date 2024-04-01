@@ -92,5 +92,9 @@ ${({ theme }) => css`
     font-weight: ${theme.typography.weight.extraBold};
     letter-spacing: ${theme.typography.letterSpacing.subtitle};
   }
+
+  ul {
+    list-style: none;
+  }
 `}
 `;
