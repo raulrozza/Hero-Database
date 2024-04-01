@@ -80,6 +80,11 @@ export const TableContent = styled.td`
     padding: ${theme.layout.spacing(0.5, 1)};
     text-align: center;
 
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+
     &:nth-child(1) {
       font-weight: ${theme.typography.weight.bold};
       text-align: left;
