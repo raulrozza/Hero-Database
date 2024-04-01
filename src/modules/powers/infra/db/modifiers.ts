@@ -1020,4 +1020,111 @@ export const modifiers = new Map<string, MetaModifier>([
       source: 'HH',
     },
   ],
+  [
+    'Resistible',
+    {
+      name: 'Resistible',
+      type: 'flaw',
+      description: [
+        'When applied to an effect that doesn’t normally allow a resistance check, this flaw gives it one. Choose the defense when the flaw is applied. Since effects that work on others allow a resistance check by definition, this nearly always applies to personal effects that allow someone interacting with them to circumvent the effect with a successful check.',
+        'For example, an Enhanced @{Defense|Parry} defense effect might reflect a low-level reading of a target’s mind to anticipate and avoid attacks. It allows a @{Defense|Will} resistance check to overcome the effect, denying you the defense bonus against that opponent (and applying this flaw to the effect). Likewise, your @{Effect|Concealment} effect might be illusory rather than a true physical transformation, permitting a Will resistance check for someone to overcome it. A sustained @{Effect|Protection} effect might be some sort of “kinetic field” that permits an attacker a @{Defense|Fortitude} resistance check to overcome it.',
+        'When applied to an effect that does normally allow a resistance check, this flaw gives it an additional one, which may be the same as its normal resistance, or different. The target makes both resistance checks and applies the better of the two to determine the effect’s result.',
+        'For example, a @{Effect|Damage} effect might involve whirling blades an attacker can avoid with a successful @{Resistance|Dodge} resistance check, circumventing the need for a @{Resistancec|Toughness} check against the damage. Similarly a @{Effect|Weaken} effect based on a poison dart might add a Toughness check to see if the dart penetrates the target’s skin in addition to making the usual Fortitude check against the effect.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Sense-Dependent',
+    {
+      name: 'Sense-Dependent',
+      type: 'flaw',
+      description: [
+        'The target of a Sense-Dependent effect must be able to perceive the effect for it to work. The target gets a @{Resistance|Dodge} resistance check. Success means the target has managed to avert his eyes, cover his ears, etc. and the effect doesn’t work. Otherwise the effect works normally and the target makes the usual resistance check against it, if any.',
+        'Opponents aware of a Sense-Dependent effect can also deliberately block the targeted sense: looking away, covering or blocking their ears, etc. This provides a +10 bonus to resistance checks against the effect, but gives others partial concealment from that sense. An opponent unable to use a sense (blind, deaf, etc.) is immune to effects dependent on it. Opponents can do this by closing their eyes, wearing ear- or nose-plugs, or using another effect like @{Effect|Concealment}. This gives you total concealment from that sense.',
+        'Sensory effects are Sense-Dependent by definition, and cannot apply this flaw. To give a target additional resistance to a sensory effect, use the @{Modifier|Resistible} flaw.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Side Effect',
+    {
+      name: 'Side Effect',
+      type: 'flaw',
+      description: [
+        'Failing to successfully use an effect with this flaw causes some problematic effect. Failure includes missing an attack check, or the target successfully resisting the effect. If the side effect always occurs when you use the effect, whether you succeed or fail, it is worth –2 cost per rank.',
+        'The exact nature of the side effect is for you and the Gamemaster to determine. As a general guideline, it should be an effect about the same in value as the effect with this flaw. So an effect with a cost of 20 points should have a 20-point side effect. Typical side effects include @{Effect|Affliction}, @{Effect|Damage}, or @{Effect|Weaken}, or the base effect itself (it essentially rebounds and affects you instead). The Side Effect does not require an attack check and only affects you, although the GM may permit some Side Effects with the @{Modifier|Area} modifier on a case-by-case basis. You get a normal resistance check against the Side Effect. If you are immune to your own powers, you aren’t immune to its side-effect.',
+        'The GM may also allow a Complication Side Effect, which essentially imposes a complication on you without awarding a victory point. See Complications for more information.',
+      ],
+      cost: {
+        costs: [-1, -2],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Tiring',
+    {
+      name: 'Tiring',
+      type: 'flaw',
+      description: [
+        'An effect with this flaw causes you to suffer a level of fatigue when you use it. You recover from this fatigue normally, and can use victory points to overcome it by spending the victory point at the start of the round following the use of a tiring effect. In essence, the power requires extra effort in order to use it (see Extra Effort). This makes Tiring a useful flaw for creating an effect you can only use with extra effort.',
+        'Tiring is often applied to just some ranks of an effect to represent a higher level of the effect, usable only through extra effort. For example, a hero might have a rank 12 @{Effect|Damage} effect, but routinely use only 8 ranks of it. The remaining 4 ranks are Tiring, so using them quickly fatigues the hero.',
+        'A Tiring effect can be combined with extra effort, but the fatigue stacks, causing a minimum of two levels of fatigue per use.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Uncontrolled',
+    {
+      name: 'Uncontrolled',
+      type: 'flaw',
+      description: [
+        'You have no control over an effect with this flaw. Instead, the Gamemaster decides when and how it works (essentially making it a plot device). This flaw is best suited for mysterious powers out of the characters’ direct control or effects the GM feels more comfortable having under direct, rather than player, control.',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
+  [
+    'Unreliable',
+    {
+      name: 'Unreliable',
+      type: 'flaw',
+      description: [
+        'An Unreliable effect doesn’t work all the time. Roll a die each round before you use or maintain the effect. On a 10 or less, it doesn’t work this round, but you’ve still used the action the effect requires. You can roll again on the following round to see if it works, although you must take the normal action needed to activate the effect again. Spending a victory point on your reliability roll allows you to succeed automatically (since the roll is then at least an 11).',
+        'Alternately, instead of having a reliability roll, you can choose to have five uses where your effect works normally, then it stops working altogether until you can “recover” it in some way (see @{Modifier|Fades} flaw for more on this). The GM may allow you to spend a victory point to automatically recover a spent Unreliable power.',
+        'Powers that are only occasionally unreliable (less than about 50% of the time) are better handled as complications (see Complications.)',
+      ],
+      cost: {
+        costs: [-1],
+        maxRanks: -1,
+        type: 'standard',
+      },
+      source: 'HH',
+    },
+  ],
 ]);
