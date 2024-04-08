@@ -2,6 +2,7 @@ import React from 'react';
 
 import { capitalize } from 'lodash';
 
+import { getCostText } from '@/modules/powers/presentation/helpers';
 import { IEffect } from '@/shared/domain/entities';
 import {
   ItemContent,
@@ -9,7 +10,7 @@ import {
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
 
-import { Container } from './styles';
+import { Container, Subtitle } from './styles';
 
 type TEffectItemProps = IEffect & {
   showTooltip?: boolean;
@@ -24,6 +25,29 @@ const EffectItem: React.FC<TEffectItemProps> = ({
   return (
     <Container>
       <ItemHeader title={effect.name} subtitle={capitalize(effect.type)} />
+
+      <Subtitle>
+        <div>
+          <p>
+            <strong>Action:</strong> {effect.action || 'None'}
+          </p>
+          <span>•</span>
+          <p>
+            <strong>Range:</strong> {effect.range}
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <strong>Duration:</strong> {effect.duration}
+          </p>
+          <span>•</span>
+          <p>
+            <strong>Cost:</strong>{' '}
+            {getCostText(effect.cost, { showPositiveSign: false })}
+          </p>
+        </div>
+      </Subtitle>
 
       <ItemContent description={effect.description} config={renderConfig} />
 

@@ -13,7 +13,8 @@ export const effects = new Map<string, MetaEffect>([
       range: 'close',
       cost: { type: 'standard', costs: [1], maxRanks: -1 },
       description: [
-        'An effect with this extra is especially accurate; you get +2 per Accurate rank to attack checks made with it. The power level limits maximum attack bonus with any given effect.',
+        'You can impose some debilitating condition or conditions on a target by making a close attack. You set the conditions your Affliction causes at each degree when you acquire it and they may not be changed. Higher degree conditions replace lower degree conditions and do not stack with them.',
+        'See the possible conditions for each degree under the <strong>Affliction Resistance Check</strong> table. The target resists with @{Defense|Fortitude} or @{Defense|Will} defense (chosen when you take the effect): ',
       ],
       source: 'HH',
     },
