@@ -22,7 +22,7 @@ export type DurationType =
 export interface IEffect {
   key: string;
   name: string;
-  description: ItemContent;
+  description: ItemContent[];
   cost: RankCost;
   type: EffectType;
   action?: ActionType;

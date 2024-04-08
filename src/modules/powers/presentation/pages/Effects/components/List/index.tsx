@@ -81,7 +81,7 @@ const List: React.FC = () => {
             },
             {
               key: 'cost',
-              content: getCostText(effect.cost),
+              content: getCostText(effect.cost, { showPositiveSign: false }),
             },
             {
               key: 'source',
