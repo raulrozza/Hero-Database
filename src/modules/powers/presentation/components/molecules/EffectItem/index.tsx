@@ -9,6 +9,7 @@ import {
   ItemFooter,
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
+import { useThemeProvider } from '@/shared/presentation/contexts';
 
 import { Container, Subtitle } from './styles';
 
@@ -20,13 +21,14 @@ const EffectItem: React.FC<TEffectItemProps> = ({
   showTooltip = true,
   ...effect
 }) => {
+  const { name } = useThemeProvider();
   const renderConfig = { showTooltip };
 
   return (
     <Container>
       <ItemHeader title={effect.name} subtitle={capitalize(effect.type)} />
 
-      <Subtitle>
+      <Subtitle themeName={name}>
         <div>
           <p>
             <strong>Action:</strong> {effect.action || 'None'}

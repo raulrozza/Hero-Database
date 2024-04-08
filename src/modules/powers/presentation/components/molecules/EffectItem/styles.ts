@@ -1,4 +1,4 @@
-import { lighten } from 'polished';
+import { darken, lighten } from 'polished';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
@@ -8,8 +8,8 @@ export const Container = styled.div`
   `}
 `;
 
-export const Subtitle = styled.div`
-  ${({ theme }) => css`
+export const Subtitle = styled.div<{ themeName: 'light' | 'dark' }>`
+  ${({ theme, themeName }) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,9 +17,9 @@ export const Subtitle = styled.div`
     padding: ${theme.layout.spacing(1)};
     gap: ${theme.layout.spacing(1)};
 
-    background-color: ${lighten(0.1, theme.palette.primary[300])};
-
-    color: ${theme.palette.text.black};
+    background-color: ${themeName === 'light'
+      ? lighten(0.15, theme.palette.primary[300])
+      : darken(0.15, theme.palette.primary[800])};
 
     > div {
       display: flex;
