@@ -31,6 +31,10 @@ const LINKS: MenuItem[] = [
     children: 'Powers',
     items: [
       {
+        href: '/effects',
+        children: 'Effects',
+      },
+      {
         href: '/modifiers',
         children: 'Modifiers',
       },
