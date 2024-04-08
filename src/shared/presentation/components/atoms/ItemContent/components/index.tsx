@@ -3,6 +3,7 @@ import React from 'react';
 import { ItemContent } from '@/shared/domain/valueObjects';
 import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
+import BoxContent from './BoxContent';
 import HeadingContent from './HeadingContent';
 import ListContent from './ListContent';
 import SectionContent from './SectionContent';
@@ -12,6 +13,7 @@ const CONTENTS = {
   section: SectionContent,
   list: ListContent,
   heading: HeadingContent,
+  box: BoxContent,
 };
 
 interface IContentFactoryProps {

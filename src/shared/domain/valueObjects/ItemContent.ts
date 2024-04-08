@@ -15,9 +15,14 @@ export type HeadingItemContent = {
   variant: 'h1' | 'h2' | 'h3' | 'h4';
   text: string;
 };
+export type BoxItemContent = {
+  type: 'box';
+  description: ItemContent[];
+};
 
 export type ItemContent =
   | TextItemContent
   | SectionItemContent
   | ListItemContent
-  | HeadingItemContent;
+  | HeadingItemContent
+  | BoxItemContent;
