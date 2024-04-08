@@ -3,6 +3,7 @@ import React from 'react';
 import { ItemContent } from '@/shared/domain/valueObjects';
 import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
+import HeadingContent from './HeadingContent';
 import ListContent from './ListContent';
 import SectionContent from './SectionContent';
 import TextContent from './TextContent';
@@ -10,6 +11,7 @@ import TextContent from './TextContent';
 const CONTENTS = {
   section: SectionContent,
   list: ListContent,
+  heading: HeadingContent,
 };
 
 interface IContentFactoryProps {

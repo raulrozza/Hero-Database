@@ -10,8 +10,14 @@ export type ListItemContent = {
   type: 'list';
   items: string[];
 };
+export type HeadingItemContent = {
+  type: 'heading';
+  variant: 'h1' | 'h2' | 'h3' | 'h4';
+  text: string;
+};
 
 export type ItemContent =
   | TextItemContent
   | SectionItemContent
-  | ListItemContent;
+  | ListItemContent
+  | HeadingItemContent;
