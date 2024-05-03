@@ -20,6 +20,7 @@ export default class EffectsRepository implements IEffectsRepository {
           key: modifier.name,
           description: variant.description || modifier.description,
           cost: variant.cost || modifier.cost,
+          name: variant.name || modifier.name,
           variants: [],
         };
 

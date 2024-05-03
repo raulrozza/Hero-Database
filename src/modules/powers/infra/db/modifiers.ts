@@ -9,8 +9,9 @@ export type MetaModifier = {
   source: Source;
   variants?: Array<{
     effect: string;
-    description: ItemContent[];
-    cost: RankCost;
+    name?: string;
+    description?: ItemContent[];
+    cost?: RankCost;
   }>;
 };
 
@@ -330,6 +331,15 @@ export const modifiers = new Map<string, MetaModifier>([
         type: 'standard',
       },
       source: 'HH',
+      variants: [
+        {
+          effect: 'Affliction',
+          name: 'Concentration',
+          description: [
+            'Once you have hit with a Concentration @{Effect|Affliction}, so long as you continue to take a standard action each turn to maintain the effect, the target must make a new resistance check against it, with no attack check required.',
+          ],
+        },
+      ],
     },
   ],
   [
