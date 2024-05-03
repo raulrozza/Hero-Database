@@ -13,5 +13,10 @@ export const Container = styled.section<{ themeName: 'light' | 'dark' }>`
       : darken(0.15, theme.palette.primary[800])};
     border-top: 2px solid ${theme.palette.primary[500]};
     border-bottom: 2px solid ${theme.palette.neutral[900]};
+
+    h2,
+    h3 {
+      border-bottom: none;
+    }
   `}
 `;
