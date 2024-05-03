@@ -4,13 +4,15 @@ import * as RadixTooltip from '@radix-ui/react-tooltip';
 
 import { Content } from './styles';
 
+const DELAY = 200;
+
 interface ITooltipProps {
   content: ReactElement;
 }
 
 const Tooltip: React.FC<ITooltipProps> = ({ children, content }) => {
   return (
-    <RadixTooltip.Provider delayDuration={200}>
+    <RadixTooltip.Provider delayDuration={DELAY}>
       <RadixTooltip.Root>
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
         <RadixTooltip.Portal>

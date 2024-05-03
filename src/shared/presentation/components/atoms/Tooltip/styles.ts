@@ -21,6 +21,7 @@ export const Content = styled(RadixContent)`
     max-height: var(--radix-tooltip-content-available-height);
 
     overflow: auto;
+    overflow-x: hidden;
 
     .arrow {
       fill: ${theme.palette.neutral[50]};
