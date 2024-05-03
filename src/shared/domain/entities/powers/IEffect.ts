@@ -1,3 +1,4 @@
+import { IModifier } from '@/shared/domain/entities/powers/IModifier';
 import { Source } from '@/shared/domain/entities/sources';
 import { ItemContent, RankCost } from '@/shared/domain/valueObjects';
 
@@ -29,4 +30,6 @@ export interface IEffect {
   range: RangeType;
   duration: DurationType;
   source: Source;
+  extras: IModifier[];
+  flaws: IModifier[];
 }

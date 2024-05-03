@@ -5,6 +5,7 @@ import { capitalize } from 'lodash';
 import { getCostText } from '@/modules/powers/presentation/helpers';
 import { IEffect } from '@/shared/domain/entities';
 import {
+  ItemCollapsible,
   ItemContent,
   ItemFooter,
   ItemHeader,
@@ -52,6 +53,18 @@ const EffectItem: React.FC<TEffectItemProps> = ({
       </Subtitle>
 
       <ItemContent description={effect.description} config={renderConfig} />
+
+      {!!effect.extras.length && (
+        <ItemCollapsible title="Extras">
+          {effect.extras.map(extra => (
+            <ItemContent
+              key={extra.key}
+              title={`${extra.name} (${getCostText(extra.cost)})`}
+              description={extra.description}
+            />
+          ))}
+        </ItemCollapsible>
+      )}
 
       <ItemFooter source={effect.source} />
     </Container>

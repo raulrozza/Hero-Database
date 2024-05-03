@@ -1,6 +1,6 @@
 import { IEffect } from '@/shared/domain/entities';
 
-export type MetaEffect = Omit<IEffect, 'key'>;
+export type MetaEffect = Omit<IEffect, 'key' | 'extras' | 'flaws'>;
 
 export const effects = new Map<string, MetaEffect>([
   [
