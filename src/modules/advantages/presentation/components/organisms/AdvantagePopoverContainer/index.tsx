@@ -2,8 +2,7 @@ import React from 'react';
 
 import { AdvantageItem } from '@/modules/advantages/presentation/components/molecules';
 import { api } from '@/shared/infra/http/api';
-
-import { Container } from './styles';
+import { PopoverContainer } from '@/shared/presentation/components/atoms';
 
 interface IAdvantagePopoverContainerProps {
   entityKey: string;
@@ -16,17 +15,17 @@ const AdvantagePopoverContainer: React.FC<IAdvantagePopoverContainerProps> = ({
 
   if (query.isLoading)
     return (
-      <Container>
+      <PopoverContainer>
         <span>Loading...</span>
-      </Container>
+      </PopoverContainer>
     );
 
   if (!query.data) return null;
 
   return (
-    <Container>
+    <PopoverContainer>
       <AdvantageItem {...query.data} showTooltip={false} />
-    </Container>
+    </PopoverContainer>
   );
 };
 

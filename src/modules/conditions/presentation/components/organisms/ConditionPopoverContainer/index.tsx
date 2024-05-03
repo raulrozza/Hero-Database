@@ -2,8 +2,7 @@ import React from 'react';
 
 import { ConditionItem } from '@/modules/conditions/presentation/components/molecules';
 import { api } from '@/shared/infra/http/api';
-
-import { Container } from './styles';
+import { PopoverContainer } from '@/shared/presentation/components/atoms';
 
 interface IConditionPopoverContainerProps {
   entityKey: string;
@@ -16,21 +15,21 @@ const ConditionPopoverContainer: React.FC<IConditionPopoverContainerProps> = ({
 
   if (query.isLoading)
     return (
-      <Container>
+      <PopoverContainer>
         <span>Loading...</span>
-      </Container>
+      </PopoverContainer>
     );
 
   if (!query.data) return null;
 
   return (
-    <Container>
+    <PopoverContainer>
       <ConditionItem
         {...query.data}
         showComponents={false}
         showTooltip={false}
       />
-    </Container>
+    </PopoverContainer>
   );
 };
 

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+const PopoverContainer = styled.div`
   ${({ theme }) => css`
     width: 100%;
     max-width: ${theme.layout.spacing(50)};
@@ -12,3 +12,5 @@ export const Container = styled.div`
     }
   `}
 `;
+
+export default PopoverContainer;

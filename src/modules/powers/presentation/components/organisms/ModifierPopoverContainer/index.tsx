@@ -2,8 +2,7 @@ import React from 'react';
 
 import { ModifierItem } from '@/modules/powers/presentation/components/molecules';
 import { api } from '@/shared/infra/http/api';
-
-import { Container } from './styles';
+import { PopoverContainer } from '@/shared/presentation/components/atoms';
 
 interface IModifierPopoverContainerProps {
   entityKey: string;
@@ -16,17 +15,17 @@ const ModifierPopoverContainer: React.FC<IModifierPopoverContainerProps> = ({
 
   if (query.isLoading)
     return (
-      <Container>
+      <PopoverContainer>
         <span>Loading...</span>
-      </Container>
+      </PopoverContainer>
     );
 
   if (!query.data) return null;
 
   return (
-    <Container>
+    <PopoverContainer>
       <ModifierItem {...query.data} showTooltip={false} />
-    </Container>
+    </PopoverContainer>
   );
 };
 
