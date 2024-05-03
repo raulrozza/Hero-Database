@@ -2,15 +2,17 @@ import React from 'react';
 
 import { capitalize } from 'lodash';
 
+import { getCostText } from '@/modules/powers/presentation/helpers';
 import { IModifier } from '@/shared/domain/entities';
 import {
+  ItemCollapsible,
   ItemContent,
   ItemFooter,
   ItemHeader,
 } from '@/shared/presentation/components/atoms';
 
 import { getSubtitle } from './helpers';
-import { Container, Subtitle } from './styles';
+import { Container, Subtitle, Variant } from './styles';
 
 type TModifierItemProps = IModifier & {
   showTooltip?: boolean;
@@ -31,6 +33,20 @@ const ModifierItem: React.FC<TModifierItemProps> = ({
       </Subtitle>
 
       <ItemContent description={modifier.description} config={renderConfig} />
+
+      {!!modifier.variants.length && (
+        <ItemCollapsible title="Variants" defaultOpen={false}>
+          {modifier.variants.map(variant => (
+            <Variant key={variant.effect}>
+              <ItemContent
+                title={`${variant.effect} (${getCostText(variant.cost)})`}
+                description={variant.description}
+                config={renderConfig}
+              />
+            </Variant>
+          ))}
+        </ItemCollapsible>
+      )}
 
       <ItemFooter source={modifier.source} />
     </Container>

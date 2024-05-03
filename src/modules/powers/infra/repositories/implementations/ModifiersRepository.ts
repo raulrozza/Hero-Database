@@ -28,6 +28,12 @@ export default class ModifiersRepository implements IModifiersRepository {
       type: modifier.type,
       cost: modifier.cost,
       source: modifier.source,
+      variants:
+        modifier.variants?.map(variant => ({
+          effect: variant.effect,
+          description: variant.description || modifier.description,
+          cost: variant.cost || modifier.cost,
+        })) || [],
     };
   }
 }

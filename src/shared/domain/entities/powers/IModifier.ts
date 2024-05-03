@@ -10,4 +10,9 @@ export interface IModifier {
   description: ItemContent[];
   cost: RankCost;
   source: Source;
+  variants: Array<{
+    effect: string;
+    description: ItemContent[];
+    cost: RankCost;
+  }>;
 }

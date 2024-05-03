@@ -7,6 +7,11 @@ export type MetaModifier = {
   description: ItemContent[];
   cost: RankCost;
   source: Source;
+  variants?: Array<{
+    effect: string;
+    description: ItemContent[];
+    cost: RankCost;
+  }>;
 };
 
 export const modifiers = new Map<string, MetaModifier>([
@@ -133,6 +138,19 @@ export const modifiers = new Map<string, MetaModifier>([
         type: 'standard',
       },
       source: 'HH',
+      variants: [
+        {
+          effect: 'Affliction',
+          description: [
+            'Some @{Effect|Affliction|Afflictions} may be initially resisted by @{Resistance|Dodge}, representing the need for quick reaction time or reflexes to avoid the effect. In this case, the later resistance checks to remove the Affliction’s conditions are typically still based on @{Resistance|Fortitude} or @{Resistance|Will}. For example, a target might make a Dodge check to avoid a blinding light or spray of liquid, but a Fortitude check to eliminate the effect if the initial Dodge fails.',
+          ],
+          cost: {
+            costs: [0],
+            maxRanks: -1,
+            type: 'standard',
+          },
+        },
+      ],
     },
   ],
   [

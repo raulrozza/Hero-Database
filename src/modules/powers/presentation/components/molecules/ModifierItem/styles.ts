@@ -23,3 +23,5 @@ export const Subtitle = styled.div<ISubtitleProps>`
     width: 100%;
   `}
 `;
+
+export const Variant = styled.div``;
