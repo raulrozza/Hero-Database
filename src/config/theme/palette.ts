@@ -48,7 +48,7 @@ export const darkPalette: Palette = {
     800: '#6F12A1',
   },
   secondary: {
-    300: '#a873f2',
+    300: '#ea8276',
     500: '#EB4D3B',
     800: '#B21B0A',
   },

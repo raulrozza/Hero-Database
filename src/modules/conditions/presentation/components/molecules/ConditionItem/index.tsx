@@ -57,7 +57,8 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
           {condition.components.map(component => (
             <ItemContent
               key={component.key}
-              description={condition.description}
+              title={component.name}
+              description={component.description}
               config={renderConfig}
             />
           ))}
