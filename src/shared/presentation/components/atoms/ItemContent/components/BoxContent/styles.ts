@@ -1,6 +1,8 @@
 import { darken, lighten } from 'polished';
 import styled, { css } from 'styled-components';
 
+import { VARIABLES } from '../../constants/variables';
+
 export const Container = styled.section<{ themeName: 'light' | 'dark' }>`
   ${({ theme, themeName }) => css`
     display: flex;
@@ -14,9 +16,6 @@ export const Container = styled.section<{ themeName: 'light' | 'dark' }>`
     border-top: 2px solid ${theme.palette.primary[500]};
     border-bottom: 2px solid ${theme.palette.neutral[900]};
 
-    h2,
-    h3 {
-      border-bottom: none;
-    }
+    ${VARIABLES.TITLE_BORDER}: 0px;
   `}
 `;
