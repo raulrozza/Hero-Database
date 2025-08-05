@@ -44,7 +44,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "eslint.config.mts"
   ],
   "exclude": [
     "node_modules"
