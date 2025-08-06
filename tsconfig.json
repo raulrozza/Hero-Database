@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,26 +15,14 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/assets/*": [
-        "./src/assets/*"
-      ],
-      "@/config/*": [
-        "./src/config/*"
-      ],
-      "@/modules/*": [
-        "./src/modules/*"
-      ],
-      "@/shared/*": [
-        "./src/shared/*"
-      ],
-      "@api/*": [
-        "./src/modules/api/presentation/*"
-      ]
+      "@/assets/*": ["./src/assets/*"],
+      "@/config/*": ["./src/config/*"],
+      "@/modules/*": ["./src/modules/*"],
+      "@/presentation/*": ["./src/presentation/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@api/*": ["./src/modules/api/presentation/*"]
     },
-    "typeRoots": [
-      "node_modules/@types",
-      "./src/@types"
-    ],
+    "typeRoots": ["node_modules/@types", "./src/@types"],
     "incremental": true,
     "plugins": [
       {
@@ -54,7 +38,5 @@
     "eslint.config.mts",
     "postcss.config.mjs"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
