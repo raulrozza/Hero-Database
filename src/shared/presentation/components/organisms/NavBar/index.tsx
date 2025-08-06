@@ -50,7 +50,10 @@ const NavBar: React.FC = () => {
     <NavigationMenu.Root>
       <nav className="flex items-end gap-9 p-6 pt-9 pb-9 bg-primary-500">
         <div className="h-full flex items-center">
-          <Link href="/" className="text-white text-lg no-underline">
+          <Link
+            href="/"
+            className="text-white text-4xl no-underline font-title"
+          >
             M&M Index
           </Link>
         </div>
@@ -73,7 +76,7 @@ const NavBar: React.FC = () => {
                     <NavButton {...item} active={isActive} />
                   </NavigationMenu.Trigger>
 
-                  <Content>
+                  <Content className="absolute">
                     {item.items.map(item => (
                       <NavLink
                         key={item.href}

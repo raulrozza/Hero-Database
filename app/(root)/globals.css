@@ -32,6 +32,9 @@
   --color-text-light: #454d4f;
   --color-text-black: #181e21;
   --color-text-white: #f9fbfb;
+
+  --font-text: var(--font-biryani), sans-serif;
+  --font-title: var(--font-newsflash), serif;
 }
 
 @layer base {
@@ -60,7 +63,7 @@
   textarea,
   a,
   button {
-    font-family: var(--font-biryani), sans-serif;
+    font-family: var(--font-text);
     color: var(--color-text-main);
     font-size: var(--text-base);
     letter-spacing: var(--tracking-normal);
@@ -79,7 +82,7 @@
   h1,
   h2,
   h3 {
-    font-family: var(--font-newsflash), serif;
+    font-family: var(--font-title);
   }
 
   h1 {
