@@ -48,7 +48,7 @@ const NavBar: React.FC = () => {
 
   return (
     <NavigationMenu.Root>
-      <nav className="flex items-end gap-9 p-6 pt-9 pb-9 bg-amber-500">
+      <nav className="flex items-end gap-9 p-6 pt-9 pb-9 bg-primary-500">
         <div className="h-full flex items-center">
           <Link href="/" className="text-white text-lg no-underline">
             M&M Index

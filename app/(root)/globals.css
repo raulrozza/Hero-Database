@@ -1,1 +1,112 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary-300: #fc9d83;
+  --color-primary-500: #d83a0e;
+  --color-primary-800: #782008;
+
+  --color-secondary-300: #f7df88;
+  --color-secondary-500: #f2cb40;
+  --color-secondary-800: #d7ab0f;
+
+  --color-contrast-300: #66c6ff;
+  --color-contrast-500: #20a4f3;
+  --color-contrast-800: #157ab7;
+
+  --color-error-300: #fe6776;
+  --color-error-500: #c20114;
+  --color-error-800: #790612;
+
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2edf0;
+  --color-neutral-300: #cbd7e1;
+  --color-neutral-400: #94a7b8;
+  --color-neutral-500: #647487;
+  --color-neutral-600: #485a6a;
+  --color-neutral-700: #344556;
+  --color-neutral-800: #1e2c38;
+  --color-neutral-900: #0f1a29;
+
+  --color-text-main: #181e21;
+  --color-text-light: #454d4f;
+  --color-text-black: #181e21;
+  --color-text-white: #f9fbfb;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      display: block;
+      height: 0.5rem;
+      width: 0.5rem;
+      overflow: auto;
+      background-color: var(--color-neutral-100);
+
+      &-thumb {
+        transition: 0.5s;
+        background-color: var(--color-neutral-400);
+        &:hover {
+          background-color: var(--color-neutral-500);
+        }
+      }
+    }
+  }
+
+  body,
+  input,
+  textarea,
+  a,
+  button {
+    font-family: var(--font-biryani), sans-serif;
+    color: var(--color-text-main);
+    font-size: var(--text-base);
+    letter-spacing: var(--tracking-normal);
+  }
+
+  caption {
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  body {
+    background-color: var(--color-neutral-200);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-newsflash), serif;
+  }
+
+  h1 {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--tracking-wider);
+  }
+
+  h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--tracking-wider);
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--tracking-wider);
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  ul {
+    list-style: none;
+  }
+}
