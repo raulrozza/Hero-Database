@@ -1,13 +1,13 @@
 'use client';
+
 import React, { ComponentPropsWithoutRef } from 'react';
 
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
+import { Content } from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { NavLink, NavButton } from '@/shared/presentation/components/atoms';
-
-import { Container, Menu } from './styles';
 
 type MenuItem =
   | (ComponentPropsWithoutRef<typeof NavLink> & { type: 'link' })
@@ -48,12 +48,14 @@ const NavBar: React.FC = () => {
 
   return (
     <NavigationMenu.Root>
-      <Container>
-        <div className="logo">
-          <Link href="/">M&M Index</Link>
+      <nav className="flex items-end gap-9 p-6 pt-9 pb-9 bg-amber-500">
+        <div className="h-full flex items-center">
+          <Link href="/" className="text-white text-lg no-underline">
+            M&M Index
+          </Link>
         </div>
 
-        <NavigationMenu.List className="links">
+        <NavigationMenu.List className="flex">
           {LINKS.map(item => {
             if (item.type === 'link')
               return (
@@ -71,7 +73,7 @@ const NavBar: React.FC = () => {
                     <NavButton {...item} active={isActive} />
                   </NavigationMenu.Trigger>
 
-                  <Menu>
+                  <Content>
                     {item.items.map(item => (
                       <NavLink
                         key={item.href}
@@ -79,7 +81,7 @@ const NavBar: React.FC = () => {
                         active={pathname === item.href}
                       />
                     ))}
-                  </Menu>
+                  </Content>
                 </NavigationMenu.Item>
               );
             }
@@ -87,7 +89,7 @@ const NavBar: React.FC = () => {
             return null;
           })}
         </NavigationMenu.List>
-      </Container>
+      </nav>
     </NavigationMenu.Root>
   );
 };
