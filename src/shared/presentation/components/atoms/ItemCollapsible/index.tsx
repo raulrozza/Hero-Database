@@ -8,6 +8,7 @@ import { Container, Content, Header } from './styles';
 interface IItemCollapsibleProps {
   title: string;
   defaultOpen?: boolean;
+  children: React.ReactNode;
 }
 
 const ItemCollapsible: React.FC<IItemCollapsibleProps> = ({

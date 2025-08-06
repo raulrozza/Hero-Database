@@ -7,7 +7,7 @@ import * as S from './styles';
 interface IRowProps {
   items: Array<{
     key: string;
-    content: React.ReactChild;
+    content: React.ReactNode;
   }>;
   onClick?: () => void;
   highlighted?: boolean;
@@ -40,6 +40,7 @@ interface ITableProps {
     sorting?: 'asc' | 'desc';
     onClick?: () => void;
   }>;
+  children: React.ReactNode;
 }
 
 interface ITable extends React.FC<ITableProps> {

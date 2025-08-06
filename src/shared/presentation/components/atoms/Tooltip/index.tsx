@@ -8,6 +8,7 @@ const DELAY = 200;
 
 interface ITooltipProps {
   content: ReactElement;
+  children: React.ReactNode;
 }
 
 const Tooltip: React.FC<ITooltipProps> = ({ children, content }) => {

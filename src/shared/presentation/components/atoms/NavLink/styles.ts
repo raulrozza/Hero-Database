@@ -1,13 +1,15 @@
 import { lighten } from 'polished';
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div<{ active: boolean }>`
-  ${({ theme, active }) => css`
+export const Container = styled.div`
+  ${({ theme }) => css`
     display: flex;
 
-    background-color: ${active
-      ? theme.palette.primary[800]
-      : theme.palette.secondary[500]};
+    background-color: ${theme.palette.secondary[500]};
+
+    &[data-active='true'] {
+      background-color: ${theme.palette.primary[800]};
+    }
 
     transition: all 0.2s;
 
@@ -22,10 +24,11 @@ export const Container = styled.div<{ active: boolean }>`
     }
 
     &:hover {
-      background-color: ${lighten(
-        0.05,
-        active ? theme.palette.primary[800] : theme.palette.secondary[500],
-      )};
+      background-color: ${lighten(0.05, theme.palette.secondary[500])};
+
+      &[data-active='true'] {
+        background-color: ${lighten(0.05, theme.palette.primary[800])};
+      }
     }
   `}
 `;

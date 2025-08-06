@@ -1,7 +1,6 @@
 import { Source } from '@/shared/domain/entities/sources';
 import { ItemContent } from '@/shared/domain/valueObjects';
 
-/* eslint-disable no-use-before-define */
 interface IBaseCondition {
   type: string;
   key: string;

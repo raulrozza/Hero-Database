@@ -4,7 +4,8 @@ export default createGlobalStyle`
 ${({ theme }) => css`
   @font-face {
     font-family: 'Newsflash-BB';
-    src: url('Newsflash-BB.ttf.woff') format('woff'),
+    src:
+      url('Newsflash-BB.ttf.woff') format('woff'),
       url('Newsflash-BB.ttf.svg#Newsflash-BB') format('svg'),
       url('Newsflash-BB.ttf.eot'),
       url('Newsflash-BB.ttf.eot?#iefix') format('embedded-opentype');

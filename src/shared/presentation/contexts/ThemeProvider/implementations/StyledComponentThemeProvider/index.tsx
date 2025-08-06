@@ -1,4 +1,11 @@
-import { FC, useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  FC,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 
 import { ThemeProvider as SCThemeProvider } from 'styled-components';
 
@@ -13,7 +20,9 @@ import {
 
 const STORAGE_KEY = '@MeM/theme';
 
-const StyledComponentsThemeContext: FC = ({ children }) => {
+const StyledComponentsThemeContext: FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [name, setName] = useState<IThemeProvider['name']>('light');
 
   useEffect(() => {

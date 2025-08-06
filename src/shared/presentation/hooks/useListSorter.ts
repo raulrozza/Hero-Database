@@ -59,8 +59,8 @@ function handleSortByKey(key: string, config: TSortConfig) {
   return (a: unknown, b: unknown): number => {
     const [itemA, itemB] = config.order === 'asc' ? [a, b] : [b, a];
 
-    const keyA = get(itemA, key);
-    const keyB = get(itemB, key);
+    const keyA = get(itemA, key) as string;
+    const keyB = get(itemB, key) as string;
 
     if (keyA > keyB) return 1;
 

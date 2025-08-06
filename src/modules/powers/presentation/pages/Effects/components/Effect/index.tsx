@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { EffectItem } from '@/modules/powers/presentation/components/molecules';
+import { IEffect } from '@/shared/domain/entities';
 import { EmptyItemCard } from '@/shared/presentation/components/molecules';
 
 import { Container } from './styles';
-import { useEffectValue } from '../../store';
 
 const Effect: React.FC = () => {
-  const effect = useEffectValue();
+  const effect = null as IEffect | null;
 
   if (!effect)
     return (

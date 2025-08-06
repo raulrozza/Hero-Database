@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { ConditionItem } from '@/modules/conditions/presentation/components/molecules';
+import { ICondition } from '@/shared/domain/entities';
 import { EmptyItemCard } from '@/shared/presentation/components/molecules';
 
 import { Container } from './styles';
-import { useConditionValue } from '../../store';
 
 const Condition: React.FC = () => {
-  const condition = useConditionValue();
+  const condition = null as ICondition | null;
 
   if (!condition)
     return (

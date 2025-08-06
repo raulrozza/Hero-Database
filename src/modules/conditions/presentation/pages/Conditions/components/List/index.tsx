@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 
 import { capitalize } from 'lodash';
 
@@ -7,10 +7,8 @@ import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
 import { useListSorter } from '@/shared/presentation/hooks';
 
-import { useConditionState } from '../../store';
-
 const List: React.FC = () => {
-  const [selectedCondition, setCondition] = useConditionState();
+  const [selectedCondition, setCondition] = useState<ICondition>();
   const hasInitialized = useRef(false);
 
   const query = api.conditions.getAll.useQuery(undefined, {

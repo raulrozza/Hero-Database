@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -11,6 +10,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import pluginReact from 'eslint-plugin-react';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
@@ -38,6 +38,7 @@ export default defineConfig([
       },
     },
   },
+  ...compat.extends('standard'),
   {
     files: ['**/*.jsx', '**/*.tsx'],
     ...pluginReact.configs.flat.recommended,
@@ -84,6 +85,10 @@ export default defineConfig([
         },
       ],
       'no-useless-constructor': 'off',
+      'react/react-in-jsx-scope': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/require-await': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
     },
   },
   {

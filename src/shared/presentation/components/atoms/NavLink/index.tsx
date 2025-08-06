@@ -7,6 +7,7 @@ import { Container } from './styles';
 interface INavLinkProps {
   href: string;
   active?: boolean;
+  children: React.ReactNode;
 }
 
 const NavLink: React.FC<INavLinkProps> = ({
@@ -14,7 +15,7 @@ const NavLink: React.FC<INavLinkProps> = ({
   active = false,
   children,
 }) => (
-  <Container active={active}>
+  <Container data-active={active}>
     <Link href={href}>{children}</Link>
   </Container>
 );

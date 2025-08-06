@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { ModifierItem } from '@/modules/powers/presentation/components/molecules';
+import { IModifier } from '@/shared/domain/entities';
 import { EmptyItemCard } from '@/shared/presentation/components/molecules';
 
 import { Container } from './styles';
-import { useModifierValue } from '../../store';
 
 const Modifier: React.FC = () => {
-  const modifier = useModifierValue();
+  const modifier = null as IModifier | null;
 
   if (!modifier)
     return (

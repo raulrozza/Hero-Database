@@ -10,7 +10,6 @@ interface IItemContentProps {
   title?: string;
   description: ItemContentType[];
   config?: RenderItemContentConfig;
-  children?: never;
 }
 
 const ItemContent: React.FC<IItemContentProps> = ({

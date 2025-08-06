@@ -32,7 +32,7 @@ export default function renderItemContent(
 function toElementsArray(text: string, config: RenderItemContentConfig) {
   const textElements = htmlElementStrategy.extract(
     text,
-    referenceStrategy.extract,
+    referenceStrategy.extract, // eslint-disable-line @typescript-eslint/unbound-method
   );
 
   return textElements.map((element, index) => {

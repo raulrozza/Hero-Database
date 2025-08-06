@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { AdvantageItem } from '@/modules/advantages/presentation/components/molecules';
+import { IAdvantage } from '@/shared/domain/entities';
 import { EmptyItemCard } from '@/shared/presentation/components/molecules';
 
 import { Container } from './styles';
-import { useAdvantageValue } from '../../store';
 
 const Advantage: React.FC = () => {
-  const advantage = useAdvantageValue();
+  const advantage = null as IAdvantage | null;
 
   if (!advantage)
     return (
