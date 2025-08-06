@@ -1,8 +1,9 @@
+'use client';
 import React, { ComponentPropsWithoutRef } from 'react';
 
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import { NavLink, NavButton } from '@/shared/presentation/components/atoms';
 
@@ -43,7 +44,7 @@ const LINKS: MenuItem[] = [
 ];
 
 const NavBar: React.FC = () => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <NavigationMenu.Root>
@@ -57,14 +58,12 @@ const NavBar: React.FC = () => {
             if (item.type === 'link')
               return (
                 <NavigationMenu.Item key={item.href} asChild>
-                  <NavLink {...item} active={router.pathname === item.href} />
+                  <NavLink {...item} active={pathname === item.href} />
                 </NavigationMenu.Item>
               );
 
             if (item.type === 'menu') {
-              const isActive = item.items.some(
-                item => router.pathname === item.href,
-              );
+              const isActive = item.items.some(item => pathname === item.href);
 
               return (
                 <NavigationMenu.Item key={item.children}>
@@ -77,7 +76,7 @@ const NavBar: React.FC = () => {
                       <NavLink
                         key={item.href}
                         {...item}
-                        active={router.pathname === item.href}
+                        active={pathname === item.href}
                       />
                     ))}
                   </Menu>
