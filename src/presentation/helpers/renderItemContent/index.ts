@@ -1,6 +1,7 @@
 import React, { FC, Fragment, ReactNode } from 'react';
 
 import EntityLink from '@/presentation/components/molecules/EntityLink';
+import ConditionPopoverContainer from '@/presentation/components/organisms/ConditionPopoverContainer';
 import { PopovableEntity } from '@/presentation/models';
 
 import { htmlElementStrategy } from './strategies/htmlElements';
@@ -11,7 +12,7 @@ const ENTITY_TOOLTIP_COMPONENTS: Record<
   FC<{ entityKey: string }>
 > = {
   Advantage: React.Fragment as FC<{ entityKey: string }>,
-  Condition: React.Fragment as FC<{ entityKey: string }>,
+  Condition: ConditionPopoverContainer,
   Modifier: React.Fragment as FC<{ entityKey: string }>,
 };
 

@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 
-import { ConditionItem } from '@/modules/conditions/presentation/components/molecules';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
+import ConditionItem from '@/presentation/components/molecules/ConditionItem';
 import { api } from '@/shared/infra/http/api';
 
 interface IConditionPopoverContainerProps {
@@ -25,7 +27,7 @@ const ConditionPopoverContainer: React.FC<IConditionPopoverContainerProps> = ({
   return (
     <PopoverContainer>
       <ConditionItem
-        {...query.data}
+        condition={query.data}
         showComponents={false}
         showTooltip={false}
       />
