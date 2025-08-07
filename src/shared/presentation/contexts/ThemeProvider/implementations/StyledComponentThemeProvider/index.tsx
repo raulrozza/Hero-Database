@@ -10,7 +10,7 @@ import {
 import { ThemeProvider as SCThemeProvider } from 'styled-components';
 
 import buildTheme from '@/config/theme';
-import makeStorageProvider from '@/shared/infra/providers/makeStorageProvider';
+import makeStorageProvider from '@/infra/providers/makeStorageProvider';
 
 import GlobalStyles from './styles';
 import {

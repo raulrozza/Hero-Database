@@ -1,8 +1,8 @@
 import z from 'zod';
 
+import { publicProcedure, router } from '@/infra/http/trpcServer';
 import makeGetConditionByKey from '@/modules/conditions/domain/useCases/makeGetConditionByKey';
 import makeGetConditions from '@/modules/conditions/domain/useCases/makeGetConditions';
-import { publicProcedure, router } from '@/shared/infra/http/trpcServer';
 
 export const conditionsRoutes = router({
   getAll: publicProcedure.query(() => makeGetConditions().execute()),

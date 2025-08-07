@@ -4,7 +4,7 @@ import { capitalize } from 'lodash';
 
 import { ICondition } from '@/domain/entities';
 import { useListSorter } from '@/presentation/hooks';
-import { api } from '@/shared/infra/http/api';
+import { api } from '@/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
 
 const List: React.FC = () => {

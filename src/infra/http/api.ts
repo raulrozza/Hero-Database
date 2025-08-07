@@ -2,7 +2,7 @@ import { httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
 import type { inferRouterOutputs } from '@trpc/server';
 
-import { AppRouter } from '@/shared/infra/routes';
+import { AppRouter } from '@/infra/routes';
 
 export type RouterOutputs = inferRouterOutputs<AppRouter>;
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AdvantageItem } from '@/modules/advantages/presentation/components/molecules';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
-import { api } from '@/shared/infra/http/api';
+import { api } from '@/infra/http/api';
 
 interface IAdvantagePopoverContainerProps {
   entityKey: string;

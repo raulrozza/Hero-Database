@@ -2,9 +2,9 @@
 
 import React from 'react';
 
+import { api } from '@/infra/http/api';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
 import ConditionItem from '@/presentation/components/molecules/ConditionItem';
-import { api } from '@/shared/infra/http/api';
 
 interface IConditionPopoverContainerProps {
   entityKey: string;

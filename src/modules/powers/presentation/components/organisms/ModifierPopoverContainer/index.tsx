@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ModifierItem } from '@/modules/powers/presentation/components/molecules';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
-import { api } from '@/shared/infra/http/api';
+import { api } from '@/infra/http/api';
 
 interface IModifierPopoverContainerProps {
   entityKey: string;

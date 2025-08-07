@@ -4,7 +4,7 @@ import { capitalize } from 'lodash';
 
 import { getCostText } from '@/modules/powers/presentation/helpers';
 import { IModifier } from '@/domain/entities';
-import { api } from '@/shared/infra/http/api';
+import { api } from '@/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
 import { useListSorter } from '@/presentation/hooks';
 

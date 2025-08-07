@@ -4,7 +4,7 @@ import makeGetEffectByKey from '@/modules/powers/domain/useCases/makeGetEffectBy
 import makeGetEffects from '@/modules/powers/domain/useCases/makeGetEffects';
 import makeGetModifierByKey from '@/modules/powers/domain/useCases/makeGetModifierByKey';
 import makeGetModifiers from '@/modules/powers/domain/useCases/makeGetModifiers';
-import { publicProcedure, router } from '@/shared/infra/http/trpcServer';
+import { publicProcedure, router } from '@/infra/http/trpcServer';
 
 export const modifiersRoutes = router({
   getAll: publicProcedure.query(() => makeGetModifiers().execute()),
