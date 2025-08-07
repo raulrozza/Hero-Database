@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import EmptyItemCard from '@/shared/presentation/components/molecules/EmptyItemCard';
+import EmptyItemCard from '@/presentation/components/molecules/EmptyItemCard';
 
 export const metadata: Metadata = {
   title: 'Conditions',

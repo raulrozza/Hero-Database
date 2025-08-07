@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { ModifierItem } from '@/modules/powers/presentation/components/molecules';
+import EmptyItemCard from '@/presentation/components/molecules/EmptyItemCard';
 import { IModifier } from '@/shared/domain/entities';
-import { EmptyItemCard } from '@/shared/presentation/components/molecules';
 
 import { Container } from './styles';
 
