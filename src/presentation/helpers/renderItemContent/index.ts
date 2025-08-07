@@ -1,6 +1,7 @@
 import React, { FC, Fragment, ReactNode } from 'react';
 
-import { PopovableEntity } from '@/shared/presentation/models';
+import EntityLink from '@/presentation/components/molecules/EntityLink';
+import { PopovableEntity } from '@/presentation/models';
 
 import { htmlElementStrategy } from './strategies/htmlElements';
 import { referenceStrategy } from './strategies/references';
@@ -66,13 +67,13 @@ function parseReference(
     : undefined;
 
   return React.createElement(
-    React.Fragment,
+    EntityLink,
     {
       type,
       key: reactKey,
       entityKey: key,
       tooltipComponent,
-    } as unknown as object,
+    },
     children,
   );
 }

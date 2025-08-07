@@ -4,7 +4,7 @@ import { AdvantagePopoverContainer } from '@/modules/advantages/presentation/com
 import { ConditionPopoverContainer } from '@/modules/conditions/presentation/components/organisms';
 import { ModifierPopoverContainer } from '@/modules/powers/presentation/components/organisms';
 import { EntityLink } from '@/shared/presentation/components/molecules';
-import { PopovableEntity } from '@/shared/presentation/models';
+import { PopovableEntity } from '@/presentation/models';
 
 import { htmlElementStrategy } from './strategies/htmlElements';
 import { referenceStrategy } from './strategies/references';

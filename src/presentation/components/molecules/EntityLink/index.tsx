@@ -2,10 +2,8 @@ import React, { FC, Fragment } from 'react';
 
 import Link from 'next/link';
 
-import { Tooltip } from '@/shared/presentation/components/atoms';
+import Tooltip from '@/presentation/components/atoms/Tooltip';
 import { PopovableEntity } from '@/presentation/models';
-
-import { Container } from './styles';
 
 const ENTITY_TO_PAGE: Record<PopovableEntity, string> = {
   Advantage: 'advantages',
@@ -17,6 +15,7 @@ interface IEntityLinkProps {
   type: string;
   entityKey: string;
   tooltipComponent?: FC<{ entityKey: string }>;
+  children?: React.ReactNode;
 }
 
 const EntityLink: React.FC<IEntityLinkProps> = ({
@@ -27,26 +26,29 @@ const EntityLink: React.FC<IEntityLinkProps> = ({
 }) => {
   if (!(type in ENTITY_TO_PAGE)) return <Fragment>{children}</Fragment>;
 
-  const path = `${ENTITY_TO_PAGE[type as PopovableEntity]}/#${entityKey}`;
+  const path = `/${ENTITY_TO_PAGE[type as PopovableEntity]}/${entityKey}`;
   const title = `${type}: ${entityKey}`;
+
+  const linkClassName =
+    'no-underline font-extrabold text-contrast-500 transition-all hover:text-contrast-300';
 
   if (TooltipComponent)
     return (
       <Tooltip content={<TooltipComponent entityKey={entityKey} />}>
-        <Container>
-          <Link href={path} title={title}>
+        <span>
+          <Link href={path} title={title} className={linkClassName}>
             {children}
           </Link>
-        </Container>
+        </span>
       </Tooltip>
     );
 
   return (
-    <Container>
-      <Link href={path} title={title}>
+    <span>
+      <Link href={path} title={title} className={linkClassName}>
         {children}
       </Link>
-    </Container>
+    </span>
   );
 };
 
