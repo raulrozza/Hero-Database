@@ -2,12 +2,12 @@ import React from 'react';
 
 import { capitalize } from 'lodash';
 
+import ItemHeader from '@/presentation/components/atoms/ItemHeader';
 import { ICondition } from '@/shared/domain/entities';
 import {
   ItemCollapsible,
   ItemContent,
   ItemFooter,
-  ItemHeader,
 } from '@/shared/presentation/components/atoms';
 import { useMediaQuery } from '@/shared/presentation/hooks';
 

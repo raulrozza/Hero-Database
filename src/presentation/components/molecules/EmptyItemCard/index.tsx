@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ItemContent from '@/shared/presentation/components/atoms/ItemContent';
-import ItemHeader from '@/shared/presentation/components/atoms/ItemHeader';
+import ItemContent from '@/presentation/components/atoms/ItemContent';
+import ItemHeader from '@/presentation/components/atoms/ItemHeader';
 
 interface IEmptyItemCardProps {
   title: string;
