@@ -2,13 +2,13 @@ import React from 'react';
 
 import { capitalize } from 'lodash';
 
-import { getCostText } from '@/modules/powers/presentation/helpers';
-import ItemHeader from '@/presentation/components/atoms/ItemHeader';
 import { IEffect } from '@/domain/entities';
+import { getCostText } from '@/modules/powers/presentation/helpers';
+import ItemFooter from '@/presentation/components/atoms/ItemFooter';
+import ItemHeader from '@/presentation/components/atoms/ItemHeader';
 import {
   ItemCollapsible,
   ItemContent,
-  ItemFooter,
 } from '@/shared/presentation/components/atoms';
 import { useThemeProvider } from '@/shared/presentation/contexts';
 
