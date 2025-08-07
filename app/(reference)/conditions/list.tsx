@@ -3,6 +3,7 @@
 import React, { Fragment } from 'react';
 
 import { capitalize } from 'lodash';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { ICondition } from '@/domain/entities';
 import Table from '@/presentation/components/atoms/Table';
@@ -16,6 +17,8 @@ const List: React.FC<IListProps> = ({ conditions }) => {
   const sortedQuery = useListSorter(conditions, {
     sortKeys: ['name', 'source'],
   });
+  const route = useRouter();
+  const pathname = usePathname();
 
   const { basic, combined } = sortedQuery.items.reduce(
     (acc, condition) => {
@@ -93,8 +96,8 @@ const List: React.FC<IListProps> = ({ conditions }) => {
                   content: condition.source,
                 },
               ]}
-              onClick={() => undefined /* setCondition(condition) */}
-              highlighted={false /* selectedCondition?.key === condition.key */}
+              onClick={() => route.push(`/conditions/${condition.key}`)}
+              highlighted={pathname?.includes(condition.key)}
             />
           ))}
         </Fragment>
