@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { AdvantageItem } from '@/modules/advantages/presentation/components/molecules';
+import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
 import { api } from '@/shared/infra/http/api';
-import { PopoverContainer } from '@/shared/presentation/components/atoms';
 
 interface IAdvantagePopoverContainerProps {
   entityKey: string;
@@ -16,7 +16,7 @@ const AdvantagePopoverContainer: React.FC<IAdvantagePopoverContainerProps> = ({
   if (query.isLoading)
     return (
       <PopoverContainer>
-        <span>Loading...</span>
+        <PopoverContainer.Span>Loading...</PopoverContainer.Span>
       </PopoverContainer>
     );
 
