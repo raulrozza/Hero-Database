@@ -7,7 +7,8 @@ import { Content } from '@radix-ui/react-navigation-menu';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { NavLink, NavButton } from '@/shared/presentation/components/atoms';
+import NavButton from '@/presentation/components/atoms/NavButton';
+import NavLink from '@/presentation/components/atoms/NavLink';
 
 type MenuItem =
   | (ComponentPropsWithoutRef<typeof NavLink> & { type: 'link' })

@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import dynamic from 'next/dynamic';
 
-import { NavBar } from '@/shared/presentation/components/organisms';
+import NavBar from '@/presentation/components/organisms/NavBar';
 
 import { Advantage } from './components';
 import { Container } from './styles';

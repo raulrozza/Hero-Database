@@ -1,4 +1,4 @@
-import { NavBar } from '@/shared/presentation/components/organisms';
+import NavBar from '@/presentation/components/organisms/NavBar';
 
 import { LayoutProps } from '.next/types/app/layout';
 
