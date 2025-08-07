@@ -1,10 +1,8 @@
 import React from 'react';
 
+import type { RenderItemContentConfig } from '@/presentation/helpers/renderItemContent';
+import renderItemContent from '@/presentation/helpers/renderItemContent';
 import { TextItemContent } from '@/shared/domain/valueObjects';
-import {
-  RenderItemContentConfig,
-  renderItemContent,
-} from '@/shared/presentation/helpers';
 
 interface ITextContentProps {
   description: TextItemContent;
