@@ -1,24 +1,28 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 
-import { ITheme } from '@/config/theme';
-import { useThemeProvider } from '@/shared/presentation/contexts';
+const breakpoints = ['sm', 'md', 'lg'] as const;
 
-type TBreakpoints = keyof ITheme['layout']['breakpoints'];
+type TBreakpoints = (typeof breakpoints)[number];
 
 type TDimension = TBreakpoints | Omit<string, TBreakpoints>;
 
 const getQuery = (dimension: string) => `(max-width: ${dimension})`;
 
-const isThemeBreakpoint = (
-  dimention: TDimension,
-  theme: ITheme,
-): dimention is TBreakpoints =>
-  Object.keys(theme.layout.breakpoints).includes(dimention as TBreakpoints);
+function isKnowBreakpoint(dimention: TDimension): dimention is TBreakpoints {
+  return breakpoints.includes(dimention as TBreakpoints);
+}
 
-const getBreakpoint = (dimention: TDimension, theme: ITheme) => {
-  if (isThemeBreakpoint(dimention, theme)) {
-    return theme.layout.breakpoints[dimention];
+const BREAKPOINTS_DICTIONARY: Record<TBreakpoints, string> = {
+  lg: '1024px',
+  md: '768px',
+  sm: '640px',
+};
+
+const getBreakpoint = (dimention: TDimension) => {
+  if (isKnowBreakpoint(dimention)) {
+    return BREAKPOINTS_DICTIONARY[dimention];
   }
 
   return dimention as string;
@@ -36,27 +40,21 @@ const getMatches = (dimension: string): boolean => {
  * @returns
  */
 export default function useMediaQuery(dimension: TDimension): boolean {
-  const { theme } = useThemeProvider();
-
-  const [matches, setMatches] = useState(
-    getMatches(getBreakpoint(dimension, theme)),
-  );
+  const [matches, setMatches] = useState(getMatches(getBreakpoint(dimension)));
 
   useEffect(() => {
     const handleChange = (event: MediaQueryListEvent) => {
       setMatches(event.matches);
     };
 
-    const matchMedia = window.matchMedia(
-      getQuery(getBreakpoint(dimension, theme)),
-    );
+    const matchMedia = window.matchMedia(getQuery(getBreakpoint(dimension)));
 
     matchMedia.addEventListener('change', handleChange);
 
     return () => {
       matchMedia.removeEventListener('change', handleChange);
     };
-  }, [dimension, theme]);
+  }, [dimension]);
 
   return matches;
 }

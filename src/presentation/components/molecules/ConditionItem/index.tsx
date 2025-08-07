@@ -1,34 +1,33 @@
+'use client';
 import React from 'react';
 
 import { capitalize } from 'lodash';
 
 import { ICondition } from '@/domain/entities';
+import ItemContent from '@/presentation/components/atoms/ItemContent';
+import ItemFooter from '@/presentation/components/atoms/ItemFooter';
 import ItemHeader from '@/presentation/components/atoms/ItemHeader';
-import {
-  ItemCollapsible,
-  ItemContent,
-  ItemFooter,
-} from '@/shared/presentation/components/atoms';
 import { useMediaQuery } from '@/shared/presentation/hooks';
 
-import { Container } from './styles';
-
-type TConditionItemProps = ICondition & {
+type TConditionItemProps = {
   showComponents?: boolean;
   showTooltip?: boolean;
+  condition: ICondition;
 };
 
 const ConditionItem: React.FC<TConditionItemProps> = ({
   showComponents = true,
   showTooltip = true,
-  ...condition
+  condition,
 }) => {
   const renderConfig = { showTooltip };
   const isMobile = useMediaQuery('md');
 
+  const containerClassName = 'w-100% bg-neutral-50';
+
   if (condition.type === 'basic')
     return (
-      <Container>
+      <div className={containerClassName}>
         <ItemHeader
           title={condition.name}
           subtitle={capitalize(condition.type)}
@@ -40,11 +39,11 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
         />
 
         <ItemFooter source={condition.source} />
-      </Container>
+      </div>
     );
 
   return (
-    <Container>
+    <div className={containerClassName}>
       <ItemHeader
         title={condition.name}
         subtitle={capitalize(condition.type)}
@@ -52,7 +51,7 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
 
       <ItemContent description={condition.description} config={renderConfig} />
 
-      {showComponents && (
+      {/*   {showComponents && (
         <ItemCollapsible title="Components" defaultOpen={!isMobile}>
           {condition.components.map(component => (
             <ItemContent
@@ -63,10 +62,10 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
             />
           ))}
         </ItemCollapsible>
-      )}
+      )} */}
 
       <ItemFooter source={condition.source} />
-    </Container>
+    </div>
   );
 };
 
