@@ -1,4 +1,4 @@
-import { makeConditionsRepository } from '@/modules/conditions/infra/repositories';
+import { makeConditionsRepository } from '@/infra/repositories';
 
 import { LayoutProps } from '.next/types/app/(reference)/conditions/layout';
 

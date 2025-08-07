@@ -1,4 +1,4 @@
-import { IConditionsRepository } from '@/modules/conditions/domain/repositories/IConditionsRepository';
+import { IConditionsRepository } from '@/domain/repositories/IConditionsRepository';
 
 import ConditionsRepository from './implementations/ConditionsRepository';
 

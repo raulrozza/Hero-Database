@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
-import { makeConditionsRepository } from '@/modules/conditions/infra/repositories';
+import { makeConditionsRepository } from '@/infra/repositories';
 import ConditionItem from '@/presentation/components/molecules/ConditionItem';
 
 interface ConditionProps {
