@@ -1,5 +1,5 @@
-import { AdvantageType, Source } from '@/shared/domain/entities';
-import { ItemContent } from '@/shared/domain/valueObjects';
+import { AdvantageType, Source } from '@/domain/entities';
+import { ItemContent } from '@/domain/valueObjects';
 
 export type MetaAdvantage = {
   name: string;

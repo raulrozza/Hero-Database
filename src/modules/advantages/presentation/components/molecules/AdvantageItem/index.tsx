@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ItemHeader from '@/presentation/components/atoms/ItemHeader';
-import { IAdvantage } from '@/shared/domain/entities';
+import { IAdvantage } from '@/domain/entities';
 import {
   ItemContent,
   ItemFooter,

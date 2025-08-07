@@ -3,7 +3,7 @@ import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { capitalize } from 'lodash';
 
 import { getCostText } from '@/modules/powers/presentation/helpers';
-import { IModifier } from '@/shared/domain/entities';
+import { IModifier } from '@/domain/entities';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
 import { useListSorter } from '@/shared/presentation/hooks';

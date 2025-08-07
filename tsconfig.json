@@ -18,6 +18,7 @@
       "@/assets/*": ["./src/assets/*"],
       "@/config/*": ["./src/config/*"],
       "@/modules/*": ["./src/modules/*"],
+      "@/domain/*": ["./src/domain/*"],
       "@/presentation/*": ["./src/presentation/*"],
       "@/shared/*": ["./src/shared/*"],
       "@api/*": ["./src/modules/api/presentation/*"]

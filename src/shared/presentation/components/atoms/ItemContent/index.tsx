@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { cn } from '@/presentation/helpers/cn';
-import type { ItemContent as ItemContentType } from '@/shared/domain/valueObjects';
+import type { ItemContent as ItemContentType } from '@/domain/valueObjects';
 import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import ContentFactory from './components';

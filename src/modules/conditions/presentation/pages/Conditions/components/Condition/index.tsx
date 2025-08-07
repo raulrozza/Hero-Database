@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { ICondition } from '@/domain/entities';
 import { ConditionItem } from '@/modules/conditions/presentation/components/molecules';
 import EmptyItemCard from '@/presentation/components/molecules/EmptyItemCard';
-import { ICondition } from '@/shared/domain/entities';
 
 import { Container } from './styles';
 

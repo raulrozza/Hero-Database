@@ -1,4 +1,4 @@
-import IStorageProvider from '@/shared/domain/providers/IStorageProvider';
+import IStorageProvider from '@/domain/providers/IStorageProvider';
 
 import LocalStorageProvider from './implementations/LocalStorageProvider';
 

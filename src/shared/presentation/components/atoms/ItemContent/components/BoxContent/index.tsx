@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { cn } from '@/presentation/helpers/cn';
-import { BoxItemContent } from '@/shared/domain/valueObjects';
+import { BoxItemContent } from '@/domain/valueObjects';
 import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import ContentFactory from '..';

@@ -1,5 +1,5 @@
-import { Source } from '@/shared/domain/entities/sources';
-import { ItemContent, RankCost } from '@/shared/domain/valueObjects';
+import { Source } from '@/domain/entities/sources';
+import { ItemContent, RankCost } from '@/domain/valueObjects';
 
 export type ModifierType = 'extra' | 'flaw';
 

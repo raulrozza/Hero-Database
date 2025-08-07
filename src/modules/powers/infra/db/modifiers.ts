@@ -1,5 +1,5 @@
-import { ModifierType, Source } from '@/shared/domain/entities';
-import { ItemContent, RankCost } from '@/shared/domain/valueObjects';
+import { ModifierType, Source } from '@/domain/entities';
+import { ItemContent, RankCost } from '@/domain/valueObjects';
 
 export type MetaModifier = {
   name: string;

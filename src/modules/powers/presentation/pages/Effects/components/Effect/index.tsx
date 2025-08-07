@@ -2,7 +2,7 @@ import React from 'react';
 
 import { EffectItem } from '@/modules/powers/presentation/components/molecules';
 import EmptyItemCard from '@/presentation/components/molecules/EmptyItemCard';
-import { IEffect } from '@/shared/domain/entities';
+import { IEffect } from '@/domain/entities';
 
 import { Container } from './styles';
 

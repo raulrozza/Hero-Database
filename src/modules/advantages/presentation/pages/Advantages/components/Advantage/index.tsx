@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AdvantageItem } from '@/modules/advantages/presentation/components/molecules';
 import EmptyItemCard from '@/presentation/components/molecules/EmptyItemCard';
-import { IAdvantage } from '@/shared/domain/entities';
+import { IAdvantage } from '@/domain/entities';
 
 import { Container } from './styles';
 

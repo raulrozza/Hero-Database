@@ -1,4 +1,4 @@
-import { IAdvantage } from '@/shared/domain/entities';
+import { IAdvantage } from '@/domain/entities';
 
 export interface IAdvantagesRepository {
   findAll(): Promise<IAdvantage[]>;

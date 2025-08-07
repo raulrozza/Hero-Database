@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useRef, useState } from 'react';
 
 import { capitalize } from 'lodash';
 
-import { ICondition } from '@/shared/domain/entities';
+import { ICondition } from '@/domain/entities';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
 import { useListSorter } from '@/shared/presentation/hooks';

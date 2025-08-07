@@ -1,4 +1,4 @@
-import { IModifier } from '@/shared/domain/entities';
+import { IModifier } from '@/domain/entities';
 
 export interface IModifiersRepository {
   findAll(): Promise<IModifier[]>;

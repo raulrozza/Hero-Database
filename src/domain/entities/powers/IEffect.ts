@@ -1,6 +1,6 @@
-import { IModifier } from '@/shared/domain/entities/powers/IModifier';
-import { Source } from '@/shared/domain/entities/sources';
-import { ItemContent, RankCost } from '@/shared/domain/valueObjects';
+import { IModifier } from '@/domain/entities/powers/IModifier';
+import { Source } from '@/domain/entities/sources';
+import { ItemContent, RankCost } from '@/domain/valueObjects';
 
 export type EffectType =
   | 'attack'

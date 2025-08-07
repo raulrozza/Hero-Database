@@ -4,7 +4,7 @@ import { capitalize } from 'lodash';
 
 import { getCostText } from '@/modules/powers/presentation/helpers';
 import ItemHeader from '@/presentation/components/atoms/ItemHeader';
-import { IEffect } from '@/shared/domain/entities';
+import { IEffect } from '@/domain/entities';
 import {
   ItemCollapsible,
   ItemContent,

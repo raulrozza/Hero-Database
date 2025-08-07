@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SectionItemContent } from '@/shared/domain/valueObjects';
+import { SectionItemContent } from '@/domain/valueObjects';
 import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import ContentFactory from '..';

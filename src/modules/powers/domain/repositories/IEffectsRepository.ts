@@ -1,4 +1,4 @@
-import { IEffect } from '@/shared/domain/entities';
+import { IEffect } from '@/domain/entities';
 
 export interface IEffectsRepository {
   findAll(): Promise<IEffect[]>;

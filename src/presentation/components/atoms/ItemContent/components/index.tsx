@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ItemContent } from '@/shared/domain/valueObjects';
+import { ItemContent } from '@/domain/valueObjects';
 import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import BoxContent from './BoxContent';

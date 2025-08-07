@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { ListItemContent } from '@/domain/valueObjects';
 import type { RenderItemContentConfig } from '@/presentation/helpers/renderItemContent';
 import renderItemContent from '@/presentation/helpers/renderItemContent';
-import { ListItemContent } from '@/shared/domain/valueObjects';
 
 interface IListContentProps extends ListItemContent {
   config: RenderItemContentConfig | undefined;

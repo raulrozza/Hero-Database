@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { HeadingItemContent } from '@/domain/valueObjects';
 import { cn } from '@/presentation/helpers/cn';
 import type { RenderItemContentConfig } from '@/presentation/helpers/renderItemContent';
-import { HeadingItemContent } from '@/shared/domain/valueObjects';
 
 import { h2Classes } from '../../constants/classes';
 import { VARIABLES } from '../../constants/variables';

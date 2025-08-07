@@ -1,4 +1,4 @@
-import { RankCost } from '@/shared/domain/valueObjects';
+import { RankCost } from '@/domain/valueObjects';
 
 type Config = {
   showPositiveSign: boolean;

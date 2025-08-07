@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { cn } from '@/presentation/helpers/cn';
-import { HeadingItemContent } from '@/shared/domain/valueObjects';
+import { HeadingItemContent } from '@/domain/valueObjects';
 import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import { h2Classes } from '../../constants/classes';

@@ -1,4 +1,4 @@
-import { IEffect } from '@/shared/domain/entities';
+import { IEffect } from '@/domain/entities';
 
 export type MetaEffect = Omit<IEffect, 'key' | 'extras' | 'flaws'>;
 

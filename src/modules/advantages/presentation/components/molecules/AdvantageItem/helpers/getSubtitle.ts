@@ -1,6 +1,6 @@
 import { capitalize } from 'lodash';
 
-import { IAdvantage } from '@/shared/domain/entities';
+import { IAdvantage } from '@/domain/entities';
 
 function getRanksText(maxRanks: number) {
   if (maxRanks < 0) return 'Ranked';

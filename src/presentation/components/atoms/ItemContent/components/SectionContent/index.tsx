@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { SectionItemContent } from '@/domain/valueObjects';
 import type { RenderItemContentConfig } from '@/presentation/helpers/renderItemContent';
-import { SectionItemContent } from '@/shared/domain/valueObjects';
 
 import ContentFactory from '..';
 import { h2Classes } from '../../constants/classes';

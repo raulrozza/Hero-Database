@@ -1,7 +1,7 @@
 import { capitalize } from 'lodash';
 
 import { getCostText } from '@/modules/powers/presentation/helpers';
-import { IModifier } from '@/shared/domain/entities';
+import { IModifier } from '@/domain/entities';
 
 export default function getSubtitle(modifier: IModifier) {
   if (modifier.cost.type === 'flat') {

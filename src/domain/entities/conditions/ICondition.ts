@@ -1,5 +1,5 @@
-import { Source } from '@/shared/domain/entities/sources';
-import { ItemContent } from '@/shared/domain/valueObjects';
+import { Source } from '@/domain/entities/sources';
+import { ItemContent } from '@/domain/valueObjects';
 
 interface IBaseCondition {
   type: string;

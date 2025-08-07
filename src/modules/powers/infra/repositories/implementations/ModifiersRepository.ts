@@ -1,6 +1,6 @@
 import { IModifiersRepository } from '@/modules/powers/domain/repositories/IModifiersRepository';
 import { MetaModifier, modifiers } from '@/modules/powers/infra/db';
-import { IModifier } from '@/shared/domain/entities';
+import { IModifier } from '@/domain/entities';
 
 export default class ModifiersRepository implements IModifiersRepository {
   public findAll: IModifiersRepository['findAll'] = async () =>

@@ -1,6 +1,6 @@
 import { IConditionsRepository } from '@/modules/conditions/domain/repositories/IConditionsRepository';
 import { MetaCondition, conditions } from '@/modules/conditions/infra/db';
-import { ICondition } from '@/shared/domain/entities';
+import { ICondition } from '@/domain/entities';
 
 export default class ConditionsRepository implements IConditionsRepository {
   public findAll: IConditionsRepository['findAll'] = async () =>

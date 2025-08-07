@@ -1,4 +1,4 @@
-import IStorageProvider from '@/shared/domain/providers/IStorageProvider';
+import IStorageProvider from '@/domain/providers/IStorageProvider';
 
 export default class LocalStorageProvider implements IStorageProvider {
   public clear(): void {

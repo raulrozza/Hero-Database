@@ -3,7 +3,7 @@ import React from 'react';
 import { capitalize } from 'lodash';
 
 import ItemHeader from '@/presentation/components/atoms/ItemHeader';
-import { ICondition } from '@/shared/domain/entities';
+import { ICondition } from '@/domain/entities';
 import {
   ItemCollapsible,
   ItemContent,

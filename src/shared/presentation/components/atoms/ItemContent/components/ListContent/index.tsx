@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ListItemContent } from '@/shared/domain/valueObjects';
+import { ListItemContent } from '@/domain/valueObjects';
 import {
   RenderItemContentConfig,
   renderItemContent,

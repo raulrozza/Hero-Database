@@ -1,5 +1,5 @@
-import { Source } from '@/shared/domain/entities';
-import { ItemContent } from '@/shared/domain/valueObjects';
+import { Source } from '@/domain/entities';
+import { ItemContent } from '@/domain/valueObjects';
 
 export type MetaCondition = {
   name: string;

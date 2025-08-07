@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { capitalize } from 'lodash';
 
-import { IAdvantage } from '@/shared/domain/entities';
+import { IAdvantage } from '@/domain/entities';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
 import { useListSorter } from '@/shared/presentation/hooks';
