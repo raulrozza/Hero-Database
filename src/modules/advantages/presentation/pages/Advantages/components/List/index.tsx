@@ -5,7 +5,7 @@ import { capitalize } from 'lodash';
 import { IAdvantage } from '@/domain/entities';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
-import { useListSorter } from '@/shared/presentation/hooks';
+import { useListSorter } from '@/presentation/hooks';
 
 import { getRanksTextFromMaxRanks } from './helpers';
 

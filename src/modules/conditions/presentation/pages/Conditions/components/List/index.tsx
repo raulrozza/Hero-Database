@@ -3,9 +3,9 @@ import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { capitalize } from 'lodash';
 
 import { ICondition } from '@/domain/entities';
+import { useListSorter } from '@/presentation/hooks';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
-import { useListSorter } from '@/shared/presentation/hooks';
 
 const List: React.FC = () => {
   const [selectedCondition, setCondition] = useState<ICondition>();

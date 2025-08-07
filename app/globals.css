@@ -42,6 +42,27 @@
 
   --font-text: var(--font-biryani), sans-serif;
   --font-title: var(--font-newsflash), serif;
+
+  --animate-slide-down: slide-down 300ms ease-out;
+  --animate-slide-up: slide-up 300ms ease-out;
+
+  @keyframes slide-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
 @layer base {

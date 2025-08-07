@@ -9,7 +9,7 @@ import {
   ItemContent,
   ItemFooter,
 } from '@/shared/presentation/components/atoms';
-import { useMediaQuery } from '@/shared/presentation/hooks';
+import { useMediaQuery } from '@/presentation/hooks';
 
 import { Container } from './styles';
 

@@ -6,7 +6,7 @@ import { getCostText } from '@/modules/powers/presentation/helpers';
 import { IModifier } from '@/domain/entities';
 import { api } from '@/shared/infra/http/api';
 import { Table } from '@/shared/presentation/components/atoms';
-import { useListSorter } from '@/shared/presentation/hooks';
+import { useListSorter } from '@/presentation/hooks';
 
 const List: React.FC = () => {
   const [selectedModifier, setModifier] = useState<IModifier>();

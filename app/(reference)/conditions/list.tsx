@@ -7,7 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { ICondition } from '@/domain/entities';
 import Table from '@/presentation/components/atoms/Table';
-import { useListSorter } from '@/shared/presentation/hooks';
+import { useListSorter } from '@/presentation/hooks';
 
 interface IListProps {
   conditions: ICondition[];
