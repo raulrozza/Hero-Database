@@ -54,7 +54,7 @@ const NavBar: React.FC = () => {
             href="/"
             className="text-white text-4xl no-underline font-title"
           >
-            M&M Index
+            Hero Database
           </Link>
         </div>
 

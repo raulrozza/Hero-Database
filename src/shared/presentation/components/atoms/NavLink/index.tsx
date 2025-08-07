@@ -25,7 +25,7 @@ const NavLink: React.FC<INavLinkProps> = ({
       href={href}
       className={cn(
         'flex w-full text-center p-2 pt-1 pb-1 text-white font-title text-lg no-underline tracking-wider',
-        active ? 'hover:bg-primary-500' : 'hover:bg-secondary-300',
+        active ? 'hover:bg-primary-700' : 'hover:bg-secondary-400',
       )}
     >
       {children}

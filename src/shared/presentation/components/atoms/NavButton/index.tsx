@@ -16,8 +16,8 @@ const NavButton: React.ForwardRefRenderFunction<
     className={cn(
       'flex transition-all text-center p-2 pt-1 pb-1 text-white font-title text-lg no-underline tracking-wider cursor-pointer',
       active
-        ? 'bg-primary-800 hover:bg-primary-500'
-        : 'bg-secondary-500 hover:bg-secondary-300',
+        ? 'bg-primary-800 hover:bg-primary-700'
+        : 'bg-secondary-500 hover:bg-secondary-400',
     )}
     {...props}
   >

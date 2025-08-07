@@ -1,6 +1,6 @@
 import { NavBar } from '@/shared/presentation/components/organisms';
 
-import { LayoutProps } from '.next/types/app/(root)/layout';
+import { LayoutProps } from '.next/types/app/layout';
 
 import { biryani, newsflash } from './fonts/fonts';
 

@@ -11,7 +11,7 @@ interface IListContentProps extends ListItemContent {
 }
 
 const ListContent: React.FC<IListContentProps> = ({ items, config }) => (
-  <ul>
+  <ul className="flex flex-col gap-2 pl-8">
     {items.map((item, index) => (
       <li key={index}>{renderItemContent(item, config)}</li>
     ))}

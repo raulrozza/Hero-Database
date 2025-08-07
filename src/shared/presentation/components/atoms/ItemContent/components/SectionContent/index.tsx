@@ -4,6 +4,7 @@ import { SectionItemContent } from '@/shared/domain/valueObjects';
 import { RenderItemContentConfig } from '@/shared/presentation/helpers';
 
 import ContentFactory from '..';
+import { h2Classes } from '../../constants/classes';
 
 interface ISectionContentProps extends SectionItemContent {
   config: RenderItemContentConfig | undefined;
@@ -15,7 +16,7 @@ const SectionContent: React.FC<ISectionContentProps> = ({
   config,
 }) => (
   <>
-    <h2>{title}</h2>
+    <h2 className={h2Classes}>{title}</h2>
 
     <ContentFactory description={description} config={config} />
   </>

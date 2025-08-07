@@ -1,18 +1,16 @@
 import React from 'react';
 
-import { Container } from './styles';
-
 interface IItemHeaderProps {
   title: string;
   subtitle?: string;
 }
 
 const ItemHeader: React.FC<IItemHeaderProps> = ({ title, subtitle }) => (
-  <Container>
+  <header className="text-white flex justify-between items-end p-4 bg-primary-500">
     <h1>{title}</h1>
 
     {subtitle && <h2>{subtitle}</h2>}
-  </Container>
+  </header>
 );
 
 export default ItemHeader;

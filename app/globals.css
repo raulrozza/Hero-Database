@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 @theme {
+  --color-primary-100: #ffeec2;
+  --color-primary-200: #ffc89c;
   --color-primary-300: #fc9d83;
+  --color-primary-400: #e2846a;
   --color-primary-500: #d83a0e;
+  --color-primary-700: #923921;
   --color-primary-800: #782008;
+  --color-primary-900: ##5e0000;
 
   --color-secondary-300: #f7df88;
+  --color-secondary-400: #f1d570;
   --color-secondary-500: #f2cb40;
+  --color-secondary-700: #ddb527;
   --color-secondary-800: #d7ab0f;
 
   --color-contrast-300: #66c6ff;
@@ -114,14 +121,38 @@
   }
 }
 
+@layer utilities {
+  /* For Chrome, Safari, and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE and Edge */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+  }
+
+  /* For Firefox */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-primary-100: #ffefff;
+    --color-primary-200: #ffc9ff;
     --color-primary-300: #cc94eb;
+    --color-primary-400: #b97adc;
     --color-primary-500: #ab3be8;
+    --color-primary-700: #822cb0;
     --color-primary-800: #6f12a1;
+    --color-primary-900: #31006e;
 
     --color-secondary-300: #ea8276;
+    --color-secondary-400: #df6d60;
     --color-secondary-500: #eb4d3b;
+    --color-secondary-700: #bd3020;
     --color-secondary-800: #b21b0a;
 
     --color-contrast-300: #91ff85;
