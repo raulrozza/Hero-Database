@@ -3,13 +3,11 @@ import React from 'react';
 import { capitalize } from 'lodash';
 
 import { ICondition } from '@/domain/entities';
+import ItemCollapsible from '@/presentation/components/atoms/ItemCollapsible';
 import ItemFooter from '@/presentation/components/atoms/ItemFooter';
 import ItemHeader from '@/presentation/components/atoms/ItemHeader';
 import { useMediaQuery } from '@/presentation/hooks';
-import {
-  ItemCollapsible,
-  ItemContent,
-} from '@/shared/presentation/components/atoms';
+import { ItemContent } from '@/shared/presentation/components/atoms';
 
 import { Container } from './styles';
 

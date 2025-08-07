@@ -4,12 +4,10 @@ import { capitalize } from 'lodash';
 
 import { IEffect } from '@/domain/entities';
 import { getCostText } from '@/modules/powers/presentation/helpers';
+import ItemCollapsible from '@/presentation/components/atoms/ItemCollapsible';
 import ItemFooter from '@/presentation/components/atoms/ItemFooter';
 import ItemHeader from '@/presentation/components/atoms/ItemHeader';
-import {
-  ItemCollapsible,
-  ItemContent,
-} from '@/shared/presentation/components/atoms';
+import { ItemContent } from '@/shared/presentation/components/atoms';
 import { useThemeProvider } from '@/shared/presentation/contexts';
 
 import { Container, Subtitle } from './styles';
