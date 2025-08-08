@@ -870,21 +870,6 @@
   dependencies:
     "@tanstack/query-core" "5.83.1"
 
-"@trpc/client@^11.4.4":
-  version "11.4.4"
-  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-11.4.4.tgz#efe9eeb6970b060c2d05457eab681db209274e7a"
-  integrity sha512-86OZl+Y+Xlt9ITGlhCMImERcsWCOrVzpNuzg3XBlsDSmSs9NGsghKjeCpJQlE36XaG3aze+o9pRukiYYvBqxgQ==
-
-"@trpc/server@^11.4.4":
-  version "11.4.4"
-  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-11.4.4.tgz#847455e43ec236e163f0a34d95237d140618dfb7"
-  integrity sha512-VkJb2xnb4rCynuwlCvgPBh5aM+Dco6fBBIo6lWAdJJRYVwtyE5bxNZBgUvRRz/cFSEAy0vmzLxF7aABDJfK5Rg==
-
-"@trpc/tanstack-react-query@^11.4.4":
-  version "11.4.4"
-  resolved "https://registry.yarnpkg.com/@trpc/tanstack-react-query/-/tanstack-react-query-11.4.4.tgz#52d517f7d3f538609f9d490c0c695f2b62a40f53"
-  integrity sha512-Rf7jhPfwAHqmQdQlxTiMolNRon85bPEsBNa5JGpjSvhrTmiaFu5UEhEwHDF2myL7IRYxuYHLc4H0bQ+19qjdHQ==
-
 "@tybys/wasm-util@^0.10.0":
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/@tybys/wasm-util/-/wasm-util-0.10.0.tgz#2fd3cd754b94b378734ce17058d0507c45c88369"

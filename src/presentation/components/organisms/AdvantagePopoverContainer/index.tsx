@@ -4,9 +4,9 @@ import React from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
+import { IAdvantage } from '@/domain/entities';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
 import AdvantageItem from '@/presentation/components/molecules/AdvantageItem';
-import { useTRPC } from '@/presentation/contexts/HttpContext';
 
 interface IAdvantagePopoverContainerProps {
   entityKey: string;
@@ -15,10 +15,15 @@ interface IAdvantagePopoverContainerProps {
 const AdvantagePopoverContainer: React.FC<IAdvantagePopoverContainerProps> = ({
   entityKey,
 }) => {
-  const trpc = useTRPC();
-  const query = useQuery(
-    trpc.advantages.getByKey.queryOptions({ key: entityKey }),
-  );
+  const query = useQuery({
+    queryKey: ['advantages', entityKey],
+    queryFn: async () => {
+      const result = await fetch(`/api/advantages/${entityKey}`);
+      const data = await result.json();
+
+      return data as IAdvantage;
+    },
+  });
 
   if (query.isLoading)
     return (

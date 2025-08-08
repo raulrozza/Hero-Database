@@ -1,6 +1,6 @@
+import { IEffect, IModifier } from '@/domain/entities';
 import { IEffectsRepository } from '@/domain/repositories/IEffectsRepository';
 import { MetaEffect, effects, modifiers } from '@/infra/db';
-import { IEffect, IModifier } from '@/domain/entities';
 
 export default class EffectsRepository implements IEffectsRepository {
   private extras = new Map<string, Set<IModifier>>();

@@ -1,5 +1,5 @@
 import NavBar from '@/presentation/components/organisms/NavBar';
-import { HttpContext } from '@/presentation/contexts/HttpContext';
+import HttpContext from '@/presentation/contexts/HttpContext';
 
 import { LayoutProps } from '.next/types/app/layout';
 

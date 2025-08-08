@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
-
-import { getQueryClient } from '../helpers/trpc';
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from '@tanstack/react-query';
 
 export function HydrationContext(props: { children: React.ReactNode }) {
-  const queryClient = getQueryClient();
+  const queryClient = new QueryClient();
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>

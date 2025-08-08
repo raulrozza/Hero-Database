@@ -4,9 +4,9 @@ import React from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
+import { IModifier } from '@/domain/entities';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
 import ModifierItem from '@/presentation/components/molecules/ModifierItem';
-import { useTRPC } from '@/presentation/contexts/HttpContext';
 
 interface IModifierPopoverContainerProps {
   entityKey: string;
@@ -15,10 +15,15 @@ interface IModifierPopoverContainerProps {
 const ModifierPopoverContainer: React.FC<IModifierPopoverContainerProps> = ({
   entityKey,
 }) => {
-  const trpc = useTRPC();
-  const query = useQuery(
-    trpc.modifiers.getByKey.queryOptions({ key: entityKey }),
-  );
+  const query = useQuery({
+    queryKey: ['modifiers', entityKey],
+    queryFn: async () => {
+      const result = await fetch(`/api/modifiers/${entityKey}`);
+      const data = await result.json();
+
+      return data as IModifier;
+    },
+  });
 
   if (query.isLoading)
     return (

@@ -4,9 +4,9 @@ import React from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
+import { ICondition } from '@/domain/entities';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
 import ConditionItem from '@/presentation/components/molecules/ConditionItem';
-import { useTRPC } from '@/presentation/contexts/HttpContext';
 
 interface IConditionPopoverContainerProps {
   entityKey: string;
@@ -15,10 +15,15 @@ interface IConditionPopoverContainerProps {
 const ConditionPopoverContainer: React.FC<IConditionPopoverContainerProps> = ({
   entityKey,
 }) => {
-  const trpc = useTRPC();
-  const query = useQuery(
-    trpc.conditions.getByKey.queryOptions({ key: entityKey }),
-  );
+  const query = useQuery({
+    queryKey: ['conditions', entityKey],
+    queryFn: async () => {
+      const result = await fetch(`/api/conditions/${entityKey}`);
+      const data = await result.json();
+
+      return data as ICondition;
+    },
+  });
 
   if (query.isLoading)
     return (
