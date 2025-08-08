@@ -79,7 +79,7 @@ const List: React.FC<IListProps> = ({ advantages }) => {
             },
           ]}
           onClick={() => route.push(`/advantages/${advantage.key}`)}
-          highlighted={pathname?.includes(advantage.key)}
+          highlighted={pathname?.includes(encodeURI(advantage.key))}
         />
       ))}
     </Table>

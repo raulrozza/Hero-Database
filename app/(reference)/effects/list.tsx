@@ -74,7 +74,7 @@ const List: React.FC<IListProps> = ({ effects }) => {
             },
           ]}
           onClick={() => route.push(`/effects/${effect.key}`)}
-          highlighted={pathname?.includes(effect.key)}
+          highlighted={pathname?.includes(encodeURI(effect.key))}
         />
       ))}
     </Table>

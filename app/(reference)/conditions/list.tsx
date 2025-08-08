@@ -97,7 +97,7 @@ const List: React.FC<IListProps> = ({ conditions }) => {
                 },
               ]}
               onClick={() => route.push(`/conditions/${condition.key}`)}
-              highlighted={pathname?.includes(condition.key)}
+              highlighted={pathname?.includes(encodeURI(condition.key))}
             />
           ))}
         </Fragment>

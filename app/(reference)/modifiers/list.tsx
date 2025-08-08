@@ -109,7 +109,7 @@ const List: React.FC<IListProps> = ({ modifiers }) => {
                 },
               ]}
               onClick={() => route.push(`/modifiers/${modifier.key}`)}
-              highlighted={pathname?.includes(modifier.key)}
+              highlighted={pathname?.includes(encodeURI(modifier.key))}
             />
           ))}
         </Fragment>
