@@ -2,7 +2,6 @@ import React from 'react';
 
 import { AdvantageItem } from '@/modules/advantages/presentation/components/molecules';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
-import { api } from '@/infra/http/api';
 
 interface IAdvantagePopoverContainerProps {
   entityKey: string;
@@ -11,7 +10,7 @@ interface IAdvantagePopoverContainerProps {
 const AdvantagePopoverContainer: React.FC<IAdvantagePopoverContainerProps> = ({
   entityKey,
 }) => {
-  const query = api.advantages.getByKey.useQuery({ key: entityKey });
+  const query: any = {};
 
   if (query.isLoading)
     return (

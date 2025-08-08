@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 
-import { api } from '@/infra/http/api';
 import { sharedModule } from '@/shared/presentation/shared.module';
 
 const SharedContainer = sharedModule.Container;
@@ -13,4 +12,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default api.withTRPC(MyApp);
+export default MyApp;

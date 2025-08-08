@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 
 import { makeConditionsRepository } from '@/infra/repositories';
 import ConditionItem from '@/presentation/components/molecules/ConditionItem';
+import { HydrationContext } from '@/presentation/contexts/HydrationContext';
 
 interface ConditionProps {
   params: {
@@ -23,8 +24,10 @@ export default async function Condition({ params }: ConditionProps) {
   if (!condition) redirect('/conditions');
 
   return (
-    <div className="w-full md:w-114 max-h-100% no-scrollbar">
-      <ConditionItem condition={condition} />
-    </div>
+    <HydrationContext>
+      <div className="w-full md:w-114 max-h-100% no-scrollbar">
+        <ConditionItem condition={condition} />
+      </div>
+    </HydrationContext>
   );
 }

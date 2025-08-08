@@ -9,7 +9,10 @@ interface IPopoverContainer extends FC<PopoverContainerProps> {
 }
 
 const PopoverContainer = (({ className, ...props }: PopoverContainerProps) => (
-  <div {...props} className={cn('w-full max-w-100 bg-neutral-50', className)} />
+  <div
+    {...props}
+    className={cn('w-full max-w-100 bg-neutral-50 overflow-hidden', className)}
+  />
 )) as IPopoverContainer;
 
 function Span({ className, ...props }: HTMLProps<HTMLSpanElement>) {

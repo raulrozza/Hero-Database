@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { capitalize } from 'lodash';
 
 import { IAdvantage } from '@/domain/entities';
-import { api } from '@/infra/http/api';
 import { useListSorter } from '@/presentation/hooks';
 import { Table } from '@/shared/presentation/components/atoms';
 
@@ -13,9 +12,7 @@ const List: React.FC = () => {
   const [selectedAdvantage, setAdvantage] = useState<IAdvantage>();
   const hasInitialized = useRef(false);
 
-  const query = api.advantages.getAll.useQuery(undefined, {
-    initialData: [],
-  });
+  const query: any = {};
 
   const sortedQuery = useListSorter(query.data, {
     sortKeys: ['name', 'type', 'maxRanks', 'source'],

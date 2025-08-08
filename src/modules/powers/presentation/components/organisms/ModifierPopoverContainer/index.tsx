@@ -2,7 +2,6 @@ import React from 'react';
 
 import { ModifierItem } from '@/modules/powers/presentation/components/molecules';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
-import { api } from '@/infra/http/api';
 
 interface IModifierPopoverContainerProps {
   entityKey: string;
@@ -11,7 +10,7 @@ interface IModifierPopoverContainerProps {
 const ModifierPopoverContainer: React.FC<IModifierPopoverContainerProps> = ({
   entityKey,
 }) => {
-  const query = api.modifiers.getByKey.useQuery({ key: entityKey });
+  const query: any = {};
 
   if (query.isLoading)
     return (

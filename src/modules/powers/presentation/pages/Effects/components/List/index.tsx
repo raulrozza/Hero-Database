@@ -2,19 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { capitalize } from 'lodash';
 
-import { getCostText } from '@/modules/powers/presentation/helpers';
 import { IEffect } from '@/domain/entities';
-import { api } from '@/infra/http/api';
-import { Table } from '@/shared/presentation/components/atoms';
+import { getCostText } from '@/modules/powers/presentation/helpers';
 import { useListSorter } from '@/presentation/hooks';
+import { Table } from '@/shared/presentation/components/atoms';
 
 const List: React.FC = () => {
   const [selectedEffect, setEffect] = useState<IEffect>();
   const hasInitialized = useRef(false);
 
-  const query = api.effects.getAll.useQuery(undefined, {
-    initialData: [],
-  });
+  const query: any = {};
 
   const hash = location.hash;
 

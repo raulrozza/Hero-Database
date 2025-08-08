@@ -18,7 +18,7 @@ const Tooltip: React.FC<ITooltipProps> = ({ children, content }) => (
       <RadixTooltip.Portal>
         <RadixTooltip.Content
           side="left"
-          className="max-h-[var(--radix-tooltip-content-available-height)] [transform-origin: var(--radix-tooltip-content-transform-origin)] --animate-scale-in shadow-2xs overflow-auto overflow-x-hidden [&[data-side='bottom'].arrow]: fill-primary-500"
+          className="max-h-[var(--radix-tooltip-content-available-height)] [transform-origin: var(--radix-tooltip-content-transform-origin)] animate-scale-in shadow-2xl overflow-auto overflow-x-hidden [&[data-side='bottom'].arrow]: fill-primary-500"
         >
           <RadixTooltip.Arrow className="arrow fill-neutral-50" />
 
