@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 
 import { makeConditionsRepository } from '@/infra/repositories';
+import ReferenceItemContainer from '@/presentation/components/atoms/ReferenceItemContainer';
 import ConditionItem from '@/presentation/components/molecules/ConditionItem';
 import { HydrationContext } from '@/presentation/contexts/HydrationContext';
 
@@ -25,9 +26,9 @@ export default async function Condition({ params }: ConditionProps) {
 
   return (
     <HydrationContext>
-      <div className="w-full md:w-114 max-h-100% no-scrollbar">
+      <ReferenceItemContainer>
         <ConditionItem condition={condition} />
-      </div>
+      </ReferenceItemContainer>
     </HydrationContext>
   );
 }

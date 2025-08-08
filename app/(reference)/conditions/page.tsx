@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 
+import ReferenceItemContainer from '@/presentation/components/atoms/ReferenceItemContainer';
 import EmptyItemCard from '@/presentation/components/molecules/EmptyItemCard';
 
 export const metadata: Metadata = {
@@ -8,11 +9,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="w-full md:w-114 max-h-100% no-scrollbar">
+    <ReferenceItemContainer>
       <EmptyItemCard
         title="Condition"
         text="Please, select a condition from the options"
       />
-    </div>
+    </ReferenceItemContainer>
   );
 }
