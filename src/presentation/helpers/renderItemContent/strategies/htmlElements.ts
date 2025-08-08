@@ -1,7 +1,4 @@
-import {
-  ExtractStrategy,
-  TextElement,
-} from '@/shared/presentation/helpers/renderItemContent/models';
+import { ExtractStrategy, TextElement } from '../models';
 
 const validElements = ['strong', 'i'];
 
