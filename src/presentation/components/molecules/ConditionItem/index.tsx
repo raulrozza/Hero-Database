@@ -24,7 +24,7 @@ const ConditionItem: React.FC<TConditionItemProps> = ({
   const renderConfig = { showTooltip };
   const isMobile = useMediaQuery('md');
 
-  const containerClassName = 'w-100% bg-neutral-50';
+  const containerClassName = 'w-full bg-neutral-50';
 
   if (condition.type === 'basic')
     return (

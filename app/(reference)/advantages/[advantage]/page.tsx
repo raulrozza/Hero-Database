@@ -2,8 +2,8 @@ import { redirect } from 'next/navigation';
 
 import { makeAdvantagesRepository } from '@/infra/repositories';
 import ReferenceItemContainer from '@/presentation/components/atoms/ReferenceItemContainer';
+import AdvantageItem from '@/presentation/components/molecules/AdvantageItem';
 import { HydrationContext } from '@/presentation/contexts/HydrationContext';
-/* import AdvantageItem from '@/presentation/components/molecules/AdvantageItem'; */
 
 interface AdvantageProps {
   params: {
@@ -27,7 +27,7 @@ export default async function Advantage({ params }: AdvantageProps) {
   return (
     <HydrationContext>
       <ReferenceItemContainer>
-        {/* <AdvantageItem advantage={advantage} /> */}
+        <AdvantageItem advantage={advantage} />
       </ReferenceItemContainer>
     </HydrationContext>
   );
