@@ -4,8 +4,8 @@ import { capitalize } from 'lodash';
 
 import { IAdvantage } from '@/domain/entities';
 import { api } from '@/infra/http/api';
-import { Table } from '@/shared/presentation/components/atoms';
 import { useListSorter } from '@/presentation/hooks';
+import { Table } from '@/shared/presentation/components/atoms';
 
 import { getRanksTextFromMaxRanks } from './helpers';
 

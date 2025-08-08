@@ -1,4 +1,5 @@
 import NavBar from '@/presentation/components/organisms/NavBar';
+import { HttpContext } from '@/presentation/contexts/HttpContext';
 
 import { LayoutProps } from '.next/types/app/layout';
 
@@ -13,12 +14,14 @@ export const metadata = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" className={`${newsflash.variable} ${biryani.variable}`}>
-      <body>
-        <NavBar />
+    <HttpContext>
+      <html lang="en" className={`${newsflash.variable} ${biryani.variable}`}>
+        <body>
+          <NavBar />
 
-        {children}
-      </body>
-    </html>
+          {children}
+        </body>
+      </html>
+    </HttpContext>
   );
 }
