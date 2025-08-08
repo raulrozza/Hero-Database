@@ -15,7 +15,7 @@ type TEffectItemProps = {
   effect: IEffect;
 };
 
-const sectionClassName = 'flex g-2';
+const sectionClassName = 'flex gap-2';
 const pClassName = 'font-light';
 const strongClassName = 'font-extrabold';
 
@@ -31,7 +31,7 @@ const EffectItem: React.FC<TEffectItemProps> = ({
 
       <div
         className={cn(
-          'flex flex-col items-center p-2 g-2 bg-primary-100 dark:bg-primary-900',
+          'flex flex-col items-center p-2 gap-2 bg-primary-100 dark:bg-primary-900',
         )}
       >
         <div className={sectionClassName}>
