@@ -1,7 +1,7 @@
 import { makeModifiersRepository } from '@/infra/repositories';
 import ReferencePage from '@/presentation/components/atoms/ReferencePage';
 
-import { LayoutProps } from '.next/types/app/(reference)/conditions/layout';
+import { LayoutProps } from '.next/types/app/layout';
 
 import List from './list';
 
