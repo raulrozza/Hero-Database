@@ -6,12 +6,13 @@ import { PopovableEntity } from '@/presentation/models';
 
 import { htmlElementStrategy } from './strategies/htmlElements';
 import { referenceStrategy } from './strategies/references';
+import AdvantagePopoverContainer from '@/presentation/components/organisms/AdvantagePopoverContainer';
 
 const ENTITY_TOOLTIP_COMPONENTS: Record<
   PopovableEntity,
   FC<{ entityKey: string }>
 > = {
-  Advantage: React.Fragment as FC<{ entityKey: string }>,
+  Advantage: AdvantagePopoverContainer,
   Condition: ConditionPopoverContainer,
   Modifier: React.Fragment as FC<{ entityKey: string }>,
 };
