@@ -4,9 +4,12 @@ import React from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
-import { ICondition } from '@/domain/entities';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
 import ConditionItem from '@/presentation/components/molecules/ConditionItem';
+import {
+  conditionQueries,
+  conditionService,
+} from '@/presentation/services/conditions';
 
 interface IConditionPopoverContainerProps {
   entityKey: string;
@@ -16,13 +19,8 @@ const ConditionPopoverContainer: React.FC<IConditionPopoverContainerProps> = ({
   entityKey,
 }) => {
   const query = useQuery({
-    queryKey: ['conditions', entityKey],
-    queryFn: async () => {
-      const result = await fetch(`/api/conditions/${entityKey}`);
-      const data = await result.json();
-
-      return data as ICondition;
-    },
+    queryKey: conditionQueries.findByKey(entityKey),
+    queryFn: conditionService.findByKey(entityKey),
   });
 
   if (query.isLoading)

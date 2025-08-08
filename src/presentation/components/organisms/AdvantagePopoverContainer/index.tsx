@@ -4,9 +4,12 @@ import React from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
-import { IAdvantage } from '@/domain/entities';
 import PopoverContainer from '@/presentation/components/atoms/PopoverContainer';
 import AdvantageItem from '@/presentation/components/molecules/AdvantageItem';
+import {
+  advantageQueries,
+  advantageService,
+} from '@/presentation/services/advantages';
 
 interface IAdvantagePopoverContainerProps {
   entityKey: string;
@@ -16,13 +19,8 @@ const AdvantagePopoverContainer: React.FC<IAdvantagePopoverContainerProps> = ({
   entityKey,
 }) => {
   const query = useQuery({
-    queryKey: ['advantages', entityKey],
-    queryFn: async () => {
-      const result = await fetch(`/api/advantages/${entityKey}`);
-      const data = await result.json();
-
-      return data as IAdvantage;
-    },
+    queryKey: advantageQueries.findByKey(entityKey),
+    queryFn: advantageService.findByKey(entityKey),
   });
 
   if (query.isLoading)
