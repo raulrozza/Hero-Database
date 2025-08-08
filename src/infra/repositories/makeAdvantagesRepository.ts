@@ -1,4 +1,4 @@
-import { IAdvantagesRepository } from '@/modules/advantages/domain/repositories/IAdvantagesRepository';
+import { IAdvantagesRepository } from '@/domain/repositories/IAdvantagesRepository';
 
 import AdvantagesRepository from './implementations/AdvantagesRepository';
 

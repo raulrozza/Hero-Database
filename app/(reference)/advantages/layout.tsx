@@ -1,4 +1,4 @@
-import { makeAdvantagesRepository } from '@/modules/advantages/infra/repositories';
+import { makeAdvantagesRepository } from '@/infra/repositories';
 import ReferencePage from '@/presentation/components/atoms/ReferencePage';
 
 import { LayoutProps } from '.next/types/app/(reference)/conditions/layout';

@@ -1,6 +1,6 @@
-import { IAdvantagesRepository } from '@/modules/advantages/domain/repositories/IAdvantagesRepository';
-import { MetaAdvantage, advantages } from '@/modules/advantages/infra/db';
 import { IAdvantage } from '@/domain/entities';
+import { IAdvantagesRepository } from '@/domain/repositories/IAdvantagesRepository';
+import { MetaAdvantage, advantages } from '@/infra/db';
 
 export default class AdvantagesRepository implements IAdvantagesRepository {
   public findAll: IAdvantagesRepository['findAll'] = async () =>
