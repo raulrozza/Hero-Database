@@ -1,4 +1,4 @@
-import { IModifiersRepository } from '@/modules/powers/domain/repositories/IModifiersRepository';
+import { IModifiersRepository } from '@/domain/repositories/IModifiersRepository';
 
 import ModifiersRepository from './implementations/ModifiersRepository';
 

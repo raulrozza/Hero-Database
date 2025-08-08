@@ -1,12 +1,12 @@
 import React, { FC, Fragment, ReactNode } from 'react';
 
 import EntityLink from '@/presentation/components/molecules/EntityLink';
+import AdvantagePopoverContainer from '@/presentation/components/organisms/AdvantagePopoverContainer';
 import ConditionPopoverContainer from '@/presentation/components/organisms/ConditionPopoverContainer';
 import { PopovableEntity } from '@/presentation/models';
 
 import { htmlElementStrategy } from './strategies/htmlElements';
 import { referenceStrategy } from './strategies/references';
-import AdvantagePopoverContainer from '@/presentation/components/organisms/AdvantagePopoverContainer';
 
 const ENTITY_TOOLTIP_COMPONENTS: Record<
   PopovableEntity,

@@ -1,8 +1,8 @@
 import React, { FC, Fragment, ReactNode } from 'react';
 
-import { AdvantagePopoverContainer } from '@/modules/advantages/presentation/components/organisms';
 import { ModifierPopoverContainer } from '@/modules/powers/presentation/components/organisms';
 import EntityLink from '@/presentation/components/molecules/EntityLink';
+import AdvantagePopoverContainer from '@/presentation/components/organisms/AdvantagePopoverContainer';
 import ConditionPopoverContainer from '@/presentation/components/organisms/ConditionPopoverContainer';
 import { PopovableEntity } from '@/presentation/models';
 

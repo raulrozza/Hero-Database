@@ -1,4 +1,4 @@
-import { IEffectsRepository } from '@/modules/powers/domain/repositories/IEffectsRepository';
+import { IEffectsRepository } from '@/domain/repositories/IEffectsRepository';
 
 import EffectsRepository from './implementations/EffectsRepository';
 

@@ -1,5 +1,5 @@
-import { IEffectsRepository } from '@/modules/powers/domain/repositories/IEffectsRepository';
-import { MetaEffect, effects, modifiers } from '@/modules/powers/infra/db';
+import { IEffectsRepository } from '@/domain/repositories/IEffectsRepository';
+import { MetaEffect, effects, modifiers } from '@/infra/db';
 import { IEffect, IModifier } from '@/domain/entities';
 
 export default class EffectsRepository implements IEffectsRepository {
