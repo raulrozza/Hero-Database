@@ -2,9 +2,9 @@ import React, { FC, Fragment, ReactNode } from 'react';
 
 import { AdvantagePopoverContainer } from '@/modules/advantages/presentation/components/organisms';
 import { ModifierPopoverContainer } from '@/modules/powers/presentation/components/organisms';
+import EntityLink from '@/presentation/components/molecules/EntityLink';
 import ConditionPopoverContainer from '@/presentation/components/organisms/ConditionPopoverContainer';
 import { PopovableEntity } from '@/presentation/models';
-import { EntityLink } from '@/shared/presentation/components/molecules';
 
 import { htmlElementStrategy } from './strategies/htmlElements';
 import { referenceStrategy } from './strategies/references';

@@ -1,7 +1,7 @@
 import { router } from '@/infra/http/trpcServer';
-import { advantagesRoutes } from '@/modules/advantages/infra/routes';
 import { effectsRoutes, modifiersRoutes } from '@/modules/powers/infra/routes';
 
+import { advantagesRoutes } from './advantages';
 import { conditionsRoutes } from './conditions';
 
 export const appRouter = router({
